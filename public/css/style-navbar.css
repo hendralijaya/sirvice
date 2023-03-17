@@ -1,0 +1,293 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+header {
+    width: 100%;
+    background: linear-gradient(180deg, #E9F7FF 0%, rgba(233, 247, 255, 0) 82.08%);
+    top: 0;
+    position: fixed;
+    transition: 0.2s all ease-in-out;
+    box-shadow: 0px 4px 4px rgba(146, 146, 146, 0);
+    border-bottom: 0px solid rgba(146, 146, 146, 0);
+    z-index: 10;
+}
+
+.container {
+    padding: 0px 5%;
+    max-width: 1440px;
+    margin: auto;
+}
+
+.navigation-bar > * {
+    flex: auto;
+}
+
+header .logo > svg.sirvice-logo {
+    width: 150px;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+header .navigation-bar {
+    display: flex;
+    align-items: center;
+}
+
+header.header-scrolled {
+    box-shadow: 0px 4px 4px rgba(146, 146, 146, 0.2);
+    border-bottom: 0.1px solid rgba(146, 146, 146, 0.389);
+    transition: 0.2s all ease-in-out;
+    background: var(--background-color);
+}
+
+nav#navbar.navbar .login-and-register{
+    margin-left: auto;
+    display: flex;
+}
+
+nav#navbar.navbar .login-and-register li.login-button{
+    margin-right: 10px;
+}
+
+nav#navbar.navbar .login-and-register li.login-button a{
+    text-decoration: none;
+    padding: 10px 15px; 
+    font-weight: 500;
+}
+
+nav#navbar.navbar .login-and-register li.login-button a:hover{
+    background-color: #e4e4e460;
+    border-radius: 5px;
+}
+
+nav#navbar.navbar .login-and-register li.register-button{
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav#navbar.navbar .login-and-register li.register-button a{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 500;
+}
+
+/*--------------------------------------------------------------
+    # Navigation Menu
+--------------------------------------------------------------*/
+/**
+  * Desktop Navigation
+  */
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    flex-grow: 1;
+    gap: 10px;
+}
+
+nav#navbar.navbar li {
+    position: relative;
+}
+
+nav#navbar.navbar a,
+nav#navbar.navbar a:focus {
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    padding: 30px 20px 30px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #000000;
+    /* padding: 5px; */
+    border-bottom: 5px solid transparent;
+}
+
+nav#navbar.navbar a:hover,
+nav#navbar.navbar .active,
+nav#navbar.navbar .active:focus,
+nav#navbar.navbar li:hover>a {
+    color: var(--primary-color);
+}
+
+nav#navbar.navbar .active {
+    font-weight: 600;
+    border-bottom: 5px solid var(--primary-color);
+}
+
+.navbar .main-navbar{
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+/**
+  * Mobile Navigation
+  */
+.mobile-nav-toggle {
+    color: #000000;
+    font-size: 40px;
+    cursor: pointer;
+    display: none;
+    line-height: 0;
+    transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+    color: rgb(0, 0, 0);
+    margin: 20px;
+}
+
+nav#navbar.navbar.navbar-mobile {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(23, 35, 46, 0.9);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+nav#navbar.navbar.navbar-mobile .mobile-nav-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+nav#navbar.navbar.navbar-mobile ul {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    padding: 20px 25px;
+    padding-top: 50px;
+    margin: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+nav#navbar.navbar.navbar-mobile > .main-navbar > ul > li{
+    padding: 20px 0;
+    margin: 0 10px;
+    border-bottom: 1px solid rgba(146, 146, 146, 0.389);
+}
+
+nav#navbar.navbar.navbar-mobile ul div.login-and-register{
+    width: 90%;
+    padding: 10px 0;
+    margin-left: 0;
+    position: fixed;
+    bottom: 30px;
+    border-top: 1px solid rgba(146, 146, 146, 0.389);
+    background-color: #ffffff;
+}
+
+nav#navbar.navbar.navbar-mobile ul div.login-and-register .login-button{
+    width: 100%;
+}
+
+nav#navbar.navbar.navbar-mobile ul div.login-and-register .register-button{
+    width: 100%;
+}
+
+nav#navbar.navbar.navbar-mobile ul div.login-and-register .register-button a{
+    display: inline;
+}
+
+nav#navbar.navbar.navbar-mobile a,
+nav#navbar.navbar.navbar-mobile a:focus {
+    padding: 10px 20px;
+    color: #000000;
+    text-decoration: none;
+    border-bottom: 0px solid transparent;
+}
+
+nav#navbar.navbar.navbar-mobile a:hover,
+nav#navbar.navbar.navbar-mobile .active,
+nav#navbar.navbar.navbar-mobile li:hover>a {
+    color: var(--primary-color);
+    border-bottom: 0px solid transparent;
+}
+
+nav#navbar.navbar.navbar-mobile ul div.login-and-register li.register-button,
+nav#navbar.navbar.navbar-mobile ul div.login-and-register li.login-button{
+    display: flex;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 1400px) {
+    nav#navbar .main-navbar li a {
+        font-size: 14px;
+    }
+
+    .navbar a{
+        padding: 10px 0 10px 20px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    #header .logo img{
+        max-height: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header {
+        padding: 30px 0;
+    }
+
+    header > .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    nav#navbar.navbar {
+        padding: 0;
+        width: 100%;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        float: right;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav#navbar.navbar.navbar-mobile ul div.login-and-register{
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    nav#navbar.navbar.navbar-mobile ul div.login-and-register{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    nav#navbar.navbar.navbar-mobile ul div.login-and-register{
+        width: 75%;
+    }
+}
+

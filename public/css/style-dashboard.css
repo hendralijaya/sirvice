@@ -1,0 +1,45 @@
+main > #home > .container > .welcome-for-user{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: var(--background-welcome);
+    margin-top: 60px;
+    padding: 30px 30px 0 30px;
+    border-radius: 10px;
+    height: 175px;
+    background: url(../image/stars.png);
+    background-repeat: no-repeat;
+    background-color: var(--background-welcome);
+}
+
+main > #home > .container > .welcome-for-user > .welcome-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+main > #home > .container > .welcome-for-user > .welcome-content > h4{
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+main > #home > .container > .welcome-for-user > .welcome-content > h1 {
+    font-size: 40px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #home > .container > .welcome-for-user > .welcome-content > p {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+main> #home > .container > .welcome-for-user > .welcome-mascot-image > img{
+    display: block;
+    height: 250px;
+}

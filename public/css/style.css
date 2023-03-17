@@ -1,0 +1,683 @@
+main {
+    margin: 120px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Welcome Section */
+
+#welcome > .container > .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+#welcome > .container > .hero > .hero-details {
+    width: 50%;
+}
+
+#welcome > .container > .hero > .hero-details.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#welcome > .container > .hero > .hero-details > h1.hero-title{
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 96px;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome > .container > .hero > .hero-details > h1.hero-title > div.underline-text{
+    width: 500px;
+    border-top: 25px solid var(--primary-color);
+    margin-top: -35px;
+    margin-bottom: 10px;
+    z-index: -10;
+}
+
+#welcome > .container > .hero > .hero-details > h1.hero-title > span.highlight-text {
+    font-weight: 600;
+}
+
+#welcome > .container > .hero > .hero-details > p.hero-description{
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 42px;
+    display: flex;
+    flex-direction: column;
+}
+
+#welcome > .container > .hero > .hero-details > .hero-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#welcome > .container > .hero > .hero-details > .hero-image > img {
+    width: 90%;
+}
+
+@media screen and (max-width: 1300px) {
+    #welcome > .container > .hero > .hero-details > h1.hero-title{
+        font-size: 56px;
+        line-height: 88px;
+    }
+    
+    #welcome > .container > .hero > .hero-details > h1.hero-title > div.underline-text{
+        width: 450px;
+        border-top: 20px solid var(--primary-color);
+        margin-top: -35px;
+        margin-bottom: 10px;
+    }
+
+    #welcome > .container > .hero > .hero-details > p.hero-description{
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+    #welcome > .container > .hero > .hero-details > .hero-image > img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    #welcome > .container > .hero > .hero-details > h1.hero-title{
+        font-size: 48px;
+        line-height: 80px;
+    }
+    
+    #welcome > .container > .hero > .hero-details > h1.hero-title > div.underline-text{
+        width: 400px;
+        border-top: 20px solid var(--primary-color);
+        margin-top: -30px;
+        margin-bottom: 10px;
+    }
+
+    #welcome > .container > .hero > .hero-details > .hero-image > img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #welcome > .container > .hero > .hero-details > h1.hero-title{
+        font-size: 42px;
+        line-height: 72px;
+    }
+    
+    #welcome > .container > .hero > .hero-details > h1.hero-title > div.underline-text{
+        width: 350px;
+        border-top: 20px solid var(--primary-color);
+        margin-top: -30px;
+        margin-bottom: 10px;
+    }
+
+    #welcome > .container > .hero > .hero-details > .hero-image > img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #welcome > .container > .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+    }    
+
+    #welcome > .container > .hero > .hero-details {
+        width: 100%;
+        align-items: center;
+    }
+
+    #welcome > .container > .hero > .hero-details.hero-text {
+        gap: 10px;
+    }
+    
+    #welcome > .container > .hero > .hero-details > h1.hero-title{
+        display: block;
+        font-size: 36px;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        line-height: 56px;
+    }
+
+    #welcome > .container > .hero > .hero-details > h1.hero-title > div.underline-text {
+        display: none;
+    }
+
+    #welcome > .container > .hero > .hero-details > p.hero-description{
+        display: block;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    #welcome > .container > .hero > .hero-details > .hero-image {
+        justify-content: center;
+    }
+
+    #welcome > .container > .hero > .hero-details > .hero-image > img {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #welcome > .container > .hero > .hero-details > h1.hero-title{
+        font-size: 30px;
+        line-height: 48px;
+    }
+
+    #welcome > .container > .hero > .hero-details > p.hero-description{
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    #welcome > .container > .hero > .hero-details > .hero-image > img {
+        width: 90%;
+    }
+}
+/* End of Welcome Section */
+
+
+/* Service Offer Section */
+#service-offer {
+    padding: 100px 0;
+}
+
+#service-offer > .container > h2.service-offer-title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+#service-offer > .container > .offer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    height: 100%;
+}
+
+#service-offer > .container > .offer-cards > .card {
+    margin: 0 auto 15px;
+    width: 200px;
+    height: 200px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 40px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease-in-out;
+}
+
+#service-offer > .container > .offer-cards > .card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+#service-offer > .container > .offer-cards > .card > .service-detail-title {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    #service-offer > .container > h2.service-offer-title {
+        font-size: 30px;
+        line-height: 56px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #service-offer > .container > h2.service-offer-title {
+        font-size: 24px;
+        line-height: 48px;
+    }
+}
+
+
+/* End of Welcome Section */
+
+
+
+/* Why Sirvice Section */
+
+#why-sirvice {
+    padding: 100px 0;
+    box-sizing: border-box;
+}
+
+#why-sirvice > .container > h2.why-sirvice-title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+#why-sirvice > .container > .carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#why-sirvice > .container > .carousel > .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    white-space: wrap;
+    transition: all 0.8s ease;
+}
+
+#why-sirvice > .container > .carousel > .carousel-container > .why-sirvice-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 33%;
+    scale: 0.8;
+    filter: grayscale(1);
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    margin: 5px;
+    transition: all 0.8s ease;
+}
+
+#why-sirvice > .container > .carousel > .carousel-container > .why-sirvice-card.active {
+    scale: 1;
+    filter: grayscale(0);
+    transition: all 0.8s ease;
+}
+
+#why-sirvice > .container > .carousel > .carousel-container > .why-sirvice-card > h2 {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    padding: 30px 0 20px 0;
+}
+
+#why-sirvice > .container > .carousel > .carousel-container > .why-sirvice-card > p {
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+#why-sirvice > .container > .carousel > .carousel-container > .why-sirvice-card > .why-sirvice-vector {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#why-sirvice > .container > .carousel > .carousel-container > .why-sirvice-card > .why-sirvice-vector > svg{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#why-sirvice > .container > .carousel > .controls {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 100px;
+}
+
+#why-sirvice > .container > .carousel > .controls > button {
+    border: none;
+    background-color: var(--background-color);
+}
+
+#why-sirvice > .container > .carousel > .controls > button.bi {
+    font-size: 30px;
+    color: var(--primary-color);
+}
+
+@media screen and (max-width: 900px) {
+    #why-sirvice > .container > h2.why-sirvice-title {
+        font-size: 30px;
+        line-height: 56px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #why-sirvice > .container > .carousel > .carousel-container {
+        width: 200%;
+    }
+
+    #why-sirvice > .container > .carousel > .carousel-container > .why-sirvice-card {
+        width: 100%;
+        overflow-x: visible;
+    }
+
+    #why-sirvice > .container {
+        padding: 20px 0px;
+        overflow-x: hidden;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    #why-sirvice > .container > h2.why-sirvice-title {
+        font-size: 24px;
+        line-height: 48px;
+    }
+
+    #why-sirvice > .container > .carousel > .carousel-container {
+        width: 250%;
+    }
+
+    #why-sirvice > .container > .carousel > .carousel-container > .why-sirvice-card > .why-sirvice-vector > svg{
+        width: 80%;
+    }
+}
+
+
+/* End of Why Sirvice Section */
+
+/* Testimonial Section */
+
+#testimonial {
+    padding: 100px 0;
+    box-sizing: border-box;
+}
+
+#testimonial > .container > h2.testimonial-title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+#testimonial > .all-testimonial-cards {
+    background: white;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#testimonial > .all-testimonial-cards::before,
+#testimonial > .all-testimonial-cards::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+}
+
+#testimonial > .all-testimonial-cards::before {
+    left: 0;
+    top: 0;
+}
+
+#testimonial > .all-testimonial-cards::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(-700px);
+    }
+    25% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(-700px);
+    }
+    75% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-700px);
+    }
+}
+
+
+#testimonial > .all-testimonial-cards > .testimonial-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    animation: scroll 40s ease-in-out infinite;
+    width: calc(500px * 5);
+}
+
+#testimonial > .all-testimonial-cards > .testimonial-cards > .testimonial-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 350px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.8s ease;
+    gap: 40px;
+}
+
+#testimonial > .all-testimonial-cards > .testimonial-cards > .testimonial-card p{
+    font-size: 16px;
+    line-height: 28px;
+}
+
+#testimonial > .all-testimonial-cards > .testimonial-cards > .testimonial-card > .testimonial-card-info{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    transition: all 0.8s ease;
+}
+
+#testimonial > .all-testimonial-cards > .testimonial-cards > .testimonial-card > .testimonial-card-info > .testimonial-profile img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#testimonial > .all-testimonial-cards > .testimonial-cards > .testimonial-card > .testimonial-card-info > .testimonial-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+#testimonial > .all-testimonial-cards > .testimonial-cards > .testimonial-card > .testimonial-card-info > .testimonial-name h3{
+    font-size: 18px;
+    font-weight: 600;
+} 
+
+@media screen and (max-width: 900px) {
+    #testimonial > .container > h2.testimonial-title {
+        font-size: 30px;
+        line-height: 56px;
+    }
+}
+
+/* Media queries for smaller screens */
+@media screen and (max-width: 768px) {
+    #testimonial > .all-testimonial-cards > .testimonial-cards > .testimonial-card {
+        width: 300px;
+    }
+    
+    @keyframes scroll {
+        0% {
+            transform: translateX(-1750px);
+        }
+        25% {
+            transform: translateX(-200px);
+        }
+        50% {
+            transform: translateX(-1750px);
+        }
+        75% {
+            transform: translateX(-200px);
+        }
+        100% {
+            transform: translateX(-1750px);
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #testimonial > .container > h2.testimonial-title {
+        font-size: 24px;
+        line-height: 48px;
+    }   
+}
+
+@media screen and (max-width: 480px) {
+    #testimonial > .all-testimonial-cards > .testimonial-cards > .testimonial-card {
+        width: 250px;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(-1800px);
+        }
+        25% {
+            transform: translateX(-300px);
+        }
+        50% {
+            transform: translateX(-1800px);
+        }
+        75% {
+            transform: translateX(-300px);
+        }
+        100% {
+            transform: translateX(-1800px);
+        }
+    }
+}
+
+/* End of Testimonial Section */
+
+/* FAQ Section */
+#faq {
+    padding: 100px 0;
+    box-sizing: border-box;
+}
+
+#faq > .container > h2.faq-title {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+#faq > .container > .accordion-body > .accordion {
+    color: black;
+    background-color: white;
+    padding: 20px;
+}
+
+#faq > .container > .accordion-body > .accordion > .container {
+    position: relative;
+    padding: 10px;
+}
+
+#faq > .container > .accordion-body > .accordion > .container > .label {
+    position: relative;
+    padding: 10px 30px 10px 0px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+}
+
+#faq > .container > .accordion-body > .accordion > .container > .label::before {
+    content: '+';
+    color: var(--text-color);
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    font-size: 30px;
+    transform: translateY(-50%);
+}
+
+#faq > .container > .accordion-body > .accordion > .container > .content {
+    position: relative;
+    display: none;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: justify;
+    overflow: hidden;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#faq > .container > .accordion-body > .accordion > hr {
+    width: 100;
+    margin-left: 0;
+    border: 1px solid var(--border-color);
+}
+
+#faq > .container > .accordion-body > .accordion > .container.active .content {
+    display: block;
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+}
+
+#faq > .container > .accordion-body > .accordion > .container.active .label::before {
+    content: '-';
+    font-size: 30px;
+}
+
+@media screen and (max-width: 900px) {
+    #faq > .container > h2.faq-title {
+        font-size: 30px;
+        line-height: 56px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #faq > .container > h2.faq-title {
+        font-size: 24px;
+        line-height: 48px;
+    }   
+}
+
+/* End of FAQ Section */

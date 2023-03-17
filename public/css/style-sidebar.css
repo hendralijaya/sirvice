@@ -1,0 +1,427 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 1;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background-color: var(--background-color);
+	overflow: hidden;
+	display: flex;
+	font-family: 'Poppins', sans-serif;
+}
+
+/* Color Variables */
+.sidebar-navigation {
+	min-height: 100vh;
+	width: 80px;
+	background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	border-right: 1px solid var(--border-color);
+}
+
+.sidebar-navigation ul {
+	text-align: center;
+	color: white;
+}
+
+.sidebar-navigation > ul .logo {
+	margin: auto;
+	padding: 20px 0;
+}
+
+.sidebar-navigation > ul .logo svg {
+	width: 40px;
+	height: 40px;
+}
+
+.sidebar-navigation ul li {
+	padding: 10px;
+	margin: 10px auto;
+	cursor: pointer;
+	transition: all ease-out 120ms;
+	position: relative;
+}
+
+.sidebar-navigation ul li i.material-icons-round {
+	margin: auto;
+	color: var(--icon-color-default);
+	background-color: none;
+	padding: 10px;
+	aspect-ratio: 1/1;
+	border-radius: 10px;
+	font-size: 24px;
+	transition: all ease 450ms;
+}
+
+.sidebar-navigation ul li .tooltip {
+	display: inline-block;
+	position: absolute;
+	background-color: var(--icon-color);
+	margin: 3px 0;
+	color: var(--text-color);
+	padding: 10px 15px;
+	border-radius: 3px;
+	left: 90px;
+	opacity: 0;
+	visibility: hidden;
+	font-size: 12px;
+	border: 1px solid var(--border-color);
+}
+
+.sidebar-navigation ul li:hover i.material-icons-round{
+	background-color: var(--border-color);
+}
+
+.sidebar-navigation ul li:hover .tooltip {
+	visibility: visible;
+	opacity: 1;
+}
+
+.sidebar-navigation ul li.active i.material-icons-round  {
+	color: var(--icon-color);
+	background-color: var(--primary-color);
+}
+
+/* Header for Navbar in Dashboard */
+main {
+	width: 100%;
+	padding: 10px;
+}
+
+header {
+	width: 100%;
+}
+
+header > nav#navbar-dashboard{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 0 15px;
+	gap: 20px;
+}
+
+/* Notification */
+
+header > nav#navbar-dashboard > .notification-sneakpeek > button.notification-dropdown { 
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 10px;
+	padding: 5px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	background: none;
+	transition: 0.2s all ease-in-out;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > button.notification-dropdown:hover {
+	border: 1px solid var(--border-color);
+	transition: 0.2s all ease-in-out;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > button.notification-dropdown > i {
+	font-size: 30px;
+	padding: 3px;
+	color: var(--icon-color-default);
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content {
+	display: none;
+	margin-top: 10px;
+	padding: 15px 25px;
+	right: 250px;
+	position: absolute;
+	background-color: var(--background-color);
+	max-width: 400px;
+	max-height: 400px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+	border-radius: 10px;
+	border: 2px solid var(--border-color);
+	z-index: 1;
+	overflow-y: hidden;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content.show {
+	display: block;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek:has(.notification-dropdown-content.show) > button.notification-dropdown{
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	transition: 0.2s all ease-in-out;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-title-and-link {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 10px 0 15px 0;
+	height: 20px;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-title-and-link > h4 {
+	font-size: 20px;
+	font-weight: 500;
+	color: var(--text-color);
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-title-and-link > a {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--primary-color);
+	text-decoration: none;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	height: 300px;
+	overflow-y: scroll;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages::-webkit-scrollbar {
+	width: 10px;
+	display: none;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message{
+	display: flex;
+	padding: 20px 15px;
+	border-radius: 10px;
+	border: 2px solid var(--border-color);
+	gap: 15px;
+	text-decoration: none;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .icon-notification-mark > i{
+	font-size: 36px;
+	margin-top: -5px;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .icon-notification-mark > i.info{
+	color: var(--primary-color);
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .icon-notification-mark > i.check{
+	color: var(--success-color);
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .notification-detail-message {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .notification-detail-message > h5{
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--text-color);
+	line-height: 24px;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .notification-detail-message > p{
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--text-color);
+	line-height: 24px;
+}
+
+header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .notification-detail-message > time{
+	font-size: 12px;
+	font-weight: 300;
+	color: var(--text-color);
+	line-height: 24px;
+}
+
+/* For profile dropdown */
+
+header > nav#navbar-dashboard > .profile-sneakpeek > button.profile-dropdown{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: 10px;
+	padding: 5px 10px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	background: none;
+	transition: 0.2s all ease-in-out;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > button.profile-dropdown:hover {
+	border: 1px solid var(--border-color);
+	transition: 0.2s all ease-in-out;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > button.profile-dropdown > p.fullname {
+	font-size: 16px;
+	min-width: 100px;
+	font-weight: 500;
+	color: var(--text-color);
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content {
+	display: none;
+	margin-top: 10px;
+	right: 25px;
+	position: absolute;
+	background-color: var(--background-color);
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+	border-radius: 10px;
+	border: 2px solid var(--border-color);
+	z-index: 1;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content.show {
+	display: block;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek:has(.profile-dropdown-content.show) > button.profile-dropdown{
+	border: 1px solid var(--border-color);
+	border-radius: 10px;
+	transition: 0.2s all ease-in-out;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-general-info {
+	display: flex;
+	justify-content: space-between;
+	margin: 15px 20px 0px 20px;
+	padding-bottom: 15px;
+	align-items: center;
+	gap: 15px;
+	border-bottom: 2px solid var(--border-color);
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-general-info > img {
+	width: 50px;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	margin: auto;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-general-info > .profile-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 8px;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-general-info > .profile-info > h6.fullname {
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--text-color);
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-general-info > .profile-info > p.email-address {
+	font-size: 12px;
+	color: var(--text-color);
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-dropdown-menu {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 10px 0;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-dropdown-menu > a{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	gap: 20px;
+	font-size: 14px;
+	padding: 10px 20px;
+	color: var(--text-color);
+	transition: 0.2s all ease-in-out;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-dropdown-menu > a:hover{
+	background-color: var(--border-color);
+	transition: 0.2s all ease-in-out;
+}
+
+header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-dropdown-menu > a > i{
+	text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+	header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content {
+		right: 10px;
+		max-width: 240px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	header > nav#navbar-dashboard {
+		padding: 0 5px;
+	}
+
+	header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content {
+		right: 5px;
+		padding: 10px 20px;
+		max-width: 200px;
+	}
+
+	header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-title-and-link > h4 {
+		font-size: 16px;
+	}
+	
+	header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-title-and-link > a {
+		font-size: 12px;
+		font-weight: 400;
+		color: var(--primary-color);
+		text-decoration: none;
+	}
+
+	header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .icon-notification-mark > i {
+		font-size: 30px;
+		margin-top: 0px;
+	}
+
+	header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .notification-detail-message > h5{
+		font-size: 14px;
+	}
+	
+	header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .notification-detail-message > p{
+		font-size: 12px;
+	}
+	
+	header > nav#navbar-dashboard > .notification-sneakpeek > .notification-dropdown-content > .notification-all-messages > a.notification-message > .notification-detail-message > time{
+		font-size: 10px;
+	}
+
+	header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content {
+		right: 5px;
+		max-width: 200px;
+	}
+
+	header > nav#navbar-dashboard > .profile-sneakpeek > button.profile-dropdown > p.fullname {
+		display: none;
+	}
+
+	header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-general-info > img {
+		display: none;
+	}
+
+	header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-general-info > .profile-info > h6.fullname {
+		font-size: 14px;
+		text-align: center;
+	}
+
+	header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-general-info > .profile-info > p.email-address {
+		font-size: 10px;
+		text-align: center;
+	}
+
+	header > nav#navbar-dashboard > .profile-sneakpeek > .profile-dropdown-content > .profile-dropdown-menu > a{
+		gap: 10px;
+		font-size: 12px;
+		padding: 5px 20px;
+	}
+}
