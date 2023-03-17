@@ -18,7 +18,7 @@
 
                     <div class="hero-details">
                         <div class="hero-image">
-                            <img src="../assets/image/mascot-bubble.png" alt="Hero Image">
+                            <img src="<?= BASEURL; ?>/image/mascot-bubble.png" alt="Hero Image">
                         </div>
                     </div>
                 </div>

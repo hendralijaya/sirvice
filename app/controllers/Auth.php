@@ -28,21 +28,19 @@ class Auth extends Controller {
             exit;
         }
     }
-        $data['judul'] = 'Register';
+        $data['title'] = 'Register - Sirvice';
         $this->view('auth/register');
     }
 
     public function login() 
     {
-        $data['judul'] = 'Login';
-        $this->view('auth/login');
+        $data['title'] = 'Login - Sirvice';
         $user = $this->getRememberMeUser();
         if ($user) {
             $this->setSession($user);
             header('Location: ' . BASEURL . '/dashboard');
             exit;
         }
-
         if (isset($_POST['login'])) {
             $user = $this->model('Auth_model')->login($_POST);
             if ($user) {
@@ -56,6 +54,8 @@ class Auth extends Controller {
             header('Location: ' . BASEURL . '/auth/login');
             exit;
         }
+        $this->view('auth/login', $data);
+        $this->view('templates/auth/carousel');
     }
 
     private function getRememberMeUser() 
@@ -65,7 +65,7 @@ class Auth extends Controller {
             $validator = base64_decode($token);
             $rememberMeToken = $this->model('Remember_Me_Token_model')->getRememberMeToken($selector);
             if ($rememberMeToken && hash_equals($rememberMeToken['token'], hash('sha256', $validator))) {
-                $user = $this->model('User_model')->getUserById($rememberMeToken['user_id']);
+                $user = $this->model('Users_model')->getUserById($rememberMeToken['user_id']);
                 return $user;
             }
             $this->model('Remember_Me_Token_model')->deleteRememberMeToken($selector);
@@ -75,12 +75,14 @@ class Auth extends Controller {
 
     private function setSession($user) 
     {
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         $_SESSION['logged_in'] = true;
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['name'];
         $_SESSION['user_email'] = $user['email'];
-        session_regenerate_id();
+        session_regenerate_id(true);
     }
 
     private function setRememberMeCookie($userId) 

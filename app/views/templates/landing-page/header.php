@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sir-Vice</title>
+    <title><?= $data['title'] ?></title>
 
-    <link rel="stylesheet" href="../assets/css/reset.css">
-    <link rel="stylesheet" href="../assets/css/style-color.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/reset.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-color.css">
 
-    <link rel="stylesheet" href="../assets/css/style-loader.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-loader.css">
 
-    <link rel="stylesheet" href="../assets/css/style-navbar.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/style-footer.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-navbar.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-footer.css">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -80,9 +80,9 @@
             <nav id="navbar" class="navbar">
                 <div class="main-navbar">
                     <ul>
-                        <li><a class="nav-link active" href="./index.html">Home</a></li>
-                        <li><a class="nav-link" href="./aboutus.html">About Us</a></li>
-                        <li><a class="nav-link" href="./services.html">Services</a></li>
+                        <li><a class="nav-link active" href="<?= BASEURL; ?>/landingpage/home">Home</a></li>
+                        <li><a class="nav-link" href="<?= BASEURL; ?>/landingpage/aboutus">About Us</a></li>
+                        <li><a class="nav-link" href="<?= BASEURL; ?>/landingpage/services">Services</a></li>
                         
                         <div class="login-and-register">
                             <li class="nav-link login-button"><a href="login.html">Log in</a></li>

@@ -71,9 +71,16 @@
             </div>
         </div>
     </footer>
-
-    <script src="../assets/js/script-carousel-why-sirvice.js"></script>
-    <script src="../assets/js/script.js"></script>
-    <script src="../assets/js/script-loader.js"></script>
+    <div id="preloader">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="<?= BASEURL; ?>/js/script-carousel-why-sirvice.js"></script>
+    <script src="<?= BASEURL; ?>/js/script.js"></script>
+    <script src="<?= BASEURL; ?>/js/script-loader.js"></script>
 </body>
 </html>

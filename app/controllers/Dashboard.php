@@ -10,6 +10,14 @@ class Dashboard extends Controller {
     }
     public function index()
     {
-        echo 'dashboard <a href="' . BASEURL . '/auth/logout">Logout</a>';
+        header('Location: ' . BASEURL . '/dashboard/home');
+    }
+
+    public function home()
+    {
+        $data['title'] = 'Dashboard - Sirvice';
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/home', $data);
+        $this->view('templates/dashboard/footer');
     }
 }

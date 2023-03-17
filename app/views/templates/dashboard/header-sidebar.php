@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Sir-Vice</title>
+    <title><?= $data['title'] ?></title>
 
-    <link rel="stylesheet" href="../assets/css/reset.css">
-    <link rel="stylesheet" href="../assets/css/style-color.css">
+    <link rel="stylesheet" href="<?=BASEURL; ?>/css/reset.css">
+    <link rel="stylesheet" href="<?=BASEURL; ?>/css/style-color.css">
 
-    <link rel="stylesheet" href="../assets/css/style-loader.css">
+    <link rel="stylesheet" href="<?=BASEURL; ?>/css/style-loader.css">
 
-    <link rel="stylesheet" href="../assets/css/style-sidebar.css">
-    <link rel="stylesheet" href="../assets/css/style-dashboard.css">
+    <link rel="stylesheet" href="<?=BASEURL; ?>/css/style-sidebar.css">
+    <link rel="stylesheet" href="<?=BASEURL; ?>/css/style-dashboard.css">
 
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
@@ -48,7 +48,7 @@
                 <span class="tooltip">Home</span>
             </li>
             <li>
-                <a href="#"></a><i class="material-icons-round">list_alt</i></a>
+                <a href="#"><i class="material-icons-round">list_alt</i></a>
                 <span class="tooltip">Order</span>
             </li>
             <li>
@@ -126,7 +126,7 @@
     
                 <div class="profile-sneakpeek">
                     <button class="profile-dropdown">
-                        <img src="../assets/image/profile-example.png" alt="Profile Picture">
+                        <img src="<?=BASEURL; ?>/image/profile-example.png" alt="Profile Picture">
                         <p class="fullname">Patricia Ho</p>
                         <i class="material-icons-round">arrow_drop_down</i>
                         <!-- <i class="material-icons-round">arrow_drop_up</i> -->
@@ -134,7 +134,7 @@
         
                     <div class="profile-dropdown-content">
                         <div class="profile-general-info">
-                            <img src="../assets/image/profile-example.png" alt="Profile Picture">
+                            <img src="<?=BASEURL; ?>/image/profile-example.png" alt="Profile Picture">
                             <div class="profile-info">
                                 <h6 class="fullname">Patricia Ho</h6>
                                 <p class="email-address">hopatricia9820@gmail.com</p>
@@ -146,7 +146,7 @@
                                 <i class="material-icons-round">person</i>
                                 <p>Profile</p>
                             </a>
-                            <a href="#">
+                            <a href="<?= BASEURL; ?>/auth/logout">
                                 <i class="material-icons-round">logout</i>
                                 <p>Logout</p>
                             </a>

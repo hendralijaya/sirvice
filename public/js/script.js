@@ -86,3 +86,5 @@ for (i = 0; i < accordion.length; i++) {
         this.classList.toggle('active')
     })
 }
+
+console.log("I am here");
