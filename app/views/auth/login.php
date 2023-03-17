@@ -101,7 +101,7 @@
                     <button type="submit" class="primary-button submit-form" value="login">Login</button>
                 </form>
 
-                <p class="go-to-register-page">Don’t have account? <a href="#" class="register-page">Register Now!</a></p>
+                <p class="go-to-register-page">Don’t have account? <a href="<?= BASEURL ?>/auth/register" class="register-page">Register Now!</a></p>
             </div>
         </div>
     </section>
