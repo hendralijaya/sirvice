@@ -8,7 +8,7 @@
                         <p class="quote">“We’ll do our best to keep you breathing the fresh air!”</p>
                     </div>
                     <div class="welcome-mascot-image">
-                        <img src="../assets/image/mascot-welcome-crop.png" alt="Mascot Is Welcoming User">
+                        <img src="<?= BASEURL; ?>/image/mascot-welcome-crop.png" alt="Mascot Is Welcoming User">
                     </div>
                 </div>
             </div>
