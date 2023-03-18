@@ -97,7 +97,7 @@
 
                         <div class="global-ratings-card">
                             <h5 class="title">Global Ratings</h5>
-                            <p class="global-ratings-number">2</p>
+                            <p class="global-ratings-number">4.5/5</p>
                             <i class="material-icons-round">star_border</i>
                         </div>
                     </div>
