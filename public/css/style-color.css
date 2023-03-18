@@ -9,9 +9,16 @@
     --quote-color: #F2F2F2;
     --footer-background-color: linear-gradient(180deg, rgba(233, 247, 255, 0) 44.06%, #E9F7FF 100%);
     --dots-color: #BEE7FF;
+    --card-background-color: #F9F9F9;
 
     --success-color: #5CAA96;
     --background-welcome: rgba(170, 225, 255, 0.5);
+
+    --info-background-color: #D4EFFF;
+    --info-border-color: #82BBDB;
+
+    --scheduled-background-color: #E9E9E9;
+    --scheduled-border-color: #ADADAD;
 }
 
 html[data-theme='light'] {
