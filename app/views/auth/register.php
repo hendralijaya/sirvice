@@ -81,30 +81,30 @@
                     <p class="register-form-description">Fill all the fields below to make your new account!</p>
                 </div>
 
-                <form action="">
-                    <div class="field-nama">
+                <form action="" onsubmit="return checkPasswords()">
+                    <div class="field">
                         <label for="nama">Nama</label>
                         <input type="nama" id="nama" name="nama" placeholder="John Doe" required>
                     </div>
-                    <div class="field-email">
+                    <div class="field">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="hello@gmail.com" required>
                     </div>
 
 
-                    <div class="field-password">
+                    <div class="field password-container">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="*******" required>
                         <span toggle="#password" class="eye-icon"></span>
                     </div>
 
-                    <div class="field-password">
+                    <div class="field password-container">
                         <label for="repassword">Re-Password</label>
                         <input type="repassword" id="repassword" name="repassword" placeholder="*******" required>
                         <span toggle="#repassword" class="eye-icon"></span>
                     </div>
                     
-                    <div class="phone_number">
+                    <div class="field">
                         <label for="phone_number">Phone Number</label>
                         <input type="phone_number" id="phone_number" name="phone_number" placeholder="819xxxxxxxxx" required>
                         <span toggle="#phone_number" class="flag-icon"></span>
@@ -341,5 +341,6 @@
     <script src="<?= BASEURL; ?>/js/script.js"></script>
     <script src="<?= BASEURL; ?>/js/script-loader.js"></script>
     <script src="<?= BASEURL; ?>/js/script-credentials.js"></script>
+    <script src="<?= BASEURL; ?>/js/auth/password-check.js"></script>
 </body>
 </html>
