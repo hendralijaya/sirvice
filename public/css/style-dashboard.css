@@ -85,12 +85,11 @@ main> #home > .container > .welcome-for-user > .welcome-mascot-image > img{
 
 main > #home > .container > .main-content {
     display: flex;
+    justify-content: space-between;
     margin: 30px 30px 0 30px;
-    gap: 20px;
 }
 
 main > #home > .container > .main-content > .upcoming-order{
-    padding: 20px;
     width: 28%;
     padding: 30px;
     border-radius: 10px;
@@ -122,7 +121,7 @@ main > #home > .container > .main-content > .upcoming-order > .upcoming-order-ca
     flex-direction: column;
     gap: 20px;
     margin: 20px 0;
-    height: 480px;
+    height: 500px;
     overflow-y: scroll;
 }
 
@@ -287,4 +286,128 @@ main > #home > .container > .main-content > .total-summary > .global-ratings-car
     right: 0;
     margin-top: 30px;
     margin-right: -40px;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks{
+    width: 28%;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background-color);
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+main > #home > .container > .main-content >  .tips-and-tricks > .tips-and-tricks-header > h5.title{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #home > .container > .main-content >  .tips-and-tricks > .tips-and-tricks-header > a{
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards {
+    padding: 20px 0 10px 0;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card{
+    height: 100%;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-vector {
+    display: flex;
+    justify-content: center;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-vector > img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > h6.title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > p.description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .go-to-detail-content {
+    padding: 10px 0;
+    width: inherit;
+}
+
+main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .go-to-detail-content > a.read-more {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+    main > #home > .container > .main-content {
+        flex-direction: column;
+        margin: 30px;
+    }
+
+    main > #home > .container > .main-content > .upcoming-order {
+        width: inherit;
+        margin-bottom: 30px;
+    }
+
+    main > #home > .container > .main-content > .total-summary > .total-order-card, main > #home > .container > .main-content > .total-summary > .appointment-scheduled-card, main > #home > .container > .main-content > .total-summary > .global-ratings-card {
+        height: 130px;
+    }
+
+    main > #home > .container > .main-content > .total-summary > .total-order-card > i, main > #home > .container > .main-content > .total-summary > .appointment-scheduled-card > i, main > #home > .container > .main-content > .total-summary > .global-ratings-card > i {
+        font-size: 150px;
+        right: 0;
+    }
+
+    main > #home > .container > .main-content > .total-summary {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    main > #home > .container > .main-content > .tips-and-tricks {
+        width: inherit;
+    }
+
+    main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content{
+        padding: 0;
+    }
+    
 }

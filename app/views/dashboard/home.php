@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
 
                     <div class="total-summary">
@@ -103,12 +103,30 @@
                     </div>
 
                     <div class="tips-and-tricks">
+                        <div class="tips-and-tricks-header">
+                            <h5 class="title">Tips & Tricks</h5>
+                            <a href="#">View All</a>
+                        </div>
 
+                        <div class="tips-and-tricks-cards">
+                            <div class="tips-and-tricks-card">
+                                <div class="tips-and-tricks-vector">
+                                    <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
+                                </div>
+                                <div class="tips-and-tricks-content">
+                                    <h6 class="title">"The importance of keeping your air filter clean”</h6>
+                                    <p class="description">Your air conditioning unit is like the superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
+                                    <div class="go-to-detail-content">
+                                        <a class="read-more" href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Section End-->
-    </main>
+        </main>
 
-    <!-- Main End -->
+        <!-- Main End -->
