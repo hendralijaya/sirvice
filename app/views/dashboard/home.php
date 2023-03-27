@@ -19,7 +19,7 @@
                             <a href="#">View All</a>
                         </div>
                         <div class="upcoming-order-cards">
-                            <div class="upcoming-order-card">
+                            <a class="upcoming-order-card" href="#">
                                 <div class="service-technician-status-info">
                                     <div class="service-technician-info">
                                         <div class="general-info">
@@ -47,9 +47,9 @@
                                         <address>Jl. Kebon Jeruk Raya No. 1, RT. 1/RW. 1, Kebon Jeruk, Kec. Kby. Baru, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530</address>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div class="upcoming-order-card">
+                            <a class="upcoming-order-card" href="#">
                                 <div class="service-technician-status-info">
                                     <div class="service-technician-info">
                                         <div class="general-info">
@@ -77,7 +77,7 @@
                                         <address>Jl. Kebon Jeruk Raya No. 1, RT. 1/RW. 1, Kebon Jeruk, Kec. Kby. Baru, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530</address>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                     </div>

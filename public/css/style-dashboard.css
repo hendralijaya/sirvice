@@ -136,6 +136,8 @@ main > #home > .container > .main-content > .upcoming-order > .upcoming-order-ca
     border-radius: 10px;
     border: 1px solid var(--border-color);
     background-color: var(--background-color);
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info {
@@ -377,6 +379,10 @@ main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-
 }
 
 @media screen and (max-width: 1200px) {
+    main {
+        padding: 10px 0;
+    }
+
     main > #home > .container > .main-content {
         flex-direction: column;
         margin: 30px;
