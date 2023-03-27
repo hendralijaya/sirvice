@@ -46,7 +46,7 @@ main> #home > .container > .welcome-for-user > .welcome-mascot-image > img{
     height: 250px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 960px) {
     main > #home > .container > .welcome-for-user{
         display: flex;
         justify-content: center;
@@ -63,14 +63,17 @@ main> #home > .container > .welcome-for-user > .welcome-mascot-image > img{
 
     main > #home > .container > .welcome-for-user > .welcome-content > h4{
         text-align: center;
+        font-size: 24px;
     }
     
     main > #home > .container > .welcome-for-user > .welcome-content > h1 {
         text-align: center;
+        font-size: 30px;
     }
     
     main > #home > .container > .welcome-for-user > .welcome-content > p {
         text-align: center;
+        font-size: 16px;
     }
 
     main> #home > .container > .welcome-for-user > .welcome-mascot-image > img{
@@ -414,5 +417,4 @@ main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-
     main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content{
         padding: 0;
     }
-    
 }

@@ -20,4 +20,12 @@ class Dashboard extends Controller {
         $this->view('dashboard/home', $data);
         $this->view('templates/dashboard/footer');
     }
+
+    public function ordermain()
+    {
+        $data['title'] = 'Order - Sirvice';
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/order/main', $data);
+        $this->view('templates/dashboard/footer');
+    }
 }
