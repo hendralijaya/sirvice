@@ -115,7 +115,7 @@
                                 </div>
                                 <div class="tips-and-tricks-content">
                                     <h6 class="title">"The importance of keeping your air filter clean”</h6>
-                                    <p class="description">Your air conditioning unit is like the superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
+                                    <p class="description">Your air conditioning unit is like the superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes you more</p>
                                     <div class="go-to-detail-content">
                                         <a class="read-more" href="#">Read More</a>
                                     </div>

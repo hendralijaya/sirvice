@@ -58,12 +58,25 @@ document.addEventListener('click', (event) => {
     }
 });
 
+// for the notification dropdown
 let paragraphs = document.querySelectorAll(".notification-detail-message p");
 paragraphs.forEach(paragraph => {
   let text = paragraph.textContent.trim();
   
   // Truncate the text to 100 characters
   let truncatedText = text.slice(0, 100) + "...";
+
+  // Replace the original text with the truncated text
+  paragraph.textContent = truncatedText;
+});
+
+// for the tips and tricks in dashboard
+let paragraphsTipsAndTricks = document.querySelectorAll(".tips-and-tricks-content p");
+paragraphsTipsAndTricks.forEach(paragraph => {
+  let text = paragraph.textContent.trim();
+  
+  // Truncate the text to 100 characters
+  let truncatedText = text.slice(0, 140) + "...";
 
   // Replace the original text with the truncated text
   paragraph.textContent = truncatedText;
