@@ -22,7 +22,7 @@ class Reviews_model {
 
     public function getAverageRatingReviews()
     {
-        $this->db->query('SELECT AVG(rating) FROM ' . $this->table);
-        return $this->db->single();
+        $this->db->query('SELECT AVG(rating) AS value FROM ' . $this->table);
+        return $this->db->single()['value'];
     }
 }

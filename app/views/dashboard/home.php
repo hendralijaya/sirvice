@@ -4,7 +4,7 @@
                 <div class="welcome-for-user">
                     <div class="welcome-content">
                         <h4 class="welcome">Welcome,</h4>
-                        <h1 class="username">Patricia Ho</h1>
+                        <h1 class="username"><?= $data['user']['name'] ?></h1>
                         <p class="quote">“We’ll do our best to keep you breathing the fresh air!”</p>
                     </div>
                     <div class="welcome-mascot-image">
@@ -85,19 +85,19 @@
                     <div class="total-summary">
                         <div class="total-order-card">
                             <h5 class="title">Total Order</h5>
-                            <p class="total-order-number">12</p>
+                            <p class="total-order-number"><?= $data['total_order'] ?></p>
                             <i class="material-icons-round">list_alt</i>
                         </div>
 
                         <div class="appointment-scheduled-card">
                             <h5 class="title">Appointment Scheduled</h5>
-                            <p class="appointment-scheduled-number">2</p>
+                            <p class="appointment-scheduled-number"><?= $data['appointment_scheduled'] ?></p>
                             <i class="material-icons-round">access_time</i>
                         </div>
 
                         <div class="global-ratings-card">
                             <h5 class="title">Global Ratings</h5>
-                            <p class="global-ratings-number">4.5/5</p>
+                            <p class="global-ratings-number"><?= $data['global_ratings'] ?>/5</p>
                             <i class="material-icons-round">star_border</i>
                         </div>
                     </div>

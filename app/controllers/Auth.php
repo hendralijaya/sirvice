@@ -3,7 +3,7 @@
 class Auth extends Controller {
   public function __construct()
   {
-      if (isset($_SESSION['logged_in']) && $_SERVER['REQUEST_URI'] != '/sirvice/public/auth/logout') {
+      if (isset($_SESSION['logged_in']) && $_SERVER['REQUEST_URI'] != '/public/auth/logout') {
           header('Location: ' . BASEURL . '/dashboard');
           exit;
       }
