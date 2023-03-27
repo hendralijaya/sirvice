@@ -1,5 +1,4 @@
 /* Welcome Section with Mascot Starts Here! */
-
 main > #home > .container > .welcome-for-user{
     display: flex;
     justify-content: space-between;

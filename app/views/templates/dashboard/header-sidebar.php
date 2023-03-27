@@ -24,7 +24,7 @@
 </head>
 <body>
     <!-- Sidebar Start -->
-    <nav class="sidebar-navigation">
+    <nav class="sidebar-navigation open">
         <ul>
             <div class="logo">
                 <svg width="1033" height="1033" viewBox="0 0 1033 1033" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -79,81 +79,91 @@
         <!-- Header Start -->
         <header>
             <nav id="navbar-dashboard">
-                <div class="notification-sneakpeek">
-                    <button class="notification-dropdown">
-                        <i class="material-icons-round">
-                            notifications
-                        </i>
-                    </button>
-    
-                    <div class="notification-dropdown-content">
-                        <div class="notification-title-and-link">
-                            <h4>Notification</h4>
-                            <a href="#">View All</a>
-                        </div>
-    
-                        <div class="notification-all-messages">
-                            <a class="notification-message" href="#">
-                                <div class="icon-notification-mark">
-                                    <i class="material-icons-round info">info</i>
-                                </div>
-                                <div class="notification-detail-message">
-                                    <h5>You have Incoming Order Today</h5>
-                                    <p>Just a friendly reminder that you have an order scheduled for today! Our team is working hard to ensure that your
-                                        order is processed and delivered on time. You can check the progress of your order at any time on our website, and
-                                        we will keep you updated every step of the way.</p>
-                                    <time datetime="2022-04-12">Wednesday, 12 April 2022</time>
-                                </div>
-                            </a>
-    
-                            <a class="notification-message" href="#">
-                                <div class="icon-notification-mark">
-                                    <i class="material-icons-round check">check_circle</i>
-                                </div>
-                                <div class="notification-detail-message">
-                                    <h5>Order Successful!</h5>
-                                    <p>Congratulations, your order has been successfully processed! You can now check the progress of your order, and we
-                                        look forward to providing you with the best possible experience.</p>
-                                    <time datetime="2022-04-10">Monday, 10 April 2022</time>
-                                </div>
-                                
-                            </a>
-                            
-                        </div>
+                <div class="header-left" onclick="changeImage()">
+                    <div class="sidebar-toggle" id="hamburger">
+                        <i class="material-icons-round">menu</i>
+                    </div>
+
+                    <div class="sidebar-toggle" id="hamburger-close">
+                        <i class="material-icons-round">menu_open</i>
                     </div>
                 </div>
-                
-    
-                <div class="profile-sneakpeek">
-                    <button class="profile-dropdown">
-                        <img src="<?=BASEURL; ?>/image/profile-example.png" alt="Profile Picture">
-                        <p class="fullname">Patricia Ho</p>
-                        <i class="material-icons-round">arrow_drop_down</i>
-                        <!-- <i class="material-icons-round">arrow_drop_up</i> -->
-                    </button>
+
+                <div class="sneakpeek">
+                    <div class="notification-sneakpeek">
+                        <button class="notification-dropdown">
+                            <i class="material-icons-round">
+                                notifications
+                            </i>
+                        </button>
         
-                    <div class="profile-dropdown-content">
-                        <div class="profile-general-info">
-                            <img src="<?=BASEURL; ?>/image/profile-example.png" alt="Profile Picture">
-                            <div class="profile-info">
-                                <h6 class="fullname">Patricia Ho</h6>
-                                <p class="email-address">hopatricia9820@gmail.com</p>
+                        <div class="notification-dropdown-content">
+                            <div class="notification-title-and-link">
+                                <h4>Notification</h4>
+                                <a href="#">View All</a>
+                            </div>
+        
+                            <div class="notification-all-messages">
+                                <a class="notification-message" href="#">
+                                    <div class="icon-notification-mark">
+                                        <i class="material-icons-round info">info</i>
+                                    </div>
+                                    <div class="notification-detail-message">
+                                        <h5>You have Incoming Order Today</h5>
+                                        <p>Just a friendly reminder that you have an order scheduled for today! Our team is working hard to ensure that your
+                                            order is processed and delivered on time. You can check the progress of your order at any time on our website, and
+                                            we will keep you updated every step of the way.</p>
+                                        <time datetime="2022-04-12">Wednesday, 12 April 2022</time>
+                                    </div>
+                                </a>
+        
+                                <a class="notification-message" href="#">
+                                    <div class="icon-notification-mark">
+                                        <i class="material-icons-round check">check_circle</i>
+                                    </div>
+                                    <div class="notification-detail-message">
+                                        <h5>Order Successful!</h5>
+                                        <p>Congratulations, your order has been successfully processed! You can now check the progress of your order, and we
+                                            look forward to providing you with the best possible experience.</p>
+                                        <time datetime="2022-04-10">Monday, 10 April 2022</time>
+                                    </div>
+                                    
+                                </a>
+                                
                             </div>
                         </div>
+                    </div>
         
-                        <div class="profile-dropdown-menu">
-                            <a href="#">
-                                <i class="material-icons-round">person</i>
-                                <p>Profile</p>
-                            </a>
-                            <a href="<?= BASEURL; ?>/auth/logout">
-                                <i class="material-icons-round">logout</i>
-                                <p>Logout</p>
-                            </a>
+                    <div class="profile-sneakpeek">
+                        <button class="profile-dropdown">
+                            <img src="<?=BASEURL; ?>/image/profile-example.png" alt="Profile Picture">
+                            <p class="fullname">Patricia Ho</p>
+                            <i class="material-icons-round">arrow_drop_down</i>
+                            <!-- <i class="material-icons-round">arrow_drop_up</i> -->
+                        </button>
+            
+                        <div class="profile-dropdown-content">
+                            <div class="profile-general-info">
+                                <img src="<?=BASEURL; ?>/image/profile-example.png" alt="Profile Picture">
+                                <div class="profile-info">
+                                    <h6 class="fullname">Patricia Ho</h6>
+                                    <p class="email-address">hopatricia9820@gmail.com</p>
+                                </div>
+                            </div>
+            
+                            <div class="profile-dropdown-menu">
+                                <a href="#">
+                                    <i class="material-icons-round">person</i>
+                                    <p>Profile</p>
+                                </a>
+                                <a href="<?= BASEURL; ?>/auth/logout">
+                                    <i class="material-icons-round">logout</i>
+                                    <p>Logout</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
             </nav>
         </header>
         <!-- Header End-->

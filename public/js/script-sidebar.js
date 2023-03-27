@@ -1,3 +1,22 @@
+function changeImage() {
+  const hamburger = document.getElementById("hamburger");
+  const close = document.getElementById("hamburger-close");
+  const hamburgerDisplay = getComputedStyle(hamburger).display;
+
+  const navbar = document.querySelector("nav.sidebar-navigation");
+
+  if(hamburgerDisplay == "none"){
+      hamburger.style.display = "block";
+      close.style.display = "none";
+      navbar.classList.remove("open");   
+  } else {
+      hamburger.style.display = "none";
+      close.style.display = "block";
+      navbar.classList.add("open");    
+  }
+}
+
+
 const listItems = document.querySelectorAll('ul li');
 
 listItems.forEach((item) => {
