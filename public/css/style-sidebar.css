@@ -117,7 +117,7 @@ header > nav#navbar-dashboard {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0	px 30px;
+	padding: 0px 30px;
 }
 
 header > nav#navbar-dashboard > .header-left {
