@@ -458,12 +458,50 @@ main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-
 
 /* Home Dashboard Ends */
 
-main > #home > .container > .page-title{
+main > #order > .container > .page-title{
     padding: 30px 30px 0 30px;
     display: flex;
     align-items: center;
 }
 
-main > #home > .container > .page-title.order-title-with-button{
+main > #order > .container > .page-title.order-title-with-button{
     justify-content: space-between;
+}
+
+main > #order > .container > .page-title.order-title-with-button > h1.title-page {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #order > .container > .page-title.order-title-with-button > a.add-new-order {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+main > #order > .container > .main-content {
+    margin: 30px 30px 0 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+main > #order > .container > .main-content > .content{
+    padding: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    main > #order > .container > .page-title.order-title-with-button > h1.title-page {
+        font-size: 24px;
+    }
+    
+    main > #order > .container > .page-title.order-title-with-button > a.add-new-order {
+        padding: 10px;
+        font-size: 12px;
+    }
 }
