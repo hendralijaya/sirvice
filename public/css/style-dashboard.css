@@ -1,3 +1,4 @@
+/* Home Dashboard Starts */
 /* Welcome Section with Mascot Starts Here! */
 main > #home > .container > .welcome-for-user{
     display: flex;
@@ -135,7 +136,7 @@ main > #home > .container > .main-content > .upcoming-order > .upcoming-order-ca
 main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px 20px;
     border-radius: 10px;
     border: 1px solid var(--border-color);
     background-color: var(--background-color);
@@ -148,11 +149,42 @@ main > #home > .container > .main-content > .upcoming-order > .upcoming-order-ca
     flex-direction: column;
     padding: 0 0 10px 0 ;
     border-bottom: 1px solid var(--border-color);
+    gap: 10px;
 }
+
+/* Status Info Starts */
+
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .status-progress-info {
+    padding: 5px 0;
+}
+
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .status-progress-info > p.status {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .status-progress-info > p.status.in-progress {
+    background-color: var(--warning-background-color);
+    border: 1px solid var(--warning-border-color);
+}
+
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .status-progress-info > p.status.scheduled {
+    background-color: var(--scheduled-background-color);
+    border: 1px solid var(--scheduled-border-color);
+}
+
+/* Status Info Ends */
+
+/* Service Technician Info Starts */
 
 main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .service-technician-info{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .service-technician-info > .general-info{
@@ -161,7 +193,7 @@ main > #home > .container > .main-content > .upcoming-order > .upcoming-order-ca
     gap: 10px;
 }
 
-main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .service-technician-info > .general-info > p.service-type {
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .service-technician-info > .general-info > p.service-id-full {
     font-size: 16px;
     font-weight: 500;
     color: var(--text-color);
@@ -183,34 +215,39 @@ main > #home > .container > .main-content > .upcoming-order > .upcoming-order-ca
     object-fit: cover;
 }
 
-main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .status-progress-info {
-    padding: 5px 0;
+/* Service Technician Info Ends */
+
+/* Service Type Starts */
+
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .service-types {
+    position: relative;
 }
 
-main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .status-progress-info > p.status {
-    display: inline-block;
-    font-size: 12px;
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .service-types > .service-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 2px 0;
+    font-size: 14px;
     font-weight: 400;
     color: var(--text-color);
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .status-progress-info > p.status.in-progress {
-    background-color: var(--info-background-color);
+    padding: 3px 10px;
     border: 1px solid var(--info-border-color);
+    border-radius: 5px;
+    background-color: var(--info-background-color);
 }
 
-main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .status-progress-info > p.status.scheduled {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--text-color);
-    padding: 5px 10px;
-    background-color: var(--scheduled-background-color);
-    border: 1px solid var(--scheduled-border-color);
-    border-radius: 5px;
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .service-types > .service-type > i {
+    font-size: 20px;
+    color: var(--primary-color);
 }
+
+main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .service-technician-status-info > .service-types > .service-type > p.service-type-name {
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+/* Service Type Ends */
 
 main > #home > .container > .main-content > .upcoming-order > .upcoming-order-cards > .upcoming-order-card > .date-time-location-info {
     display: flex;
@@ -417,4 +454,16 @@ main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-
     main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content{
         padding: 0;
     }
+}
+
+/* Home Dashboard Ends */
+
+main > #home > .container > .page-title{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+main > #home > .container > .page-title.order-title-with-button{
+    justify-content: space-between;
 }

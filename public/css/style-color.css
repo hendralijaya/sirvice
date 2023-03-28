@@ -17,6 +17,9 @@
     --info-background-color: #D4EFFF;
     --info-border-color: #82BBDB;
 
+    --warning-background-color: #FFF4D8;
+    --warning-border-color: #F37121;
+
     --scheduled-background-color: #E9E9E9;
     --scheduled-border-color: #ADADAD;
 }

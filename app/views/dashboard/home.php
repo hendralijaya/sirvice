@@ -21,15 +21,29 @@
                         <div class="upcoming-order-cards">
                             <a class="upcoming-order-card" href="#">
                                 <div class="service-technician-status-info">
+                                    <div class="status-progress-info">
+                                        <p class="status in-progress">In Progress</p>
+                                    </div>
                                     <div class="service-technician-info">
                                         <div class="general-info">
-                                            <p class="service-type">Cleaning Air Conditioner</p>
+                                            <p class="service-id-full">Service ID. <span>8194</span></p>
                                             <p class="technician-name">Aldy Kusuma</p>
                                         </div>
                                         <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
                                     </div>
-                                    <div class="status-progress-info">
-                                        <p class="status in-progress">In Progress</p>
+                                    <div class="service-types">
+                                        <div class="service-type">
+                                            <i class="material-icons-round">home_repair_service</i>
+                                            <p class="service-type-name">Cleaning AC</p>
+                                        </div>
+                                        <div class="service-type">
+                                            <i class="material-icons-round">home_repair_service</i>
+                                            <p class="service-type-name">Service AC</p>
+                                        </div>
+                                        <div class="service-type">
+                                            <i class="material-icons-round">home_repair_service</i>
+                                            <p class="service-type-name">Repair AC</p>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -51,15 +65,29 @@
 
                             <a class="upcoming-order-card" href="#">
                                 <div class="service-technician-status-info">
+                                    <div class="status-progress-info">
+                                        <p class="status scheduled">Scheduled</p>
+                                    </div>
                                     <div class="service-technician-info">
                                         <div class="general-info">
-                                            <p class="service-type">Cleaning Air Conditioner</p>
+                                            <p class="service-id-full">Service ID. <span>8195</span></p>
                                             <p class="technician-name">Aldy Kusuma</p>
                                         </div>
                                         <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
                                     </div>
-                                    <div class="status-progress-info">
-                                        <p class="status scheduled">Scheduled</p>
+                                    <div class="service-types">
+                                        <div class="service-type">
+                                            <i class="material-icons-round">home_repair_service</i>
+                                            <p class="service-type-name">Cleaning AC</p>
+                                        </div>
+                                        <div class="service-type">
+                                            <i class="material-icons-round">home_repair_service</i>
+                                            <p class="service-type-name">Service AC</p>
+                                        </div>
+                                        <div class="service-type">
+                                            <i class="material-icons-round">home_repair_service</i>
+                                            <p class="service-type-name">Repair AC</p>
+                                        </div>
                                     </div>
                                 </div>
 
