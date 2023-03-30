@@ -754,26 +754,113 @@ main > #order > .container > .main-content > #tab-content > .tab-data > .upcomin
 
 /* Order End */
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form {
-    padding: 20px 0;
+main > #profile > .container > .page-title{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    align-items: center;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form.edit-profile-form {
-    display: flex;
+main > #profile > .container > .page-title.order-title-with-button{
     justify-content: space-between;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image {
+main > #profile > .container > .page-title.order-title-with-button > h1.title-page {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #profile > .container > .page-title.order-title-with-button > a.add-new-order {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+main > #profile > .container > .main-content {
+    margin: 30px 30px 0 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+main > #profile > .container > .main-content > .content{
+    padding: 20px 20px 10px 20px;
+}
+
+main > #profile > .container > .main-content > .content > #tabs {
+    font-size: var(--nav-text);
+    letter-spacing: var(--letterspace-nav-text);
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+}
+
+main > #profile > .container > .main-content > .content > #tabs > .tab{
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+    transition: all 0.3s ease-in-out;
+    font-weight: 400;
+    padding: 0 8px 8px 8px;
+    font-size: 16px;
+}
+
+main > #profile > .container > .main-content > .content > #tabs > .tab:hover{
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+main > #profile > .container > .main-content > .content > #tabs > .tab.active{
+    text-decoration: none;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+main > #profile > .container > .main-content > #tab-content {
+    padding: 0 20px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data {
+    display: none;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 20px 0;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form {
+    padding: 20px 0;
+    width: 100%;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form.edit-profile-form{
+    display: flex;
+    gap: 50px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .profile-image {
     display: inline-block;
     position: relative;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .profile-image {
     width: 150px;
     height: 150px;
+    aspect-ratio: 1/1;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image > img{
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .profile-image > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -781,7 +868,7 @@ main > #order > .container > .main-content > #tab-content > .tab-data > form > .
     overflow: hidden;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image > .edit-profile{
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .profile-image > .edit-profile{
     position: absolute;
     display: flex;
     justify-content: center;
@@ -796,47 +883,156 @@ main > #order > .container > .main-content > #tab-content > .tab-data > form > .
     cursor: pointer;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image > .edit-profile > input[type = "file"] {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .profile-image > .edit-profile > input[type = "file"] {
     position: absolute;
     transform: scale(2);
     opacity: 0;
     cursor: pointer;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image > .edit-profile > i {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .profile-image > .edit-profile > i {
     color: var(--background-color);
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form  {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .input-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
+    width: 100%;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field{
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .input-form > .field{
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field > label{
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .input-form > .field > label{
     font-size: 16px;
     font-weight: 500;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field > input {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .input-form > .field > input {
     border-radius: 5px;
     border: 0.5px solid var(--border-color);
     padding: 10px 15px;
-    min-width: 400px;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field.password-container {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .input-form > button.save-changes{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > .attention-tips-from-us  {
+    display: flex;
+    flex-direction: column;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > .attention-tips-from-us > .attention-tips  {
+    background-color: var(--icon-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > .attention-tips-from-us > .attention-tips > h2  {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > .attention-tips-from-us > .attention-tips > p  {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 0 20px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .danger-zone {
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .danger-zone > .danger-zone-title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .danger-zone > .danger-zone-title > h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--danger-color);
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .danger-zone > .danger-zone-title > p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--danger-color);
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .danger-zone > p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .danger-zone > a.delete-account {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid var(--danger-color);
+    color: var(--danger-color);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px;
+    width: fit-content;
+    transition: 0.2s all ease-in-out;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .danger-zone > a.delete-account:hover {
+    border: 1px solid var(--danger-color);
+    background-color: var(--danger-color);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 20px 0;
+    width: 100%;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form  {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form > .input-form > .field.password-container {
     position: relative;
 }
 
-main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field.password-container > .eye-icon{
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form > .input-form > .field.password-container > .eye-icon{
     position: absolute;
     top: 52.5%;
     right: 10px;
@@ -845,3 +1041,97 @@ main > #order > .container > .main-content > #tab-content > .tab-data > form > .
     background-size: cover;
     cursor: pointer;
 }
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form > .input-form  {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form > .input-form > .field{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form > .input-form > .field > label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form > .input-form > .field > input {
+    border-radius: 5px;
+    border: 0.5px solid var(--border-color);
+    padding: 10px 15px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form.change-password-form {
+    display: flex;
+    gap: 20px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > .attention-tips-from-us  {
+    display: flex;
+    flex-direction: column;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > .attention-tips-from-us > .attention-tips  {
+    background-color: var(--icon-color);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > .attention-tips-from-us > .attention-tips > h2  {
+    font-size: 24px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > .attention-tips-from-us > .attention-tips > p  {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    padding: 0 20px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form > .input-form > button.save-changes{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+@media screen and (max-width: 1200px) {
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > .attention-tips-from-us,
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > .attention-tips-from-us {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form.edit-profile-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .input-form > button.save-changes,
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-change-password > form > .input-form > button.save-changes,
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .danger-zone > a.delete-account {
+        width: inherit;
+        text-align: center;
+    }
+}
+
