@@ -222,7 +222,7 @@
     <script src="<?= BASEURL; ?>/js/script.js"></script>
     <script src="<?= BASEURL; ?>/js/script-loader.js"></script>
     <script src="<?= BASEURL; ?>/js/script-credentials.js"></script>
-    
+    <script src="<?= BASEURL; ?>/js/script-password-field.js"></script>
     
 </body>
 </html>

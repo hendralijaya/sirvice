@@ -36,4 +36,12 @@ class Dashboard extends Controller {
         $this->view('dashboard/order/main', $data);
         $this->view('templates/dashboard/footer');
     }
+
+    public function profile()
+    {
+        $data['title'] = 'Profile - Sirvice';
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/profile/main', $data);
+        $this->view('templates/dashboard/footer');
+    }
 }

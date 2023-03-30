@@ -751,3 +751,97 @@ main > #order > .container > .main-content > #tab-content > .tab-data > .upcomin
         padding: 0 5px 8px 5px;
     }
 }
+
+/* Order End */
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form {
+    padding: 20px 0;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form.edit-profile-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image {
+    display: inline-block;
+    position: relative;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image {
+    width: 150px;
+    height: 150px;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image > .edit-profile{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image > .edit-profile > input[type = "file"] {
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+    cursor: pointer;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .profile-image > .edit-profile > i {
+    color: var(--background-color);
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form  {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field > label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field > input {
+    border-radius: 5px;
+    border: 0.5px solid var(--border-color);
+    padding: 10px 15px;
+    min-width: 400px;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field.password-container {
+    position: relative;
+}
+
+main > #order > .container > .main-content > #tab-content > .tab-data > form > .input-form > .field.password-container > .eye-icon{
+    position: absolute;
+    top: 52.5%;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    cursor: pointer;
+}
