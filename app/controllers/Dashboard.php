@@ -2,8 +2,8 @@
 class Dashboard extends Controller {
     public function __construct()
     {
-        if (!isset($_SESSION['logged_in'])) {
-            // Error message
+        if (!isset($_SESSION['logged_in']) && $_SERVER['REQUEST_URI'] != '/public/dashboard/search_address') {
+            // User is not logged in and is not accessing the allowed route
             header('Location: ' . BASEURL . '/auth/login');
             exit;
         }
@@ -75,7 +75,9 @@ class Dashboard extends Controller {
     public function search_address()
     {
         $addressQuery = $_POST['address'];
+        var_dump($_SESSION);
         $data = $this->model('Address_model')->searchAddress($addressQuery, $_SESSION['user_id']);
+        header('Content-Type: application/json');
         echo json_encode($data);
     }
 
