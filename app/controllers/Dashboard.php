@@ -8,6 +8,7 @@ class Dashboard extends Controller {
             exit;
         }
     }
+
     public function index()
     {
         header('Location: ' . BASEURL . '/dashboard/home');
@@ -73,9 +74,9 @@ class Dashboard extends Controller {
     // search address
     public function search_address()
     {
-        $query = $_GET['address'];
-        $data = $this->model('Address_model')->searchAddress($query, $_SESSION['user_id']);
-        return json_encode($data);
+        $addressQuery = $_POST['address'];
+        $data = $this->model('Address_model')->searchAddress($addressQuery, $_SESSION['user_id']);
+        echo json_encode($data);
     }
 
     public function delete_profile()
