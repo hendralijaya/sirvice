@@ -13,35 +13,92 @@ class Dashboard extends Controller {
         header('Location: ' . BASEURL . '/dashboard/home');
     }
 
+    // done here
     public function home()
     {
+        // Title
         $data['title'] = 'Dashboard - Sirvice';
+        // Get user data
         $data['user']['name'] = $_SESSION['user_name'];
+        $data['user']['email'] = $_SESSION['user_email'];
+        // Get notification data
+        $this->model('Notifications_model')->createNotificationToday($_SESSION['user_id']);
+        $data['notification'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
+        // Get dashboard data
         $data['upcoming_order'] = $this->model('Orders_model')->upcomingOrders($_SESSION['user_id']);
         $data['appointment_scheduled'] = $this->model('Orders_model')->countUpcomingOrders($_SESSION['user_id']);
-        $data['appointment_scheduled'] = isset($data['appointments_scheduled']) ? $data['appointments_scheduled'] : 0;
         $data['total_order'] = $this->model('Orders_model')->countTotalOrders($_SESSION['user_id']);
-        $data['total_order'] = isset($data['total_orders']) ? $data['total_orders'] : 0;
         $data['global_ratings'] = $this->model('Reviews_model')->getAverageRatingReviews();
-        $data['global_ratings'] = isset($data['global_ratings']) ? $data['global_ratings'] : 0;
+        $data['technician'] = $this->model('Technicians_model')->getTechnician();
+        // Load view
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/home', $data);
         $this->view('templates/dashboard/footer');
     }
 
-    public function order()
+    public function order($orderId = 0)
     {
-        $data['title'] = 'Order - Sirvice';
-        $this->view('templates/dashboard/header-sidebar', $data);
-        $this->view('dashboard/order/main', $data);
-        $this->view('templates/dashboard/footer');
+        if ($orderId != 0) {
+            // Get user data
+            $data['user']['name'] = $_SESSION['user_name'];
+            $data['user']['email'] = $_SESSION['user_email'];
+            $data['order'] = $this->model('Orders_model')->getOrderById($orderId);
+            $data['title'] = 'Order - Sirvice';
+            $this->view('templates/dashboard/header-sidebar', $data);
+            $this->view('dashboard/order/detail', $data);
+            $this->view('templates/dashboard/footer');
+            return;
+        } else {
+            // Get user data
+            $data['user']['name'] = $_SESSION['user_name'];
+            $data['user']['email'] = $_SESSION['user_email'];
+            $data['title'] = 'Order - Sirvice';
+            $this->view('templates/dashboard/header-sidebar', $data);
+            $this->view('dashboard/order/main', $data);
+            $this->view('templates/dashboard/footer');
+        }
     }
 
     public function profile()
     {
         $data['title'] = 'Profile - Sirvice';
+        // Get user data
+        $data['user']['name'] = $_SESSION['user_name'];
+        $data['user']['email'] = $_SESSION['user_email'];
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/profile/main', $data);
+        $this->view('templates/dashboard/footer');
+    }
+
+    // search address
+    public function search_address()
+    {
+        $query = $_GET['address'];
+        $data = $this->model('Address_model')->searchAddress($query, $_SESSION['user_id']);
+        return json_encode($data);
+    }
+
+    public function delete_profile()
+    {
+        if ($this->model('Users_model')->deleteUser($_SESSION['user_id']) > 0) {
+            // Flash message
+            header('Location: ' . BASEURL . '/auth/logout');
+            exit;
+        } else {
+            // Flash message
+            header('Location: ' . BASEURL . '/dashboard/profile');
+            exit;
+        }
+    }
+
+    public function tips()
+    {
+        $data['title'] = 'Tips - Sirvice';
+        // Get user data
+        $data['user']['name'] = $_SESSION['user_name'];
+        $data['user']['email'] = $_SESSION['user_email'];
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/tips/main', $data);
         $this->view('templates/dashboard/footer');
     }
 }

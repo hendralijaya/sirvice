@@ -8,13 +8,8 @@ class LandingPage extends Controller {
             exit;
         }
     }
-    
-    public function index()
-    {
-        header('Location: ' . BASEURL . '/landingpage/home');
-    }
 
-    public function home()
+    public function index()
     {
         $data['title'] = 'Home - Sirvice';
         $this->view('templates/landing-page/header', $data);
