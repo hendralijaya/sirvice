@@ -110,15 +110,55 @@
 
                         <div class="tab-data tab-data-desc" data-tab="3">
                             <div class="search-bar-and-add-address">
+                                <form action="" class="search-bar">
+                                    <i class="material-icons-round">search</i>    
+                                    <input type="search" placeholder="Search Address" id="address" name="address">
+                                </form>
 
+                                <a class="add-address" href="#">+ Add New Address</a>
                             </div>
 
-                            <div class="address-cards">
-                                <a class="address-card" href="#">
-                                    <h3 class="title-address">Pradita University</h3>
-                                    <p class="address"></p>
-                                    <p class="note-address"></p>
-                                </a>
+                            <div class="address-cards" id="address-suggestion">
+                                <div class="address-card">
+                                    <div class="address-content">
+                                        <h3 class="title-address">Pradita University</h3>
+                                        <p class="address">Jl. Gading Serpong Boulevard No. 1, Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810</p>
+                                        <small class="note-address">“Di gedung 1 , yang deket lapangan basket”</small>
+                                    </div>
+                                    <div class="button-edit-and-delete">
+                                        <a href="#" class="edit-address">
+                                            <i class="material-icons-round">edit</i>
+                                            <span>Edit</span>
+                                        </a>
+                                        <form action="#">
+                                            <a href="#" class="delete-address">
+                                                <i class="material-icons-round">delete</i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="address-card">
+                                    <div class="address-content">
+                                        <h3 class="title-address">Pradita University</h3>
+                                        <p class="address">Jl. Gading Serpong Boulevard No. 1, Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810</p>
+                                        <small class="note-address">“Di gedung 1 , yang deket lapangan basket”</small>
+                                    </div>
+                                    <div class="button-edit-and-delete">
+                                        <a href="#" class="edit-address">
+                                            <i class="material-icons-round">edit</i>
+                                            <span>Edit</span>
+                                        </a>
+                                        <form action="#">
+                                            <a href="#" class="delete-address">
+                                                <i class="material-icons-round">delete</i>
+                                                <span>Delete</span>
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
 

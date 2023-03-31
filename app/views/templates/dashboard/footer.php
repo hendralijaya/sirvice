@@ -4,5 +4,6 @@
     <script src="<?= BASEURL; ?>/js/script-sidebar.js"></script>
     <script src="<?= BASEURL; ?>/js/script-tab-dashboard.js"></script>
     <script src="<?= BASEURL; ?>/js/script-change-image.js"></script>
+    <script src="<?= BASEURL; ?>/js/script-address-search.js"></script>
 </body>
 </html>
