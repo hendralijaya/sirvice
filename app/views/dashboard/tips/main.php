@@ -20,6 +20,7 @@
                                     <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
                                 </div>
                                 <div class="tips-and-tricks-content">
+                                    <time datetime="2021-05-01">May 1, 2021</time>
                                     <h6 class="title">"The importance of keeping your air filter clean”</h6>
                                     <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
                                     <div class="go-to-detail-content">
@@ -33,6 +34,7 @@
                                     <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
                                 </div>
                                 <div class="tips-and-tricks-content">
+                                    <time datetime="2021-05-01">May 1, 2021</time>
                                     <h6 class="title">"The importance of keeping your air filter clean”</h6>
                                     <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
                                     <div class="go-to-detail-content">
@@ -46,6 +48,7 @@
                                     <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
                                 </div>
                                 <div class="tips-and-tricks-content">
+                                    <time datetime="2021-05-01">May 1, 2021</time>
                                     <h6 class="title">"The importance of keeping your air filter clean”</h6>
                                     <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
                                     <div class="go-to-detail-content">
@@ -59,6 +62,7 @@
                                     <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
                                 </div>
                                 <div class="tips-and-tricks-content">
+                                    <time datetime="2021-05-01">May 1, 2021</time>
                                     <h6 class="title">"The importance of keeping your air filter clean”</h6>
                                     <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
                                     <div class="go-to-detail-content">
@@ -72,6 +76,7 @@
                                     <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
                                 </div>
                                 <div class="tips-and-tricks-content">
+                                    <time datetime="2021-05-01">May 1, 2021</time>
                                     <h6 class="title">"The importance of keeping your air filter clean”</h6>
                                     <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
                                     <div class="go-to-detail-content">
@@ -85,6 +90,7 @@
                                     <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
                                 </div>
                                 <div class="tips-and-tricks-content">
+                                    <time datetime="2021-05-01">May 1, 2021</time>
                                     <h6 class="title">"The importance of keeping your air filter clean”</h6>
                                     <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
                                     <div class="go-to-detail-content">
