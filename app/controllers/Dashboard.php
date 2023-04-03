@@ -31,6 +31,7 @@ class Dashboard extends Controller {
         $data['total_order'] = $this->model('Orders_model')->countTotalOrders($_SESSION['user_id']);
         $data['global_ratings'] = $this->model('Reviews_model')->getAverageRatingReviews();
         $data['technician'] = $this->model('Technicians_model')->getTechnician();
+        $data['tips'] = $this->model('Tips_model')->getFirstTips();
         // Load view
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/home', $data);
@@ -43,7 +44,7 @@ class Dashboard extends Controller {
             // Get user data
             $data['user']['name'] = $_SESSION['user_name'];
             $data['user']['email'] = $_SESSION['user_email'];
-            $data['order'] = $this->model('Orders_model')->getOrderById($orderId);
+            $data['orders'] = $this->model('Orders_model')->getOrderById($orderId);
             $data['title'] = 'Order - Sirvice';
             $this->view('templates/dashboard/header-sidebar', $data);
             $this->view('dashboard/order/detail', $data);
@@ -54,10 +55,24 @@ class Dashboard extends Controller {
             $data['user']['name'] = $_SESSION['user_name'];
             $data['user']['email'] = $_SESSION['user_email'];
             $data['title'] = 'Order - Sirvice';
+            $data['orders'] = $this->model('Orders_model')->getOrders($_SESSION['user_id']);
             $this->view('templates/dashboard/header-sidebar', $data);
             $this->view('dashboard/order/main', $data);
             $this->view('templates/dashboard/footer');
         }
+    }
+
+    public function newOrder()
+    {
+        // Get user data
+        $data['user']['name'] = $_SESSION['user_name'];
+        $data['user']['email'] = $_SESSION['user_email'];
+        $data['title'] = 'New Order - Sirvice';
+        $data['services'] = $this->model('Services_model')->getServices();
+        $data['technicians'] = $this->model('Technicians_model')->getTechnician();
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/order/new', $data);
+        $this->view('templates/dashboard/footer');
     }
 
     public function profile()

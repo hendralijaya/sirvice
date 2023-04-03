@@ -36,4 +36,11 @@ class Orders_model {
         $this->db->bind('user_id', $userId);
         return $this->db->single()['value'];
     }
+
+    public function inprogressOrders($userId)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE user_id=:user_id AND status="In Progress" ORDER BY order_date ASC');
+        $this->db->bind('user_id', $userId);
+        return $this->db->resultSet();
+    }
 }
