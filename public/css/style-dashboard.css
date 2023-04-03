@@ -1224,12 +1224,26 @@ main > #profile > .container > .main-content > #tab-content > .tab-data > .addre
     background-color: var(--background-color);
     color: var(--warning-border-color);
     border: 1px solid var(--warning-border-color);
+    transition: 0.2s all ease-in-out;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a.edit-address:hover {
+    background-color: var(--warning-border-color);
+    color: var(--background-color);
+    transition: 0.2s all ease-in-out;
 }
 
 main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form a.delete-address {
     background-color: var(--background-color);
     color: var(--danger-color);
     border: 1px solid var(--danger-color);
+    transition: 0.2s all ease-in-out;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form a.delete-address:hover {
+    background-color: var(--danger-color);
+    color: var(--background-color);
+    transition: 0.2s all ease-in-out;
 }
 
 main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a i {
@@ -1305,3 +1319,152 @@ main > #profile > .container > .main-content > #tab-content > .tab-data > .addre
 
 }
 
+/* Profile End */
+
+main > #tips > .container > .page-title{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+main > #tips > .container > .page-title.order-title-with-button{
+    justify-content: space-between;
+}
+
+main > #tips > .container > .page-title.order-title-with-button > h1.title-page {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #tips > .container > .page-title.order-title-with-button > a.add-new-order {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+main > #tips > .container > .main-content {
+    margin: 30px 30px 0 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+main > #tips > .container > .main-content > .content{
+    padding: 20px 20px 10px 20px;
+}
+
+main > #tips > .container > .main-content > .content > .search-bar-and-add-address{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 0;
+}
+
+main > #tips > .container > .main-content > .content > .search-bar-and-add-address > .search-bar{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+main > #tips > .container > .main-content > .content > .search-bar-and-add-address > .search-bar > i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+main > #tips > .container > .main-content > .content > .search-bar-and-add-address > .search-bar > input{
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 10px 0 10px 45px;
+    width: 100%;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards {
+    padding: 20px 0 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card{
+    height: 100%;
+    width: 25%;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    margin: 5px 0;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-vector {
+    display: flex;
+    justify-content: center;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-vector > img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > h6.title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > p.description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .go-to-detail-content {
+    padding: 10px 0;
+    width: inherit;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .go-to-detail-content > a.read-more {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 960px) {
+    main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card{
+        height: 100%;
+        width: 38%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card{
+        height: 100%;
+        width: 100%;
+    }
+}
