@@ -2,185 +2,209 @@
         <section id="add-order">
             <div class="container">
                 <div class="page-title order-title-with-button">
-                    <h1 class="title-page">Order</h1>
-                    <a class="add-new-order" href="#">+ Add New Order</a>
+                    <h1 class="title-page">Add New Order</h1>
                 </div>
 
                 <div class="main-content">
                     <div class="content">
                         <div id="tabs">
-                            <div class="tab" data-tab="1">In Progress</div>
-                            <div class="tab" data-tab="2">Scheduled</div>
-                            <div class="tab" data-tab="3">History</div>
+                            <div class="tab" data-tab="1">
+                                <div class="count">1</div>
+                                Personal Information
+                                <i class="material-icons-round">arrow_right</i>
+                            </div>
+                            <div class="tab" data-tab="2">
+                                <div class="count">2</div>
+                                Service
+                                <i class="material-icons-round">arrow_right</i>
+                            </div>
+                            <div class="tab" data-tab="3">
+                                <div class="count">3</div>
+                                Payment
+                                <i class="material-icons-round">arrow_right</i>
+                            </div>
+                            <div class="tab" data-tab="4">
+                                <div class="count">4</div>
+                                Done
+                            </div>
                         </div>
                     </div>
 
                     <div id="tab-content">
-                        <div class="tab-data tab-data-desc" data-tab="1">
-                            <div class="upcoming-order-cards">
-                                <a class="upcoming-order-card" href="#">
-                                    <div class="service-technician-status-info">
-                                        <div class="status-progress-info">
-                                            <div class="status in-progress">
-                                                <i class="material-icons-round">schedule</i>
-                                                <p>In Progress</p>
-                                            </div>
-                                        </div>
-                                        <div class="service-technician-info">
-                                            <div class="general-info">
-                                                <p class="service-id-full">Service ID. <span>8194</span></p>
-                                                <p class="technician-name">Aldy Kusuma</p>
-                                            </div>
-                                            <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
-                                        </div>
-                                        <div class="service-types">
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Cleaning AC</p>
-                                            </div>
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Service AC</p>
-                                            </div>
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Repair AC</p>
-                                            </div>
-                                        </div>
+                        <form action="">
+                            <div class="tab-data tab-data-desc" data-tab="1">
+                                <div class="input-form">
+                                    <div class="field">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Example. John Doe" required disabled>
                                     </div>
 
-                                    <div class="date-time-location-info">
-                                        <div class="date-info">
-                                            <i class="material-icons-round">calendar_month</i>
-                                            <time datetime="2023-04-12">Wednesday, 12 April 2023</time>
-                                        </div>
-                                        <div class="time">
-                                            <i class="material-icons-round">access_time</i>
-                                            <time datetime="14:00">14:00 WIB</time>
-                                        </div>
-                                        <div class="location">
-                                            <i class="material-icons-round">location_on</i>
-                                            <address>Jl. Kebon Jeruk Raya No. 1, RT. 1/RW. 1, Kebon Jeruk, Kec. Kby. Baru, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530</address>
-                                        </div>
+                                    <div class="field">
+                                        <label for="address">Address</label>
+                                        <select name="address" id="address">
+                                            <option value="Pradita University">
+                                                Pradita University
+                                            </option>
+                                            <option value="Pradita University">
+                                                Pradita University
+                                            </option>
+                                            <option value="Pradita University">
+                                                Pradita University
+                                            </option>
+                                        </select>
                                     </div>
 
-                                    <div class="order-date-time">
-                                        <p>Ordered on <time datetime="10-04-2023">Monday, 10 April 2023</time></p>
+                                    <div class="field">
+                                        <label for="Date">Date</label>
+                                        <input type="date" id="date" name="date">
                                     </div>
-                                </a>
+
+                                    <div class="field">
+                                        <label for="time">Time</label>
+                                        <input type="time" id="time" name="time">
+                                    </div>
+
+                                    <div class="button-stepper-form">
+                                        <button class="next">Next</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+    
+                            <div class="tab-data tab-data-desc" data-tab="2">
+                                <div class="input-form">
+                                    <div class="field">
+                                        <label for="name">AC Problem Details</label>
+                                        <small>Please tell us what’s the problem with the AC. Make it as detail as possible so that we can save more time on diagnosing the problem :D</small>
+                                        <input type="text" id="name" name="name" placeholder="Example: The temperature is not as what expected, It smells bad, etc." required>
+                                    </div>
 
-                        <div class="tab-data tab-data-desc" data-tab="2">
-                            <div class="upcoming-order-cards">
-                                <a class="upcoming-order-card" href="#">
-                                    <div class="service-technician-status-info">
-                                        <div class="status-progress-info">
-                                            <div class="status scheduled">
-                                                <i class="material-icons-round">schedule</i>
-                                                <p>Scheduled</p>
+                                    <div class="field">
+                                        <label for="address">Address</label>
+                                        <small>Which services do you want to order from us?</small>
+                                        <div class="checkboxes">
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                <label for="vehicle1">Service 1</label><br>
                                             </div>
-                                        </div>
-                                        <div class="service-technician-info">
-                                            <div class="general-info">
-                                                <p class="service-id-full">Service ID. <span>8195</span></p>
-                                                <p class="technician-name">Aldy Kusuma</p>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                                <label for="vehicle2">Service 2</label><br>
                                             </div>
-                                            <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
-                                        </div>
-                                        <div class="service-types">
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Cleaning AC</p>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                                <label for="vehicle3">Service 3</label><br>
                                             </div>
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Service AC</p>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                <label for="vehicle1">Service 1</label><br>
                                             </div>
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Repair AC</p>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                                <label for="vehicle2">Service 2</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                                <label for="vehicle3">Service 3</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                <label for="vehicle1">Service 1</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                                <label for="vehicle2">Service 2</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                                <label for="vehicle3">Service 3</label><br>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="date-time-location-info">
-                                        <div class="date-info">
-                                            <i class="material-icons-round">calendar_month</i>
-                                            <time datetime="2023-04-12">Wednesday, 12 April 2023</time>
-                                        </div>
-                                        <div class="time">
-                                            <i class="material-icons-round">access_time</i>
-                                            <time datetime="14:00">14:00 WIB</time>
-                                        </div>
-                                        <div class="location">
-                                            <i class="material-icons-round">location_on</i>
-                                            <address>Jl. Kebon Jeruk Raya No. 1, RT. 1/RW. 1, Kebon Jeruk, Kec. Kby. Baru, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530</address>
+                                    <div class="field">
+                                        <label for="ac-unit">Number of AC Units</label>
+                                        <small>How many AC that you want us to repair?</small>
+                                        <input type="number" placeholder="Example: 3" id="ac-unit" name="ac-unit">
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="ac-brand">AC Brand</label>
+                                        <small>What kind of brand is your AC?</small>
+                                        <div class="checkboxes">
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                <label for="vehicle1">Service 1</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                                <label for="vehicle2">Service 2</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                                <label for="vehicle3">Service 3</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                <label for="vehicle1">Service 1</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                                <label for="vehicle2">Service 2</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                                <label for="vehicle3">Service 3</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                <label for="vehicle1">Service 1</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                                <label for="vehicle2">Service 2</label><br>
+                                            </div>
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                                <label for="vehicle3">Service 3</label><br>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="order-date-time">
-                                        <p>Ordered on <time datetime="10-04-2023">Monday, 10 April 2023</time></p>
+                                    <div class="button-stepper-form">
+                                        <button class="back">Back</button>
+                                        <button class="next">Next</button>
                                     </div>
-                                </a>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="tab-data tab-data-desc" data-tab="3">
-                            <div class="upcoming-order-cards">
-                                <a class="upcoming-order-card" href="#">
-                                    <div class="service-technician-status-info">
-                                        <div class="status-progress-info">
-                                            <div class="status done">
-                                                <i class="material-icons-round">check</i>
-                                                <p>Done</p>
-                                            </div>
-                                        </div>
-                                        <div class="service-technician-info">
-                                            <div class="general-info">
-                                                <p class="service-id-full">Service ID. <span>8195</span></p>
-                                                <p class="technician-name">Aldy Kusuma</p>
-                                            </div>
-                                            <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
-                                        </div>
-                                        <div class="service-types">
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Cleaning AC</p>
-                                            </div>
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Service AC</p>
-                                            </div>
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Repair AC</p>
-                                            </div>
-                                        </div>
+    
+                            <div class="tab-data tab-data-desc" data-tab="3">
+                                <div class="input-form">
+                                    <div class="field">
+                                        <label for="name">Payment Proof</label>
+                                        <small>
+                                        Please proceed your payment to this account below and screenshot for the proof of the payment.
+                                        <br>
+                                        <br>
+                                        <em>
+                                            Account :
+                                            <br>
+                                            <span style="font-weight: 500;">(789******* - BCA - Joseline Kuniadi)</span>
+                                        </em>
+                                        </small>
+                                    </div>
+                                    
+                                    <div class="field">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="Example: hello@gmail.com" required>
                                     </div>
 
-                                    <div class="date-time-location-info">
-                                        <div class="date-info">
-                                            <i class="material-icons-round">calendar_month</i>
-                                            <time datetime="2023-04-12">Wednesday, 12 April 2023</time>
-                                        </div>
-                                        <div class="time">
-                                            <i class="material-icons-round">access_time</i>
-                                            <time datetime="14:00">14:00 WIB</time>
-                                        </div>
-                                        <div class="location">
-                                            <i class="material-icons-round">location_on</i>
-                                            <address>Jl. Kebon Jeruk Raya No. 1, RT. 1/RW. 1, Kebon Jeruk, Kec. Kby. Baru, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530</address>
-                                        </div>
+                                    <div class="button-stepper-form">
+                                        <button class="back">Back</button>
+                                        <button type="submit" class="submit">Submit</button>
                                     </div>
-
-                                    <div class="order-date-time">
-                                        <p>Ordered on <time datetime="10-04-2023">Monday, 10 April 2023</time></p>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
-                        </div>
-
+                        </form>
                     </div>
 
                 </div>

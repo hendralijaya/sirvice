@@ -27,6 +27,8 @@
 
     --scheduled-background-color: #E9E9E9;
     --scheduled-border-color: #ADADAD;
+
+    --disabled-background-color: #BCBCBC;
 }
 
 html[data-theme='light'] {
