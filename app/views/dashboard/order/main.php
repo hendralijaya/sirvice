@@ -28,7 +28,7 @@
                                         </div>
                                         <div class="service-technician-info">
                                             <div class="general-info">
-                                                <p class="service-id-full">Service ID. <span><?= $data['orders']['id'] ?></span></p>
+                                                <p class="service-id-full">Service ID. <span><?= $data['inprogress_orders']['id'] ?></span></p>
                                                 <p class="technician-name">Aldy Kusuma</p>
                                             </div>
                                             <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
