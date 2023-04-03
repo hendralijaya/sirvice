@@ -56,7 +56,7 @@ class Dashboard extends Controller {
             $data['user']['email'] = $_SESSION['user_email'];
             $data['title'] = 'Order - Sirvice';
             $data['inprogress_orders'] = $this->model('Orders_model')->inprogressOrders($_SESSION['user_id']);
-            var_dump($data['inprogress_orders']);
+            // var_dump($data['inprogress_orders']);
             $this->view('templates/dashboard/header-sidebar', $data);
             $this->view('dashboard/order/main', $data);
             $this->view('templates/dashboard/footer');
@@ -69,8 +69,8 @@ class Dashboard extends Controller {
         $data['user']['name'] = $_SESSION['user_name'];
         $data['user']['email'] = $_SESSION['user_email'];
         $data['title'] = 'New Order - Sirvice';
-        $data['services'] = $this->model('Services_model')->getServices();
-        $data['technicians'] = $this->model('Technicians_model')->getTechnician();
+        // $data['services'] = $this->model('Services_model')->getServices();
+        // $data['technicians'] = $this->model('Technicians_model')->getTechnician();
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/order/new', $data);
         $this->view('templates/dashboard/footer');
