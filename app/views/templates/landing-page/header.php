@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-footer.css">
 
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-services.css">
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
