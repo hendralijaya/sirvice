@@ -17,9 +17,23 @@ class Auth extends Controller {
 
     public function register()
     {
+        
       if( isset($_POST['register']) ) {
+        $_POST['verification_code'] = uniqid();
         if( $this->model('Auth_model')->register($_POST) > 0 ) {
-            // Flash register successfull
+            $mailer = Helper::setUpMailConfiguration();
+            $mailer->setFrom('sirvice@gmail.com', 'Sirvice Corps');
+            $mailer->addAddress($_POST['email'], $_POST['name']);
+            $mailer->Subject = 'Verification Code';
+            $mailer->isHTML(true);
+            $mailer->Body = '<a href="' . BASEURL . '/auth/verify/' . $_POST['verification_code'] . '">Click here to verify your account</a>';
+            if(!$mailer->send()) {
+                // FLASH GAGAL
+                // echo 'Message could not be sent. Mailer Error: ' . $mailer->ErrorInfo;
+            } else {
+                // FLASH BERHASIL
+                // echo 'Message has been sent';
+            }
             header('Location: ' . BASEURL . '/auth/login');
             exit;
         } else {
@@ -30,6 +44,18 @@ class Auth extends Controller {
     }
         $data['title'] = 'Register - Sirvice';
         $this->view('auth/register');
+    }
+
+    public function verify($verificationCode)
+    {
+        if( $this->model('Auth_model')->verify($verificationCode) > 0 ) {
+            header('Location: ' . BASEURL . '/auth/login');
+            exit;
+        } else {
+            // Flash verification failed
+            header('Location: ' . BASEURL . '/auth/register');
+            exit;
+        }
     }
 
     public function login() 
@@ -94,7 +120,6 @@ class Auth extends Controller {
         $this->model('Remember_Me_Token_model')->insertRememberMeToken($userId, $token, $selector);
         setcookie('remember_me', $selector . ':' . base64_encode($validator), $expires, '/');
     }
-
 
     public function logout()
     {

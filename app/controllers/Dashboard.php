@@ -40,27 +40,37 @@ class Dashboard extends Controller {
 
     public function order($orderId = 0)
     {
-        if ($orderId != 0) {
-            // Get user data
-            $data['user']['name'] = $_SESSION['user_name'];
-            $data['user']['email'] = $_SESSION['user_email'];
-            $data['orders'] = $this->model('Orders_model')->getOrderById($orderId);
-            $data['title'] = 'Order - Sirvice';
-            $this->view('templates/dashboard/header-sidebar', $data);
-            $this->view('dashboard/order/detail', $data);
-            $this->view('templates/dashboard/footer');
-            return;
+        if (is_int($orderId)) {
+            // do something if $my_var is an integer
+            if ($orderId != 0) {
+                // Get user data
+                $data['user']['name'] = $_SESSION['user_name'];
+                $data['user']['email'] = $_SESSION['user_email'];
+                $data['orders'] = $this->model('Orders_model')->getOrderById($orderId);
+                $data['title'] = 'Order - Sirvice';
+                $this->view('templates/dashboard/header-sidebar', $data);
+                $this->view('dashboard/order/detail', $data);
+                $this->view('templates/dashboard/footer');
+                return;
+            } else {
+                // Get user data
+                $data['user']['name'] = $_SESSION['user_name'];
+                $data['user']['email'] = $_SESSION['user_email'];
+                $data['title'] = 'Order - Sirvice';
+                $data['inprogress_orders'] = $this->model('Orders_model')->inprogressOrders($_SESSION['user_id']);
+                $data['scheduled_orders'] = $this->model('Orders_model')->scheduledOrders($_SESSION['user_id']);
+                $data['history_orders'] = $this->model('Orders_model')->historyOrders($_SESSION['user_id']);
+                $data['technician'] = $this->model('Technicians_model')->getTechnician();
+                // var_dump($data['inprogress_orders']);
+                $this->view('templates/dashboard/header-sidebar', $data);
+                $this->view('dashboard/order/main', $data);
+                $this->view('templates/dashboard/footer');
+            }
         } else {
-            // Get user data
-            $data['user']['name'] = $_SESSION['user_name'];
-            $data['user']['email'] = $_SESSION['user_email'];
-            $data['title'] = 'Order - Sirvice';
-            $data['inprogress_orders'] = $this->model('Orders_model')->inprogressOrders($_SESSION['user_id']);
-            // var_dump($data['inprogress_orders']);
-            $this->view('templates/dashboard/header-sidebar', $data);
-            $this->view('dashboard/order/main', $data);
-            $this->view('templates/dashboard/footer');
+            // do something else if $my_var is not an integer
+            header('Location: ' . BASEURL . '/notfound/index');
         }
+        
     }
 
     public function newOrder()

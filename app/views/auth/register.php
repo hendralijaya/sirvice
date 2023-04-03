@@ -81,10 +81,10 @@
                     <p class="register-form-description">Fill all the fields below to make your new account!</p>
                 </div>
 
-                <form action="" onsubmit="return checkPasswords()">
+                <form action="<?= BASEURL; ?>/auth/register" onsubmit="return checkPasswords()" method="POST">
                     <div class="field">
-                        <label for="nama">Nama</label>
-                        <input type="nama" id="nama" name="nama" placeholder="John Doe" required>
+                        <label for="name">Name</label>
+                        <input type="name" id="name" name="name" placeholder="John Doe" required>
                     </div>
                     <div class="field">
                         <label for="email">Email</label>
@@ -99,9 +99,9 @@
                     </div>
 
                     <div class="field password-container">
-                        <label for="repassword">Re-Password</label>
-                        <input type="repassword" id="repassword" name="repassword" placeholder="*******" required>
-                        <span toggle="#repassword" class="eye-icon"></span>
+                        <label for="password">Re-Password</label>
+                        <input type="password" id="password" name="repassword" placeholder="*******" required>
+                        <span toggle="#password" class="eye-icon"></span>
                     </div>
                     
                     <div class="field">
@@ -109,7 +109,7 @@
                         <input type="phone_number" id="phone_number" name="phone_number" placeholder="819xxxxxxxxx" required>
                         <span toggle="#phone_number" class="flag-icon"></span>
                     </div>
-
+                    <input type="hidden" id="register" name="register" value="register">
                     <button type="submit" class="primary-button submit-form">Register</button>
                 </form>
                 <p class="go-to-register-page">Already have an account? <a href="<?= BASEURL; ?>/auth/login" class="register-page">Login Now!</a></p>

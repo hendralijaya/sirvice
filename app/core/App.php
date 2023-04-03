@@ -8,6 +8,11 @@ class App {
     public function __construct()
     {
         $url = $this->parseURL();
+        if (isset($url[0])) {
+            $url[0] = ucfirst($url[0]);
+        }else  {
+            $url[0] = $this->controller;
+        }
         // controller
         if( file_exists('../app/controllers/' . $url[0] . '.php') ) {
             $this->controller = $url[0];
