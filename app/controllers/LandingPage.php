@@ -1,14 +1,6 @@
 <?php 
 
 class LandingPage extends Controller {
-    public function __construct()
-    {
-        if (isset($_SESSION['logged_in'])) {
-            header('Location: ' . BASEURL . '/dashboard');
-            exit;
-        }
-    }
-
     public function index()
     {
         $data['title'] = 'Home - Sirvice';
