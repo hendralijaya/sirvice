@@ -1426,6 +1426,12 @@ main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > 
     padding: 0 20px;
 }
 
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > time {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
 main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > h6.title {
     font-size: 18px;
     font-weight: 500;

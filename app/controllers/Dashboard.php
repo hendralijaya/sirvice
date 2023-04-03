@@ -55,7 +55,7 @@ class Dashboard extends Controller {
             $data['user']['name'] = $_SESSION['user_name'];
             $data['user']['email'] = $_SESSION['user_email'];
             $data['title'] = 'Order - Sirvice';
-            $data['orders'] = $this->model('Orders_model')->getOrders($_SESSION['user_id']);
+            $data['orders'] = $this->model('Orders_model')->inprogressOrders($_SESSION['user_id']);
             $this->view('templates/dashboard/header-sidebar', $data);
             $this->view('dashboard/order/main', $data);
             $this->view('templates/dashboard/footer');

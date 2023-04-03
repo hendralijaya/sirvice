@@ -1,5 +1,5 @@
         <!-- Section Start -->
-        <section id="order">
+        <section id="add-order">
             <div class="container">
                 <div class="page-title order-title-with-button">
                     <h1 class="title-page">Order</h1>
@@ -28,7 +28,7 @@
                                         </div>
                                         <div class="service-technician-info">
                                             <div class="general-info">
-                                                <p class="service-id-full">Service ID. <span>1</span></p>
+                                                <p class="service-id-full">Service ID. <span>8194</span></p>
                                                 <p class="technician-name">Aldy Kusuma</p>
                                             </div>
                                             <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
