@@ -6,7 +6,7 @@ class Dashboard extends Controller {
             // User is not logged in and is not accessing the allowed route
             header('Location: ' . BASEURL . '/auth/login');
             exit;
-          }
+        }
     }
 
     public function index()
@@ -20,8 +20,7 @@ class Dashboard extends Controller {
         // Title
         $data['title'] = 'Dashboard - Sirvice';
         // Get user data
-        $data['user']['name'] = $_SESSION['user_name'];
-        $data['user']['email'] = $_SESSION['user_email'];
+        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
         // Get notification data
         $this->model('Notifications_model')->createNotificationToday($_SESSION['user_id']);
         $data['notification'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);

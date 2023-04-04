@@ -304,6 +304,12 @@ header > nav#navbar-dashboard > .sneakpeek > .profile-sneakpeek > button.profile
 	transition: 0.2s all ease-in-out;
 }
 
+header > nav#navbar-dashboard > .sneakpeek > .profile-sneakpeek > button.profile-dropdown > img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
 header > nav#navbar-dashboard > .sneakpeek > .profile-sneakpeek > button.profile-dropdown > p.fullname {
 	font-size: 16px;
 	min-width: 100px;
