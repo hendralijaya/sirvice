@@ -90,11 +90,27 @@ class Dashboard extends Controller {
     {
         $data['title'] = 'Profile - Sirvice';
         // Get user data
-        $data['user']['name'] = $_SESSION['user_name'];
-        $data['user']['email'] = $_SESSION['user_email'];
+        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+        $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/profile/main', $data);
         $this->view('templates/dashboard/footer');
+    }
+
+    public function update_profile()
+    {
+        var_dump($_POST);
+        var_dump($_FILES);
+        var_dump($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST, $_FILES));
+        // if ($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST) > 0) {
+        //     // Flash message
+        //     header('Location: ' . BASEURL . '/dashboard/profile');
+        //     exit;
+        // } else {
+        //     // Flash message
+        //     header('Location: ' . BASEURL . '/dashboard/profile');
+        //     exit;
+        // }
     }
 
     // search address

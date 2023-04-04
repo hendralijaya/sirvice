@@ -17,11 +17,11 @@
                     <div id="tab-content">
                         <div class="tab-data tab-data-desc" data-tab="1">
                             <div class="overall-edit-profile">
-                                <form action="" class="edit-profile-form">
+                                <form action="<?= BASEURL; ?>/dashboard/update_profile" class="edit-profile-form" method="POST" enctype="multipart/form-data">
                                     <div class="profile-image">
-                                        <img src="<?= BASEURL; ?>/image/profile-example.png" alt="User Profile Picture">
+                                        <img src="<?= BASEIMAGE ?><?= $data['user']['profile_picture'] ?>" alt="User Profile Picture">
                                         <div class="edit-profile">
-                                            <input type="file">
+                                            <input type="file" id="profile_picture" name="profile_picture">
                                             <i class="material-icons-round">photo_camera</i>
                                         </div>
                                     </div>  
@@ -29,17 +29,17 @@
                                     <div class="input-form">
                                         <div class="field">
                                             <label for="name">Name</label>
-                                            <input type="text" id="name" name="name" placeholder="Example. John Doe" required>
+                                            <input type="text" id="name" name="name" value="<?= $data['user']['name'] ?>" required>
                                         </div>
                                         
                                         <div class="field">
                                             <label for="email">Email</label>
-                                            <input type="email" id="email" name="email" placeholder="Example: hello@gmail.com" required>
+                                            <input type="email" id="email" name="email" value="<?= $data['user']['email'] ?>" required disabled>
                                         </div>
 
                                         <div class="field">
                                             <label for="phone_number">Phone Number</label>
-                                            <input type="phone_number" id="phone_number" name="phone_number" placeholder="819xxxxxxxxx" required>
+                                            <input type="phone_number" id="phone_number" name="phone_number" value="<?= $data['user']['phone_number'] ?>" required disabled>
                                             <span toggle="#phone_number" class="flag-icon"></span>
                                         </div>
 
@@ -119,45 +119,27 @@
                             </div>
 
                             <div class="address-cards" id="address-suggestion">
-                                <div class="address-card">
-                                    <div class="address-content">
-                                        <h3 class="title-address">Pradita University</h3>
-                                        <p class="address">Jl. Gading Serpong Boulevard No. 1, Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810</p>
-                                        <small class="note-address">“Di gedung 1 , yang deket lapangan basket”</small>
-                                    </div>
-                                    <div class="button-edit-and-delete">
-                                        <a href="#" class="edit-address">
-                                            <i class="material-icons-round">edit</i>
-                                            <span>Edit</span>
-                                        </a>
-                                        <form action="#">
-                                            <a href="#" class="delete-address">
-                                                <i class="material-icons-round">delete</i>
-                                                <span>Delete</span>
+                                <?php foreach ($data['addresses'] as $address) : ?>
+                                    <div class="address-card">
+                                        <div class="address-content">
+                                            <h3 class="title-address"><?= $address['label_address'] ?></h3>
+                                            <p class="address"><?= $address['street'] ?>, <?= $address['sub_district'] ?>, <?= $address['district'] ?>, <?= $address['regency'] ?>, <?= $address['province'] ?>, <?= $address['post_code'] ?></p>
+                                            <small class="note-address">“<?= $address['additional_information'] ?>”</small>
+                                        </div>
+                                        <div class="button-edit-and-delete">
+                                            <a href="#" class="edit-address">
+                                                <i class="material-icons-round">edit</i>
+                                                <span>Edit</span>
                                             </a>
-                                        </form>
+                                            <form action="#">
+                                                <a href="#" class="delete-address">
+                                                    <i class="material-icons-round">delete</i>
+                                                    <span>Delete</span>
+                                                </a>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="address-card">
-                                    <div class="address-content">
-                                        <h3 class="title-address">Pradita University</h3>
-                                        <p class="address">Jl. Gading Serpong Boulevard No. 1, Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810</p>
-                                        <small class="note-address">“Di gedung 1 , yang deket lapangan basket”</small>
-                                    </div>
-                                    <div class="button-edit-and-delete">
-                                        <a href="#" class="edit-address">
-                                            <i class="material-icons-round">edit</i>
-                                            <span>Edit</span>
-                                        </a>
-                                        <form action="#">
-                                            <a href="#" class="delete-address">
-                                                <i class="material-icons-round">delete</i>
-                                                <span>Delete</span>
-                                            </a>
-                                        </form>
-                                    </div>
-                                </div>
+                                <?php endforeach; ?>
                                 
                             </div>
                         </div>
