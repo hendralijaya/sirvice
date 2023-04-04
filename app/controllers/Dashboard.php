@@ -61,7 +61,6 @@ class Dashboard extends Controller {
                 $data['scheduled_orders'] = $this->model('Orders_model')->scheduledOrders($_SESSION['user_id']);
                 $data['history_orders'] = $this->model('Orders_model')->historyOrders($_SESSION['user_id']);
                 $data['technician'] = $this->model('Technicians_model')->getTechnician();
-                // var_dump($data['inprogress_orders']);
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/order/main', $data);
                 $this->view('templates/dashboard/footer');
@@ -99,25 +98,21 @@ class Dashboard extends Controller {
 
     public function update_profile()
     {
-        var_dump($_POST);
-        var_dump($_FILES);
-        var_dump($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST, $_FILES));
-        // if ($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST) > 0) {
-        //     // Flash message
-        //     header('Location: ' . BASEURL . '/dashboard/profile');
-        //     exit;
-        // } else {
-        //     // Flash message
-        //     header('Location: ' . BASEURL . '/dashboard/profile');
-        //     exit;
-        // }
+        if ($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST) > 0) {
+            // Flash message
+            header('Location: ' . BASEURL . '/dashboard/profile');
+            exit;
+        } else {
+            // Flash message
+            header('Location: ' . BASEURL . '/dashboard/profile');
+            exit;
+        }
     }
 
     // search address
     public function search_address()
     {
         $addressQuery = $_POST['address'];
-        var_dump($_SESSION);
         $data = $this->model('Address_model')->searchAddress($addressQuery, $_SESSION['user_id']);
         header('Content-Type: application/json');
         echo json_encode($data);
