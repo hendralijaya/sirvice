@@ -43,8 +43,7 @@ class Dashboard extends Controller {
             // do something if $my_var is an integer
             if ($orderId != 0) {
                 // Get user data
-                $data['user']['name'] = $_SESSION['user_name'];
-                $data['user']['email'] = $_SESSION['user_email'];
+                $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['orders'] = $this->model('Orders_model')->getOrderById($orderId);
                 $data['title'] = 'Order - Sirvice';
                 $this->view('templates/dashboard/header-sidebar', $data);
@@ -53,8 +52,7 @@ class Dashboard extends Controller {
                 return;
             } else {
                 // Get user data
-                $data['user']['name'] = $_SESSION['user_name'];
-                $data['user']['email'] = $_SESSION['user_email'];
+                $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['title'] = 'Order - Sirvice';
                 $data['inprogress_orders'] = $this->model('Orders_model')->inprogressOrders($_SESSION['user_id']);
                 $data['scheduled_orders'] = $this->model('Orders_model')->scheduledOrders($_SESSION['user_id']);
@@ -139,10 +137,19 @@ class Dashboard extends Controller {
     {
         $data['title'] = 'Tips - Sirvice';
         // Get user data
-        $data['user']['name'] = $_SESSION['user_name'];
-        $data['user']['email'] = $_SESSION['user_email'];
+        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/tips/main', $data);
+        $this->view('templates/dashboard/footer');
+    }
+
+    public function detailtips()
+    {
+        $data['title'] = 'Tips - Sirvice';
+        // Get user data
+        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/tips/detail', $data);
         $this->view('templates/dashboard/footer');
     }
 }
