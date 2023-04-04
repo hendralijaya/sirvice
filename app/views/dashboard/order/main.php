@@ -34,17 +34,17 @@
                                                 </div>
                                                 <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
                                             </div>
-                                            <div class="service-types">
-                                                <?php $services = $this->model('Services_model')->getServicesByOrder($order['id']); ?>
-                                                <div class='service-types'>
-                                                    <?php foreach ($services as $service) : ?>
-                                                        <div class='service-type'>
-                                                            <i class='material-icons-round'>home_repair_service</i>
-                                                            <p class='service-type-name'><?= $service['name']; ?></p>
-                                                        </div>
-                                                    <?php endforeach; ?>
-                                                </div>
+
+                                            <?php $services = $this->model('Services_model')->getServicesByOrder($order['id']); ?>
+                                            <div class='service-types'>
+                                                <?php foreach ($services as $service) : ?>
+                                                    <div class='service-type'>
+                                                        <i class='material-icons-round'>home_repair_service</i>
+                                                        <p class='service-type-name'><?= $service['name']; ?></p>
+                                                    </div>
+                                                <?php endforeach; ?>
                                             </div>
+                                            
                                         </div>
 
                                         <div class="date-time-location-info">
@@ -89,17 +89,17 @@
                                                 </div>
                                                 <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
                                             </div>
-                                            <div class="service-types">
-                                                <?php $services = $this->model('Services_model')->getServicesByOrder($order['id']); ?>
-                                                <div class='service-types'>
-                                                    <?php foreach ($services as $service) : ?>
-                                                        <div class='service-type'>
-                                                            <i class='material-icons-round'>home_repair_service</i>
-                                                            <p class='service-type-name'><?= $service['name']; ?></p>
-                                                        </div>
-                                                    <?php endforeach; ?>
-                                                </div>
+                                            
+                                            <?php $services = $this->model('Services_model')->getServicesByOrder($order['id']); ?>
+                                            <div class='service-types'>
+                                                <?php foreach ($services as $service) : ?>
+                                                    <div class='service-type'>
+                                                        <i class='material-icons-round'>home_repair_service</i>
+                                                        <p class='service-type-name'><?= $service['name']; ?></p>
+                                                    </div>
+                                                <?php endforeach; ?>
                                             </div>
+
                                         </div>
                                         <div class="date-time-location-info">
                                             <div class="date-info">
@@ -142,17 +142,17 @@
                                                 </div>
                                                 <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
                                             </div>
-                                            <div class="service-types">
-                                                <?php $services = $this->model('Services_model')->getServicesByOrder($order['id']); ?>
-                                                <div class='service-types'>
-                                                    <?php foreach ($services as $service) : ?>
-                                                        <div class='service-type'>
-                                                            <i class='material-icons-round'>home_repair_service</i>
-                                                            <p class='service-type-name'><?= $service['name']; ?></p>
-                                                        </div>
-                                                    <?php endforeach; ?>
-                                                </div>
+                                            
+                                            <?php $services = $this->model('Services_model')->getServicesByOrder($order['id']); ?>
+                                            <div class='service-types'>
+                                                <?php foreach ($services as $service) : ?>
+                                                    <div class='service-type'>
+                                                        <i class='material-icons-round'>home_repair_service</i>
+                                                        <p class='service-type-name'><?= $service['name']; ?></p>
+                                                    </div>
+                                                <?php endforeach; ?>
                                             </div>
+                                            
                                         </div>
                                         <div class="date-time-location-info">
                                             <div class="date-info">

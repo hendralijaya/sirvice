@@ -887,6 +887,7 @@ main > #profile > .container > .main-content > #tab-content > .tab-data > .overa
     position: absolute;
     transform: scale(2);
     opacity: 0;
+    width: 50%;
     cursor: pointer;
 }
 
@@ -916,6 +917,10 @@ main > #profile > .container > .main-content > #tab-content > .tab-data > .overa
     border-radius: 5px;
     border: 0.5px solid var(--border-color);
     padding: 10px 15px;
+}
+
+main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .input-form > .field > input:disabled {
+    background-color: var(--disabled-background-color);
 }
 
 main > #profile > .container > .main-content > #tab-content > .tab-data > .overall-edit-profile > form > .input-form > button.save-changes{

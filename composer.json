@@ -1,5 +1,5 @@
 {
-    "name": "sirvice",
+    "name": "sirvice/public",
     "autoload": {
         "psr-4": {
             "Hendr\\Sirvice\\": "src/"
