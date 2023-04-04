@@ -42,6 +42,7 @@ main > #detail-tips > .container > .main-content > .content > .breadcrumbs{
     padding: 0 0 10px 0;
     gap: 3px;
     border-bottom: 1px solid var(--border-color);
+    overflow-x: auto;
 }
 
 main > #detail-tips > .container > .main-content > .content > .breadcrumbs > .breadcrumb{
@@ -74,6 +75,7 @@ main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-w
     font-size: 20px;
     font-weight: 500;
     color: var(--text-color);
+    line-height: 24px;
 }
 
 main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-header > time {
@@ -126,4 +128,24 @@ main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-w
     color: var(--background-color);
     border: 1px solid var(--primary-color);
     transition: 0.2s all ease-in-out;
+}
+
+@media screen and (max-width: 960px) {
+    main > #detail-tips > .container > .main-content > .content > .breadcrumbs {
+        display: none;
+    }
+
+    main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content {
+        padding: 0;
+    }
+
+    main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-body > img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-body > img {
+        width: 90%;
+    }
 }

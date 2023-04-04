@@ -193,10 +193,28 @@
                                         </small>
                                     </div>
                                     
-                                    <div class="field">
-                                        <label for="email">Email</label>
-                                        <input type="email" id="email" name="email" placeholder="Example: hello@gmail.com" required>
+                                    <div class="payment-field">
+                                        <div class="field">
+                                            <i class="material-icons-round">description</i>
+                                            <p>We only accept file with .png, .jpg, and .jpeg type</p>
+                                            <label for="payment-file">Choose File</label>
+                                            <input type="file" id="payment-file" name="payment-file" hidden required>
+                                        </div>
+                                        <div class="document-payment-proof">
+                                            <div class="screenshot" hidden>
+                                                <!-- This will be the one where the file of payment shown -->
+                                                <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="">
+                                            </div>
+                                            <div class="message-none">
+                                                <p>
+                                                    No file choosen, yet!
+                                                    <br>
+                                                    You will see the preview of your screenshot here!
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
+                                    
 
                                     <div class="button-stepper-form">
                                         <button class="back">Back</button>

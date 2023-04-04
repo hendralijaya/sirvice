@@ -72,8 +72,7 @@ class Dashboard extends Controller {
     public function newOrder()
     {
         // Get user data
-        $data['user']['name'] = $_SESSION['user_name'];
-        $data['user']['email'] = $_SESSION['user_email'];
+        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
         $data['title'] = 'New Order - Sirvice';
         // $data['services'] = $this->model('Services_model')->getServices();
         // $data['technicians'] = $this->model('Technicians_model')->getTechnician();
