@@ -24,7 +24,7 @@ class Users_model {
 
     public function updateUser($id, $data, $file)
     {
-        if ($data['profile_picture'] == '') {
+        if ($file['profile_picture'] == '') {
             $this->db->query('UPDATE ' . $this->table . ' SET name=:name WHERE id=:id');
             $this->db->bind('id', $id);
             $this->db->bind('name', $data['name']);

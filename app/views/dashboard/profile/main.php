@@ -13,13 +13,12 @@
                             <div class="tab" data-tab="3">Address List</div>
                         </div>
                     </div>
-
                     <div id="tab-content">
                         <div class="tab-data tab-data-desc" data-tab="1">
                             <div class="overall-edit-profile">
                                 <form action="<?= BASEURL; ?>/dashboard/update_profile" class="edit-profile-form" method="POST" enctype="multipart/form-data">
                                     <div class="profile-image">
-                                        <img src="<?= BASEIMAGE ?><?= $data['user']['profile_picture'] ?>" alt="User Profile Picture">
+                                        <img src="<?= PROFILE_IMAGE ?><?= $data['user']['profile_picture'] ?>" alt="User Profile Picture">
                                         <div class="edit-profile">
                                             <input type="file" id="profile_picture" name="profile_picture">
                                             <i class="material-icons-round">photo_camera</i>

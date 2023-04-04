@@ -1,7 +1,7 @@
 <?php 
 
 define('BASEURL', 'http://sirvice/public');
-define('BASEIMAGE', 'http://sirvice/public/image/');
+define('PROFILE_IMAGE', 'http://sirvice/public/image/user-profile/');
 
 // DB
 define('DB_HOST', 'localhost');
