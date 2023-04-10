@@ -31,37 +31,33 @@
                     </div>
 
                     <div id="tab-content">
-                        <form action="">
+                        <form action="" method="post">
                             <div class="tab-data tab-data-desc" data-tab="1">
                                 <div class="input-form">
                                     <div class="field">
                                         <label for="name">Name</label>
-                                        <input type="text" id="name" name="name" placeholder="Example. John Doe" required disabled>
+                                        <input type="text" id="name" name="name" value="<?= $data['user']['name'] ?>" required disabled>
                                     </div>
 
                                     <div class="field">
                                         <label for="address">Address</label>
                                         <select name="address" id="address">
-                                            <option value="Pradita University">
-                                                Pradita University
+                                            <?php foreach ($data['addresses'] as $address ) : ?>
+                                            <option value=<?= $address['label_address'] ?>>
+                                                <?= $address['label_address'] ?>
                                             </option>
-                                            <option value="Pradita University">
-                                                Pradita University
-                                            </option>
-                                            <option value="Pradita University">
-                                                Pradita University
-                                            </option>
+                                            <?php endforeach; ?>
                                         </select>
                                     </div>
 
                                     <div class="field">
                                         <label for="Date">Date</label>
-                                        <input type="date" id="date" name="date">
+                                        <input type="date" id="date" name="date" value="<?= $data['date'] ?>">
                                     </div>
 
                                     <div class="field">
                                         <label for="time">Time</label>
-                                        <input type="time" id="time" name="time">
+                                        <input type="time" id="time" name="time" value="10:00">
                                     </div>
 
                                     <div class="button-stepper-form">

@@ -19,6 +19,15 @@ class Auth extends Controller {
     {
         
       if( isset($_POST['register']) ) {
+        var_dump($_POST);
+        exit;
+        // Validate required register fields
+        if( !isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['repassword']) || !isset($_POST['phone_number']) || !isset($_POST['register']) ) {
+            // Flash required fields
+            header('Location: ' . BASEURL . '/auth/register');
+            exit;
+        }
+
         $_POST['verification_code'] = uniqid();
         if( $this->model('Auth_model')->register($_POST) > 0 ) {
             $mailer = Helper::setUpMailConfiguration();

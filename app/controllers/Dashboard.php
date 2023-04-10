@@ -39,7 +39,7 @@ class Dashboard extends Controller {
 
     public function order($orderId = 0)
     {
-        if (is_int($orderId)) {
+        if (is_numeric($orderId)) {
             // do something if $my_var is an integer
             if ($orderId != 0) {
                 // Get user data
@@ -73,7 +73,9 @@ class Dashboard extends Controller {
     {
         // Get user data
         $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+        $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
         $data['title'] = 'New Order - Sirvice';
+        $data['date'] = date('Y-m-d');
         // $data['services'] = $this->model('Services_model')->getServices();
         // $data['technicians'] = $this->model('Technicians_model')->getTechnician();
         $this->view('templates/dashboard/header-sidebar', $data);
@@ -127,23 +129,31 @@ class Dashboard extends Controller {
         }
     }
 
-    public function tips()
+    public function tips($tipId = 0)
     {
-        $data['title'] = 'Tips - Sirvice';
-        // Get user data
-        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
-        $this->view('templates/dashboard/header-sidebar', $data);
-        $this->view('dashboard/tips/main', $data);
-        $this->view('templates/dashboard/footer');
-    }
-
-    public function detailtips()
-    {
-        $data['title'] = 'Tips - Sirvice';
-        // Get user data
-        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
-        $this->view('templates/dashboard/header-sidebar', $data);
-        $this->view('dashboard/tips/detail', $data);
-        $this->view('templates/dashboard/footer');
+        if (is_numeric($tipId)) {
+            // do something if $my_var is an integer
+            if ($tipId != 0) {
+                // Get user data
+                $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+                $data['tips'] = $this->model('Tips_model')->getTipsById($tipId);
+                $data['title'] = 'Tips - Sirvice';
+                $this->view('templates/dashboard/header-sidebar', $data);
+                $this->view('dashboard/tips/detail', $data);
+                $this->view('templates/dashboard/footer');
+                return;
+            } else {
+                // Get user data
+                $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+                $data['title'] = 'Tips - Sirvice';
+                $data['tips'] = $this->model('Tips_model')->getAllTips();
+                $this->view('templates/dashboard/header-sidebar', $data);
+                $this->view('dashboard/tips/main', $data);
+                $this->view('templates/dashboard/footer');
+            }
+        } else {
+            // do something else if $my_var is not an integer
+            header('Location: ' . BASEURL . '/notfound/index');
+        }
     }
 }
