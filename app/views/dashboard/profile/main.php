@@ -117,6 +117,41 @@
                                 <a class="add-address" href="#">+ Add New Address</a>
                             </div>
 
+                            <!-- Alert -->
+                            <div class="alert alert-success">
+                                <div class="messages">
+                                    <p>
+                                        <span>"Pradita University"</span> address has been deleted!
+                                    </p>
+                                </div>
+                                <div class="alert-close">
+                                    <i class="material-icons-round">close</i>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-warning">
+                                <div class="messages">
+                                    <p>
+                                        <span>"Pradita University"</span> address has been deleted!
+                                    </p>
+                                </div>
+                                <div class="alert-close">
+                                    <i class="material-icons-round">close</i>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-danger">
+                                <div class="messages">
+                                    <p>
+                                        <span>"Pradita University"</span> address has been deleted!
+                                    </p>
+                                </div>
+                                <div class="alert-close">
+                                    <i class="material-icons-round">close</i>
+                                </div>
+                            </div>
+                            <!-- Alert Done -->
+
                             <div class="address-cards" id="address-suggestion">
                                 <?php foreach ($data['addresses'] as $address) : ?>
                                     <div class="address-card">
