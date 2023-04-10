@@ -156,4 +156,14 @@ class Dashboard extends Controller {
             header('Location: ' . BASEURL . '/notfound/index');
         }
     }
+
+    public function notification(){
+        $data['title'] = 'Notification - Sirvice';
+        // Get user data
+        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+        $data['notification'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/notification/main', $data);
+        $this->view('templates/dashboard/footer');
+    }
 }
