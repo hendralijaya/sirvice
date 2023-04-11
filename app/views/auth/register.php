@@ -76,9 +76,9 @@
                     </svg>
                 </div>
 
-                <div class="register-form-instructions">
-                    <h1 class="register-form-title">Register</h1>
-                    <p class="register-form-description">Fill all the fields below to make your new account!</p>
+                <div class="login-form-instructions">
+                    <h1 class="login-form-title">Register</h1>
+                    <p class="login-form-description">Fill all the fields below to make your new account!</p>
                 </div>
 
                 <form action="<?= BASEURL; ?>/auth/register" onsubmit="return checkPasswords()" method="POST">
@@ -99,7 +99,7 @@
                     </div>
 
                     <div class="field password-container">
-                        <label for="password">Re-Password</label>
+                        <label for="repassword">Re-Password</label>
                         <input type="password" id="password" name="repassword" placeholder="*******" required>
                         <span toggle="#password" class="eye-icon"></span>
                     </div>

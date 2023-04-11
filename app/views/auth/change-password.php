@@ -74,34 +74,26 @@
                 </div>  
     
                 <div class="login-form-instructions">
-                    <h1 class="login-form-title">Login</h1>
-                    <p class="login-form-description">Please enter your email and password</p>
+                    <h1 class="login-form-title">Change Password</h1>
+                    <p class="login-form-description">Make your new password now! we suggest you to use at least one capital letter and one number to make you password stronger!</p>
                 </div>
 
                 <form action="<?= BASEURL; ?>/auth/login" method="post">
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Example: hello@gmail.com" required>
-                    </div>
-
                     <div class="field password-container">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="*******" required>
                         <span toggle="#password" class="eye-icon"></span>
                     </div>
 
-                    <div class="other-login-purposes">
-                        <label>
-                            <input type="checkbox" name="remember_me" class="remember-me">
-                            Remember for a week
-                        </label>
-                        <a href="<?= BASEURL; ?>/auth/forgotpassword" class="forgot-password">Forgot Password?</a>
+                    <div class="field password-container">
+                        <label for="repassword">Re-Password</label>
+                        <input type="password" id="password" name="repassword" placeholder="*******" required>
+                        <span toggle="#password" class="eye-icon"></span>
                     </div>
-                    <input type="hidden" id="login" name="login" value="login">
-                    <button type="submit" class="primary-button submit-form" value="login">Login</button>
-                </form>
 
-                <p class="go-to-register-page">Don’t have account? <a href="<?= BASEURL ?>/auth/register" class="register-page">Register Now!</a></p>
+                    <input type="hidden" id="login" name="login" value="login">
+                    <button type="submit" class="primary-button submit-form" value="login">Change Password</button>
+                </form>
             </div>
         </div>
     </section>
