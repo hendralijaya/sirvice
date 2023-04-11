@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-add-order.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-detail-tips.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-notification.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-address-page.css">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">

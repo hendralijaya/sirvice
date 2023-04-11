@@ -116,6 +116,16 @@ class Dashboard extends Controller {
         echo json_encode($data);
     }
 
+    public function address() {
+        $data['title'] = 'Address - Sirvice';
+        // Get user data
+        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+        $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/profile/address', $data);
+        $this->view('templates/dashboard/footer');
+    }
+
     public function delete_profile()
     {
         if ($this->model('Users_model')->deleteUser($_SESSION['user_id']) > 0) {
