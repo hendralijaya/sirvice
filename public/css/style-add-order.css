@@ -302,3 +302,26 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
     }
     
 }
+
+@media screen and (max-width: 500px) {
+    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.next,
+    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.back,
+    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.submit {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button:nth-child(1){
+        order: 2
+    }
+
+    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button:nth-child(2){
+        order: 1
+    }
+}

@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-color.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-loader.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-credentials-form.css">
-    <!-- Google Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -75,34 +74,20 @@
                 </div>  
     
                 <div class="login-form-instructions">
-                    <h1 class="login-form-title">Login</h1>
-                    <p class="login-form-description">Please enter your email and password</p>
+                    <h1 class="login-form-title">Password Recovery</h1>
+                    <p class="login-form-description">
+                        We have sent you the reset password to <span style="font-weight: 500;">hello@gmail.com</span> by email, please click the link in the email that we just sent to you
+                        <br><br>
+                        Also you can leave this page if you’re done 
+                    </p>
                 </div>
-                <?php Flasher::flash(); ?>
+
                 <form action="<?= BASEURL; ?>/auth/login" method="post">
-                    <div class="field">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Example: hello@gmail.com" required value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
+                    <div class="image">
+                        <img src="<?= BASEURL; ?>/image/email-sent.png" alt="">
                     </div>
-
-                    <div class="field password-container">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="*******" required value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>">
-                        <span toggle="#password" class="eye-icon"></span>
-                    </div>
-
-                    <div class="other-login-purposes">
-                        <label>
-                            <input type="checkbox" name="remember_me" class="remember-me">
-                            Remember for a week
-                        </label>
-                        <a href="<?= BASEURL; ?>/auth/forgotpassword" class="forgot-password">Forgot Password?</a>
-                    </div>
-                    <input type="hidden" id="login" name="login" value="login">
-                    <button type="submit" class="primary-button submit-form" value="login">Login</button>
+                    <button type="submit" class="primary-button submit-form" value="login">Go to Email</button>
                 </form>
-
-                <p class="go-to-register-page">Don’t have account? <a href="<?= BASEURL ?>/auth/register" class="register-page">Register Now!</a></p>
             </div>
         </div>
     </section>

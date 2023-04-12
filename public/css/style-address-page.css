@@ -1,0 +1,181 @@
+
+main > #address-add-and-edit > .container > .page-title{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+main > #address-add-and-edit > .container > .page-title.order-title-with-button{
+    justify-content: space-between;
+}
+
+main > #address-add-and-edit > .container > .page-title.order-title-with-button > h1.title-page {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #address-add-and-edit > .container > .page-title.order-title-with-button > a.add-new-order {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+main > #address-add-and-edit > .container > .main-content {
+    margin: 30px 30px 0 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+main > #address-add-and-edit > .container > .main-content > .content{
+    padding: 20px 20px 10px 20px;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .breadcrumbs{
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px 0;
+    gap: 3px;
+    border-bottom: 1px solid var(--border-color);
+    overflow-x: auto;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .breadcrumbs > .breadcrumb{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .breadcrumbs > .breadcrumb > a{
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .breadcrumbs > .breadcrumb > p.title{
+    font-weight: 500;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form {
+    padding: 20px 0;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form .field{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form .field.field-border-bottom {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .flex-field {
+    display: flex;
+    gap: 20px;
+    width: inherit;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form .field > label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form .field > input {
+    border-radius: 5px;
+    border: 0.5px solid var(--border-color);
+    padding: 10px 15px;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form .field > input:disabled {
+    background-color: var(--disabled-background-color);
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form .field > small {
+    font-style: italic;
+    font-size: 14px;
+    padding: 3px 0;
+    line-height: 21px;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form .field > select{
+    border-radius: 5px;
+    border: 0.5px solid var(--border-color);
+    padding: 10px 15px;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .button-stepper-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .button-stepper-form > button.back {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    display: inline-flex;
+    width: fit-content;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .button-stepper-form > button.next,
+main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .button-stepper-form > button.submit {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    display: inline-flex;
+    width: fit-content;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 960px) {
+    main > #address-add-and-edit > .container > .main-content > .content > .breadcrumbs {
+        display: none;
+    }
+
+    main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .flex-field {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .button-stepper-form {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .button-stepper-form > button.next,
+    main > #address-add-and-edit > .container > .main-content > .content > .overall-address-fields > form.address-form > .input-form > .button-stepper-form > button.back {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}

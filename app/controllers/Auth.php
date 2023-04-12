@@ -152,4 +152,28 @@ class Auth extends Controller {
         header('Location: ' . BASEURL . '/auth/login');
         exit;
     }
+
+    public function forgotpassword() {
+        $data['title'] = 'Forgot Password - Sirvice';
+        $this->view('auth/forgot-password');
+        $this->view('templates/auth/carousel');
+    }
+
+    public function passwordrecovery() {
+        $data['title'] = 'Password Recovery - Sirvice';
+        $this->view('auth/password-recovery');
+        $this->view('templates/auth/carousel');
+    }
+
+    public function changepassword() {
+        $data['title'] = 'Change Password - Sirvice';
+        $this->view('auth/change-password');
+        $this->view('templates/auth/carousel');
+    }
+
+    public function verification() {
+        $data['title'] = 'Verification Sent - Sirvice';
+        $this->view('auth/verification');
+        $this->view('templates/auth/carousel');
+    }
 }
