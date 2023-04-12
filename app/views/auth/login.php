@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-color.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-loader.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-credentials-form.css">
-
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -77,16 +78,16 @@
                     <h1 class="login-form-title">Login</h1>
                     <p class="login-form-description">Please enter your email and password</p>
                 </div>
-
+                <?php Flasher::flash(); ?>
                 <form action="<?= BASEURL; ?>/auth/login" method="post">
                     <div class="field">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Example: hello@gmail.com" required>
+                        <input type="email" id="email" name="email" placeholder="Example: hello@gmail.com" required value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
                     </div>
 
                     <div class="field password-container">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="*******" required>
+                        <input type="password" id="password" name="password" placeholder="*******" required value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>">
                         <span toggle="#password" class="eye-icon"></span>
                     </div>
 

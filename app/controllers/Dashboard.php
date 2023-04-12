@@ -72,6 +72,26 @@ class Dashboard extends Controller {
     public function newOrder()
     {
         // Get user data
+        if(isset($_POST['order'])) {
+            if ($this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST) > 0) {
+                Flasher::setFlash('Order has been ', 'created', 'success');
+                header('Location: ' . BASEURL . '/dashboard/order');
+                exit;
+            } else {
+                $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+                $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
+                $data['title'] = 'New Order - Sirvice';
+                $data['date'] = date('Y-m-d');
+                // Error Flash Message
+                Flasher::setFlash('Order : All field is ', 'required', 'danger');
+                // $data['services'] = $this->model('Services_model')->getServices();
+                // $data['technicians'] = $this->model('Technicians_model')->getTechnician();
+                $this->view('templates/dashboard/header-sidebar', $data);
+                $this->view('dashboard/order/new', $data);
+                $this->view('templates/dashboard/footer');
+                exit;
+            }
+        }
         $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
         $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
         $data['title'] = 'New Order - Sirvice';
@@ -165,5 +185,88 @@ class Dashboard extends Controller {
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/notification/main', $data);
         $this->view('templates/dashboard/footer');
+    }
+
+    public function new_address($addressId = 0){
+        if(is_numeric($addressId)){
+            if ($addressId != 0) {
+                // Get user data
+                $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+                $data['address'] = $this->model('Address_model')->getAddressById($addressId);
+                $data['title'] = 'New Address - Sirvice';
+                $this->view('templates/dashboard/header-sidebar', $data);
+                $this->view('dashboard/profile/new-address', $data);
+                $this->view('templates/dashboard/footer');
+                return;
+            } else {
+                // Get user data
+                $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+                $data['title'] = 'New Address - Sirvice';
+                $this->view('templates/dashboard/header-sidebar', $data);
+                $this->view('dashboard/profile/new-address', $data);
+                $this->view('templates/dashboard/footer');
+            }
+        } else {
+            // do something else if $my_var is not an integer
+            header('Location: ' . BASEURL . '/notfound/index');
+        }
+    }
+
+    public function add_address(){
+        if ($this->model('Address_model')->createAddress($_SESSION['user_id'],$_POST) > 0) {
+            // Flash message
+            Flasher::setFlash('Address successfully ', 'added', 'success');
+            header('Location: ' . BASEURL . '/dashboard/profile');
+            exit;
+        } else {
+            // Flash message
+            Flasher::setFlash('Address failed to be ', 'added', 'danger');
+            header('Location: ' . BASEURL . '/dashboard/profile');
+            exit;
+        }
+    }
+
+    public function update_address($addressId = 0){
+        if(is_numeric($addressId)){
+            if($addressId > 0){
+                if ($this->model('Address_model')->updateAddress($_SESSION['user_id'],$addressId,$_POST) > 0) {
+                    // Flash message
+                    Flasher::setFlash('Address successfully ', 'updated', 'success');
+                    header('Location: ' . BASEURL . '/dashboard/profile');
+                    exit;
+                } else {
+                    // Flash message
+                    Flasher::setFlash('Address failed to be ', 'updated', 'danger');
+                    header('Location: ' . BASEURL . '/dashboard/profile');
+                    exit;
+                }
+            } else {
+                // Flash message
+                Flasher::setFlash('Address id ', 'not found', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            }
+        }
+    }
+
+    public function delete_address($addressId = 0){
+        if(is_numeric($addressId)){
+            if($addressId > 0) {
+                if ($this->model('Address_model')->deleteAddress($_SESSION['user_id'], $addressId) > 0) {
+                    // Flash message
+                    Flasher::setFlash('Address successfully ', 'deleted', 'success');
+                    header('Location: ' . BASEURL . '/dashboard/profile');
+                    exit;
+                } else {
+                    // Flash message
+                    Flasher::setFlash('Address not found failed to be ', 'deleted', 'danger');
+                    header('Location: ' . BASEURL . '/dashboard/profile');
+                    exit;
+                }
+            }
+        }else{
+            Flasher::setFlash('Address not found failed to be ', 'deleted', 'danger');
+            header('Location: ' . BASEURL . '/dashboard/profile');
+        }
     }
 }

@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+use FFI\Exception;
 
 class Auth_model {
     private $table = 'users';
@@ -11,32 +13,43 @@ class Auth_model {
 
     public function register($data)
   {
-    $query = "INSERT INTO $this->table VALUES ('', :email, :password, :name, :phone_number, :verification_code, 0, '')";
-    $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-    $this->db->query($query);
-    $this->db->bind('email', $data['email']);
-    $this->db->bind('password', $data['password']);
-    $this->db->bind('name', $data['name']);
-    $this->db->bind('phone_number', $data['phone_number']);
-    $this->db->bind('verification_code', $data['verification_code']);
-    $this->db->execute();
-
-    return $this->db->rowCount();
+    try {
+      $query = "INSERT INTO $this->table VALUES ('', :email, :password, :name, :phone_number, :verification_code, 0, '')";
+      $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+      $this->db->query($query);
+      $this->db->bind('email', $data['email']);
+      $this->db->bind('password', $data['password']);
+      $this->db->bind('name', $data['name']);
+      $this->db->bind('phone_number', $data['phone_number']);
+      $this->db->bind('verification_code', $data['verification_code']);
+      $this->db->execute();
+      return $this->db->rowCount();
+    }catch (PDOException $e) {
+      // Handle the exception here
+      return false;
+      // You can also log the error or perform other error handling tasks as needed
+    }
   }
 
   public function login($data)
   {
-    $query = "SELECT * FROM users WHERE email = :email";
-    $this->db->query($query);
-    $this->db->bind('email', $data['email']);
-    $this->db->execute();
-    $row = $this->db->single();
-    $password = $row['password'];
-    if (password_verify($data['password'], $password)) {
-      return $row;
-    } else {
+    try {
+      $query = "SELECT * FROM users WHERE email = :email";
+      $this->db->query($query);
+      $this->db->bind('email', $data['email']);
+      $this->db->execute();
+      $row = $this->db->single();
+      $password = $row['password'] ?? '';
+      if (password_verify($data['password'], $password)) {
+          return $row;
+      } else {
+          return false;
+      }
+  } catch (PDOException $e) {
+      // Handle the exception here
       return false;
-    }
+      // You can also log the error or perform other error handling tasks as needed
+  }  
   }
 
   public function verify($verificationCode)

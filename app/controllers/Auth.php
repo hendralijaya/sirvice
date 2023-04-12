@@ -19,17 +19,23 @@ class Auth extends Controller {
     {
         
       if( isset($_POST['register']) ) {
-        var_dump($_POST);
-        exit;
         // Validate required register fields
-        if( !isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['repassword']) || !isset($_POST['phone_number']) || !isset($_POST['register']) ) {
-            // Flash required fields
-            header('Location: ' . BASEURL . '/auth/register');
+        if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['repassword']) || !isset($_POST['phone_number']) || !isset($_POST['register'])) {
+            Flasher::setFlash('All fields are required', 'register', 'danger');
+            $data['title'] = 'Register - Sirvice';
+            $this->view('auth/register', $data);
+            exit;
+        }
+        // Validate phone number is numeric
+        if( !is_numeric($_POST['phone_number']) ) {
+            Flasher::setFlash('Phone number must be numeric', 'register', 'danger');
+            $data['title'] = 'Register - Sirvice';
+            $this->view('auth/register', $data);
             exit;
         }
 
         $_POST['verification_code'] = uniqid();
-        if( $this->model('Auth_model')->register($_POST) > 0 ) {
+        if( $this->model('Auth_model')->register($_POST) > 0) {
             $mailer = Helper::setUpMailConfiguration();
             $mailer->setFrom('sirvice@gmail.com', 'Sirvice Corps');
             $mailer->addAddress($_POST['email'], $_POST['name']);
@@ -47,12 +53,14 @@ class Auth extends Controller {
             exit;
         } else {
             // Flash register failed
-            header('Location: ' . BASEURL . '/auth/register');
+            Flasher::setFlash('Register failed : ', 'email or phone number is duplicate', 'danger');
+            $data['title'] = 'Register - Sirvice';
+            $this->view('auth/register', $data);
             exit;
         }
     }
         $data['title'] = 'Register - Sirvice';
-        $this->view('auth/register');
+        $this->view('auth/register', $data);
     }
 
     public function verify($verificationCode)
@@ -86,9 +94,9 @@ class Auth extends Controller {
                 header('Location: ' . BASEURL . '/dashboard');
                 exit;
             }
-            header('Location: ' . BASEURL . '/auth/login');
-            exit;
+            Flasher::setFlash('Login failed : ', 'email or password is incorrect', 'danger');
         }
+
         $this->view('auth/login', $data);
         $this->view('templates/auth/carousel');
     }

@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-loader.css">
 
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-credentials-form.css">
-
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -80,33 +81,33 @@
                     <h1 class="register-form-title">Register</h1>
                     <p class="register-form-description">Fill all the fields below to make your new account!</p>
                 </div>
-
+                <?php Flasher::flash(); ?>
                 <form action="<?= BASEURL; ?>/auth/register" onsubmit="return checkPasswords()" method="POST">
                     <div class="field">
                         <label for="name">Name</label>
-                        <input type="name" id="name" name="name" placeholder="John Doe" required>
+                        <input type="name" id="name" name="name" placeholder="John Doe" value="<?php echo isset($_POST['name']) ? $_POST['name'] : ''; ?>">
                     </div>
                     <div class="field">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="hello@gmail.com" required>
+                        <input type="email" id="email" name="email" placeholder="hello@gmail.com" required value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
                     </div>
 
 
                     <div class="field password-container">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="*******" required>
+                        <input type="password" id="password" name="password" placeholder="*******" required value="<?php echo isset($_POST['password']) ? $_POST['password'] : ''; ?>">
                         <span toggle="#password" class="eye-icon"></span>
                     </div>
 
                     <div class="field password-container">
                         <label for="password">Re-Password</label>
-                        <input type="password" id="password" name="repassword" placeholder="*******" required>
+                        <input type="password" id="password" name="repassword" placeholder="*******" required value="<?php echo isset($_POST['repassword']) ? $_POST['repassword'] : ''; ?>">
                         <span toggle="#password" class="eye-icon"></span>
                     </div>
                     
                     <div class="field">
                         <label for="phone_number">Phone Number</label>
-                        <input type="phone_number" id="phone_number" name="phone_number" placeholder="819xxxxxxxxx" required>
+                        <input type="phone_number" id="phone_number" name="phone_number" placeholder="819xxxxxxxxx" required value="<?php echo isset($_POST['phone_number']) ? $_POST['phone_number'] : ''; ?>">
                         <span toggle="#phone_number" class="flag-icon"></span>
                     </div>
                     <input type="hidden" id="register" name="register" value="register">
@@ -342,5 +343,6 @@
     <script src="<?= BASEURL; ?>/js/script-loader.js"></script>
     <script src="<?= BASEURL; ?>/js/script-credentials.js"></script>
     <script src="<?= BASEURL; ?>/js/auth/password-check.js"></script>
+    <script src="<?= BASEURL; ?>/js/script-alert.js"></script>
 </body>
 </html>

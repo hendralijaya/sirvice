@@ -13,6 +13,7 @@
                             <div class="tab" data-tab="3">Address List</div>
                         </div>
                     </div>
+                    <?php Flasher::flash() ?>
                     <div id="tab-content">
                         <div class="tab-data tab-data-desc" data-tab="1">
                             <div class="overall-edit-profile">
@@ -64,7 +65,7 @@
                                     <p>Delete user account</p>
                                 </div>
                                 <p>By deleting your account, you will lose all your data and access. You can’t recover this account </p>
-                                <a class="delete-account" href="#">Delete My Account</a>
+                                <a class="delete-account" href="<?= BASEURL ?>/dashboard/delete_profile">Delete My Account</a>
                             </div>
                         </div>
 
@@ -116,41 +117,6 @@
 
                                 <a class="add-address" href="#">+ Add New Address</a>
                             </div>
-
-                            <!-- Alert -->
-                            <div class="alert alert-success">
-                                <div class="messages">
-                                    <p>
-                                        <span>"Pradita University"</span> address has been deleted!
-                                    </p>
-                                </div>
-                                <div class="alert-close">
-                                    <i class="material-icons-round">close</i>
-                                </div>
-                            </div>
-
-                            <div class="alert alert-warning">
-                                <div class="messages">
-                                    <p>
-                                        <span>"Pradita University"</span> address has been deleted!
-                                    </p>
-                                </div>
-                                <div class="alert-close">
-                                    <i class="material-icons-round">close</i>
-                                </div>
-                            </div>
-
-                            <div class="alert alert-danger">
-                                <div class="messages">
-                                    <p>
-                                        <span>"Pradita University"</span> address has been deleted!
-                                    </p>
-                                </div>
-                                <div class="alert-close">
-                                    <i class="material-icons-round">close</i>
-                                </div>
-                            </div>
-                            <!-- Alert Done -->
 
                             <div class="address-cards" id="address-suggestion">
                                 <?php foreach ($data['addresses'] as $address) : ?>
