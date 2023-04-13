@@ -104,6 +104,18 @@ class Dashboard extends Controller {
         $this->view('templates/dashboard/footer');
     }
 
+    public function detailOrder(){ 
+        $data['title'] = 'Detail Order - Sirvice';
+        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+        // $data['orders'] = $this->model('Orders_model')->getOrderById($_POST['order_id']);
+        // $data['services'] = $this->model('Services_model')->getServices();
+        // $data['technicians'] = $this->model('Technicians_model')->getTechnician();
+        $this->view('templates/dashboard/header-sidebar', $data);
+        $this->view('dashboard/order/detail', $data);
+        $this->view('templates/dashboard/footer');
+
+    }
+
     public function profile()
     {
         $data['title'] = 'Profile - Sirvice';
