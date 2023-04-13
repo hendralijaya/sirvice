@@ -78,7 +78,7 @@
                     <p class="login-form-description">Make your new password now! we suggest you to use at least one capital letter and one number to make you password stronger!</p>
                 </div>
 
-                <form action="<?= BASEURL; ?>/auth/login" method="post">
+                <form action="<?= BASEURL; ?>/auth/changepassword" method="post">
                     <div class="field password-container">
                         <label for="password">Password</label>
                         <input type="password" id="password" name="password" placeholder="*******" required>
@@ -90,8 +90,7 @@
                         <input type="password" id="password" name="repassword" placeholder="*******" required>
                         <span toggle="#password" class="eye-icon"></span>
                     </div>
-
-                    <input type="hidden" id="login" name="login" value="login">
+                    <input type="hidden" id="change_password" name="change_password" value="change_password">
                     <button type="submit" class="primary-button submit-form" value="login">Change Password</button>
                 </form>
             </div>

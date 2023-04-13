@@ -1,15 +1,20 @@
 <?php 
 require '../vendor/autoload.php';
 class Helper {
-    public static function setUpMailConfiguration()
+    public static function setUpMailConfiguration($email, $name, $subject, $body)
     {
       $phpmailer = new PHPMailer\PHPMailer\PHPMailer();
       $phpmailer->isSMTP();
       $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
       $phpmailer->SMTPAuth = true;
       $phpmailer->Port = 2525;
-      $phpmailer->Username = '8744f8defe263c';
-      $phpmailer->Password = 'bcded7ff644db1';
+      $phpmailer->Username = 'f514ea0d6d5a5a';
+      $phpmailer->Password = '7b391a8928484b';
+      $phpmailer->setFrom('sirvice@gmail.com', 'Sirvice Corps');
+      $phpmailer->addAddress($email, $name);
+      $phpmailer->Subject = $subject;
+      $phpmailer->isHTML(true);
+      $phpmailer->Body = $body;
       return $phpmailer;
     }
 
@@ -17,7 +22,6 @@ class Helper {
       // Check if file was uploaded without errors
       if(isset($file)) {
           // Get file details
-          var_dump($file);
           $fileName = basename($file['name']);
           $fileTmpName = $file['tmp_name'];
           $fileSize = $file['size'];

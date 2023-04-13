@@ -78,14 +78,14 @@
                     <p class="login-form-description">Don’t worry! we will recover your password, give us your email to proceed of resetting your password!</p>
                 </div>
 
-                <form action="<?= BASEURL; ?>/auth/login" method="post">
+                <form action="<?= BASEURL; ?>/auth/forgotpassword" method="post">
                     <div class="field">
                         <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Example: hello@gmail.com" required>
                     </div>
 
-                    <input type="hidden" id="login" name="login" value="login">
-                    <button type="submit" class="primary-button submit-form" value="login">Reset Password</button>
+                    <input type="hidden" id="forgot_password" name="forgot_password" value="forgot_password">
+                    <button type="submit" class="primary-button submit-form" value="forgot_password">Reset Password</button>
                 </form>
 
                 <p class="go-to-register-page">

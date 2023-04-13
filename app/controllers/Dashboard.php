@@ -64,7 +64,8 @@ class Dashboard extends Controller {
             }
         } else {
             // do something else if $my_var is not an integer
-            header('Location: ' . BASEURL . '/notfound/index');
+            Flasher::setFlash('Order ', 'not found', 'danger');
+            header('Location: ' . BASEURL . '/dashboard/order');
         }
         
     }

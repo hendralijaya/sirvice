@@ -11,6 +11,13 @@ class Auth_model {
         $this->db = new Database;
     }
 
+    public function getUserByEmail($email)
+    {
+        $this->db->query("SELECT * FROM $this->table WHERE email = :email");
+        $this->db->bind('email', $email);
+        return $this->db->single();
+    }
+
     public function register($data)
   {
     try {
@@ -65,5 +72,15 @@ class Auth_model {
     } else {
       return false;
     }
+  }
+
+  public function changePassword($userId, $password)
+  {
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $this->db->query("UPDATE $this->table SET password = :password WHERE id = :id");
+    $this->db->bind('id', $userId);
+    $this->db->bind('password', $password);
+    $this->db->execute();
+    return $this->db->rowCount();
   }
 }

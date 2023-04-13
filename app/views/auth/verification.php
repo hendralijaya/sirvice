@@ -76,7 +76,7 @@
                 <div class="login-form-instructions">
                     <h1 class="login-form-title">Verification</h1>
                     <p class="login-form-description">
-                        We have sent you the verification to <span style="font-weight: 500;">hello@gmail.com</span> by email, please click the link in the email that we just sent to you
+                        We have sent you the verification to <span style="font-weight: 500;"><?= $data['email'] ?></span> by email, please click the link in the email that we just sent to you
                         <br><br>
                         Also you can leave this page if you’re done 
                     </p>
