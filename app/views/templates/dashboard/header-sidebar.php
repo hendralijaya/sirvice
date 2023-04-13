@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-sidebar.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-dashboard.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-add-order.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-detail-order.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-detail-tips.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-notification.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-address-page.css">
