@@ -26,7 +26,7 @@
                     </div>
 
                     <div id="step-content">
-                    <form action="<?= BASEURL ?>/dashboard/neworder" method="post" enctype="multipart/form-data">
+                        <form action="<?= BASEURL ?>/dashboard/neworder" method="post" enctype="multipart/form-data">
                             <div class="step-data step-data-desc" data-step="1">
                                 <div class="input-form">
                                     <div class="field">

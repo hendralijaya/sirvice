@@ -78,7 +78,7 @@
                     <p class="login-form-description">
                         We have sent you the verification to <span style="font-weight: 500;"><?= $data['email'] ?></span> by email, please click the link in the email that we just sent to you
                         <br><br>
-                        Also you can leave this page if you’re done 
+                        Also you can leave this page if you're done 
                     </p>
                 </div>
 
@@ -86,7 +86,7 @@
                     <div class="image">
                         <img src="<?= BASEURL; ?>/image/email-sent.png" alt="">
                     </div>
-                    <button type="submit" class="primary-button submit-form" value="login">Go to Email</button>
+                    <a href="https://gmail.com/" class="primary-button submit-form" value="login">Go to Email</a>
                 </form>
             </div>
         </div>
