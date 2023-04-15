@@ -1,0 +1,244 @@
+#about-us > .container > .about-us > .about-us-details > .about-us-detail > p.servs {
+    display: flex;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+    color: var(--primary-color);
+}
+#about-us > .container > .about-us > .about-us-details > .about-us-detail > h1.about-us-title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+#about-us > .container > .about-us > .about-us-details > .about-us-detail > p.about-us-description {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+}
+#about-us > .container > .about-us > .about-us-details > .about-us-detail > .about-us-image {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
+}
+#vision > .vision-description > .vision-tittle > h2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+#vision > .vision-description > .vision-tittle > p.vision-subtitle {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+}
+#vision > .vision-description > .vision-tittle > .vision-image {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#vision > .vision-description >.vision-tittle > p.description {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+#mission > .mission-description > .mission-tittle > h2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+#mission > .mission-description > .mission-tittle > p {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+    margin: 50px;
+}
+#mission > .mission-description > .our-mission > .mission1 > .mission1-description >.description {
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px;
+}
+#mission > .mission-description > .our-mission > .mission1 > .mission1-description >.description > h4 {
+    display:flex;
+    font-size: 18px;
+    font-weight: 600;
+}
+#mission > .mission-description > .our-mission > .mission1 > .mission1-description {
+    display: flex;
+}
+
+#mission > .mission-description > .our-mission > .mission1 > .mission1-description > .description > p {
+    display:flex;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 400;
+}
+#mission > .mission-description > .our-mission > .mission1 {
+   display: flex;
+   justify-content: center;
+   padding: 150px;
+}
+#mission > .mission-description > .our-mission > .mission1 > .mission1-description > .number {
+    width: 40px;
+    height: 40px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: 10px;
+  }
+  
+#mission > .mission-description > .our-mission > .mission1 > .mission1-description > .number > p {
+    text-align: center;
+    color: var(--background-color);
+  }
+#mission > .mission-description > .our-mission > .mission2 {
+    display: flex;
+    justify-content: center; 
+    padding: 200px;
+ }
+
+ #mission > .mission-description > .our-mission > .mission2 > .mission2-description >.description {
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px;
+}
+
+ #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .description > h4 {
+    display:flex;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#mission > .mission-description > .our-mission > .mission2 > .mission2-description > .description > p {
+    display:flex;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 400;
+}
+#mission > .mission-description > .our-mission > .mission2 > .mission2-description > .number {
+    width: 40px;
+    height: 40px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: 10px;
+  }
+#mission > .mission-description > .our-mission > .mission2 > .mission2-description > .number > p {
+    text-align: center;
+    color: var(--background-color);
+}
+
+#mission > .mission-description > .our-mission > .mission2 > .mission2-description {
+    display: flex;
+}
+  
+#mission > .mission-description > .our-mission > .mission3 > .mission3-description >.description {
+    display: flex; 
+    flex-direction: column; 
+    gap: 20px;
+}
+
+#mission > .mission-description > .our-mission > .mission3 {
+    display: flex; 
+    justify-content: center;
+    padding: 200px;
+}
+#mission > .mission-description > .our-mission > .mission3 > .mission3-description > .description > h4 {
+    display:flex;
+    font-size: 18px;
+    font-weight: 600;
+}
+#mission > .mission-description > .our-mission > .mission3 > .mission3-description > .number {
+    width: 40px;
+    height: 40px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: 10px;
+  }
+  
+#mission > .mission-description > .our-mission > .mission3 > .mission3-description > .number > p {
+    text-align: center;
+    color: var(--background-color);
+  }
+
+#mission > .mission-description > .our-mission > .mission3 > .mission3-description {
+    display: flex;
+}
+#background > .background-description > .background-tittle > h2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+#background > .background-description > .background-tittle > p.subtitle {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#background > .background-description > .background-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#background > .background-description > p.description {
+    display: flex;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}

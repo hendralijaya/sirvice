@@ -1,15 +1,48 @@
+main > #services {
+    padding: 0 0 100px 0;
+} 
 #services > .container > .hero > .hero-details > h1.hero-title {
+    display: flex;
     font-weight: 500;
+    font-size: 36px;
+    line-height: 1.2;
+    justify-content: center;
+    text-align: center;
+}
+#services > .container > .hero > .hero-details > p.servs {
+    display: flex;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+#services > .container > .hero > .hero-details > p.hero-description {
+    display: flex;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+}
+
+#services > .container > .hero > .hero-details > .hero-image {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 30px;
 }
 /* Style the tab */
-.tab {
+#services > .service-description > .service-tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
   }
   
   /* Style the buttons inside the tab */
-  .tab button {
+  #services > .service-description > .service-tab button {
     background-color: inherit;
     float: left;
     border: none;
@@ -20,30 +53,40 @@
     font-size: 17px;
   }
   
+  #service > .service-description > .service-tittle > h2 {
+    display: flex;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.2;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #service > .service-description > .service-tittle > p {
+    display: flex;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+  }
   /* Change background color of buttons on hover */
-  .tab button:hover {
+  #service > .service-description > .service-tab button:hover {
     background-color: #ddd;
   }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
+
+    /* Create an active/current tablink class */
+  #service > .service-description > .service-tab button:active {
     background-color: #ccc;
   }
   
+
   /* Style the tab content */
-  .tabcontent {
+  #service > .service-description > .tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
   }
   
-  /* Style the close button */
-  .topright {
-    float: right;
-    cursor: pointer;
-    font-size: 28px;
-  }
-  
-  .topright:hover {color: red;}
   

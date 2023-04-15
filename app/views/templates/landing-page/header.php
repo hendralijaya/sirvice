@@ -8,14 +8,14 @@
 
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/reset.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-color.css">
-
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-loader.css">
 
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-navbar.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-footer.css">
-
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-aboutus.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-services.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/notfound.css">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">

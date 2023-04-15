@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  NOT FOUND
-</body>
-</html>
+<main>
+  <section id ="notfound">
+    <div class="notfound-image">
+      <img src="<?= BASEURL; ?>/image/NotFound.png" alt="Not Found Image">
+    </div>
+    <div class="notfound-text">
+      <h2>404 - Page Not Found</h2>
+      <p>We're sorry that you couldn’t find what you’re looking for.</p>
+      <a href="<?= BASEURL; ?>">Back to Home</a>
+    </div>
+  </section>
+</main>

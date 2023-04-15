@@ -3,9 +3,9 @@
             <div class="container">
                 <div class="hero">
                     <div class="hero-details hero-text">
+                        <p class="servs">Services</p>
                         <h1 class="hero-title">
-                            All in one Solution for air
-                            <span>Conditioner</span> 
+                            All in one Solution for Air Conditioner
                         </h1>
 
                         <p class="hero-description">

@@ -1,0 +1,34 @@
+#notfound > .notfound-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#notfound > .notfound-text {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#notfound > .notfound-text > h2 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+#notfound > .notfound-text > p {
+    font-weight: 400;
+}
+
+#notfound > .notfound-text > a {
+    font-weight: 400;
+    background-color: var(--primary-color);
+    text-align: center;
+    color: var(--button-text-primary-color);
+    padding: 15px;
+    border-radius: 6px;
+    text-decoration: none;
+}
