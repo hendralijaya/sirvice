@@ -161,6 +161,67 @@ main > #add-order > .container > .main-content > #step-content > form > .step-da
     font-weight: 400;
 }
 
+/* Table Payment Starts */
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table {
+    width: 100%;
+    padding: 10px 0 10px 0;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table th,
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table td {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table td {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table > tbody> tr.invoice-detail {
+    border-bottom: 1px solid var(--border-color);
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table th:first-child,
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table td:first-child {
+    text-align: left;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table th:last-child,
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table td:last-child {
+    text-align: right;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table > thead{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table > tbody> tr.sub-total > td {
+    padding-top: 30px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table > tfoot {
+    border-top: 1px solid var(--border-color);
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table > tfoot > tr > td {
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Table Payment Ends */
+
 main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field {
     display: flex;
     gap: 10px;
@@ -300,6 +361,13 @@ main > #add-order > .container > .main-content > #step-content > form > .step-da
         padding: 50px 0;
     }
     
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table {
+        overflow-x: scroll;
+    }
+
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .invoice-table > table  {
+        min-width: 700px;
+    }
 }
 
 @media screen and (max-width: 500px) {
