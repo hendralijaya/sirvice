@@ -44,6 +44,7 @@
     line-height: 1.5;
     justify-content: center;
     text-align: center;
+    margin-bottom: 70px;
 
 }
 #vision > .vision-description > .vision-image {
@@ -77,7 +78,8 @@
     line-height: 1.5;
     justify-content: center;
     text-align: center;
-    margin: 50px;
+    margin: 35px;
+    margin-bottom: -50px;
 }
 #mission > .mission-description > .our-mission > .mission1 > .mission1-description >.description {
     display: flex; 
@@ -246,5 +248,5 @@
     line-height: 1.5;
     justify-content: center;
     text-align: center;
-    margin-top: 50px;
+    padding: 60px;
 }
