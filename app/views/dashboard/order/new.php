@@ -215,6 +215,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="order" id="login" value="order">
                                     <div class="button-stepper-form">
                                         <button class="back" id="prevBtn3" onclick="prevStep(1)">Back</button>
                                         <button type="submit" class="submit">Submit</button>

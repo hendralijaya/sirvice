@@ -85,9 +85,9 @@
             <nav id="navbar" class="navbar">
                 <div class="main-navbar">
                     <ul>
-                        <li><a class="nav-link active" href="<?= BASEURL; ?>/landingpage/home">Home</a></li>
-                        <li><a class="nav-link" href="<?= BASEURL; ?>/landingpage/aboutus">About Us</a></li>
-                        <li><a class="nav-link" href="<?= BASEURL; ?>/landingpage/services">Services</a></li>
+                        <li><a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/public/landingpage/home') ? 'active' : null; ?>" href="<?= BASEURL; ?>/landingpage/home">Home</a></li>
+                        <li><a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/public/landingpage/aboutus') ? 'active' : null; ?>" href="<?= BASEURL; ?>/landingpage/aboutus">About Us</a></li>
+                        <li><a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/public/landingpage/services') ? 'active' : null; ?>" href="<?= BASEURL; ?>/landingpage/services">Services</a></li>
                         
                         <div class="login-and-register">
                             <li class="nav-link login-button"><a href="login.html">Log in</a></li>
