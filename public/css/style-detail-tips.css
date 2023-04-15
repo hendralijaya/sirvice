@@ -1,0 +1,151 @@
+
+main > #detail-tips > .container > .page-title{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+main > #detail-tips > .container > .page-title.order-title-with-button{
+    justify-content: space-between;
+}
+
+main > #detail-tips > .container > .page-title.order-title-with-button > h1.title-page {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #detail-tips > .container > .page-title.order-title-with-button > a.add-new-order {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+main > #detail-tips > .container > .main-content {
+    margin: 30px 30px 0 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+main > #detail-tips > .container > .main-content > .content{
+    padding: 20px 20px 10px 20px;
+}
+
+main > #detail-tips > .container > .main-content > .content > .breadcrumbs{
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px 0;
+    gap: 3px;
+    border-bottom: 1px solid var(--border-color);
+    overflow-x: auto;
+}
+
+main > #detail-tips > .container > .main-content > .content > .breadcrumbs > .breadcrumb{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+main > #detail-tips > .container > .main-content > .content > .breadcrumbs > .breadcrumb > a{
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main > #detail-tips > .container > .main-content > .content > .breadcrumbs > .breadcrumb > p.title{
+    font-weight: 500;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content {
+    padding: 20px 0;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-header > h2.tips-and-tricks-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+    line-height: 24px;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-header > time {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-body {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-body > img {
+    width: 30%;
+    object-fit: cover;
+    padding: 0 0 10px 0;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-body > .tips-and-tricks-paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 28px;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .button-to-back {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .button-to-back > a {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.2s all ease-in-out;
+}
+
+main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .button-to-back > a:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    transition: 0.2s all ease-in-out;
+}
+
+@media screen and (max-width: 960px) {
+    main > #detail-tips > .container > .main-content > .content > .breadcrumbs {
+        display: none;
+    }
+
+    main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content {
+        padding: 0;
+    }
+
+    main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-body > img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    main > #detail-tips > .container > .main-content > .content > .tips-and-tricks-whole-content > .tips-and-tricks-body > img {
+        width: 90%;
+    }
+}

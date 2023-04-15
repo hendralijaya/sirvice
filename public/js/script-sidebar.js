@@ -59,7 +59,7 @@ document.addEventListener('click', (event) => {
 });
 
 // for the notification dropdown
-let paragraphs = document.querySelectorAll(".notification-detail-message p");
+let paragraphs = document.querySelectorAll(".notification-detail-message.simplified p");
 paragraphs.forEach(paragraph => {
   let text = paragraph.textContent.trim();
   

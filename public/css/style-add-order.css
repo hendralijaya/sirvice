@@ -1,0 +1,326 @@
+main > #add-order > .container > .page-title{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+main > #add-order > .container > .page-title.order-title-with-button{
+    justify-content: space-between;
+}
+
+main > #add-order > .container > .page-title.order-title-with-button > h1.title-page {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #add-order > .container > .page-title.order-title-with-button > a.add-new-order {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+main > #add-order > .container > .main-content {
+    margin: 30px 30px 0 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+main > #add-order > .container > .main-content > .content{
+    padding: 20px 20px 20px 20px;
+    overflow-x: scroll;
+}
+
+main > #add-order > .container > .main-content > .content::-webkit-scrollbar {
+    display: none;
+}
+
+main > #add-order > .container > .main-content > .content > #steps {
+    font-size: var(--nav-text);
+    letter-spacing: var(--letterspace-nav-text);
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+}
+
+main > #add-order > .container > .main-content > .content > #steps > .step{
+    text-decoration: none;
+    color: var(--text-color);
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+    transition: all 0.3s ease-in-out;
+    font-weight: 400;
+    padding: 0 8px 8px 8px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    filter: grayscale(1);
+}
+
+main > #add-order > .container > .main-content > .content > #steps > .step > .count{
+    padding: 7px;
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main > #add-order > .container > .main-content > .content > #steps > .step.active{
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    filter: grayscale(0);
+}
+
+main > #add-order > .container > .main-content > #step-content {
+    padding: 0 20px 20px 20px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data {
+    display: none;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data:first-child {
+    display: block;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > input {
+    border-radius: 5px;
+    border: 0.5px solid var(--border-color);
+    padding: 10px 15px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > input:disabled {
+    background-color: var(--disabled-background-color);
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > small {
+    font-style: italic;
+    font-size: 14px;
+    padding: 3px 0;
+    line-height: 21px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > select{
+    border-radius: 5px;
+    border: 0.5px solid var(--border-color);
+    padding: 10px 15px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes > .checkbox {
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+    gap: 8px;
+    padding: 5px 0;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes > .checkbox > input {
+    width: 18px;
+    height: 18px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes > .checkbox > label {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field {
+    display: flex;
+    gap: 10px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field {
+    border: 3px dashed var(--primary-color);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field > i {
+    font-size: 50px;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field >  p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--border-color);
+    line-height: 24px   ;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field > label {
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 110px;
+    text-align: center;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .document-payment-proof {
+    border: 1px solid var(--primary-color);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+} 
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .document-payment-proof > .screenshot > img{
+    width: 100%;
+    height: 300px;
+    object-fit: fill;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .document-payment-proof > .message-none > p{
+    text-align: center;
+    color: var(--border-color);
+    line-height: 24px;
+}
+
+/* main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field > input[type="file"]{
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.back {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    display: inline-flex;
+    width: fit-content;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.next,
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.submit {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    display: inline-flex;
+    width: fit-content;
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 960px) {
+    main > #add-order > .container > .page-title.order-title-with-button > h1.title-page {
+        font-size: 24px;
+    }
+    
+    main > #add-order > .container > .page-title.order-title-with-button > a.add-new-order {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    main > #add-order > .container > .main-content > .content > #steps {
+        gap: 5px;
+    }
+
+    main > #add-order > .container > .main-content > .content > #steps > .step{
+        font-size: 12px;
+        padding: 0 5px 8px 5px;
+    }
+
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes > .checkbox {
+        flex-basis: 100%;
+    }
+
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field {
+        flex-direction: column;
+    }
+
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .document-payment-proof {
+        padding: 50px 0;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.next,
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.back,
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.submit {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button:nth-child(1){
+        order: 2
+    }
+
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button:nth-child(2){
+        order: 1
+    }
+}

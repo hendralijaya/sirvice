@@ -36,4 +36,14 @@ class Notifications_model {
           return;
       }
     }
+
+    public function createNotification($userId, $title, $description)
+    {
+        $this->db->query("INSERT INTO $this->table (user_id, title, description, reminder, date) VALUES (:user_id, :title, :description, 1, CURDATE())");
+        $this->db->bind('user_id', $userId);
+        $this->db->bind('title', $title);
+        $this->db->bind('description', $description);
+        $this->db->execute();
+        return;
+    }
 }

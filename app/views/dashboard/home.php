@@ -46,7 +46,7 @@
                                     <div class="date-time-location-info">
                                         <div class="date-info">
                                             <i class="material-icons-round">calendar_month</i>
-                                            <time datetime="2023-04-12"><?= $order['scheduled_day'] ?>, <?= $order['scheduled_time'] ?></time>
+                                            <time datetime="2023-04-12"><?= "{$order['scheduled_day']}, {$order['scheduled_date']}" ?></time>
                                         </div>
                                         <div class="time">
                                             <i class="material-icons-round">access_time</i>
@@ -60,49 +60,6 @@
                                     </div>
                                 </a>
                             <?php endforeach; ?>
-                            <!-- <a class="upcoming-order-card" href="#">
-                                    <div class="service-technician-status-info">
-                                        <div class="status-progress-info">
-                                            <p class="status scheduled">Scheduled</p>
-                                        </div>
-                                        <div class="service-technician-info">
-                                            <div class="general-info">
-                                                <p class="service-id-full">Service ID. <span>8195</span></p>
-                                                <p class="technician-name">Aldy Kusuma</p>
-                                            </div>
-                                            <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
-                                        </div>
-                                        <div class="service-types">
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Cleaning AC</p>
-                                            </div>
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Service AC</p>
-                                            </div>
-                                            <div class="service-type">
-                                                <i class="material-icons-round">home_repair_service</i>
-                                                <p class="service-type-name">Repair AC</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="date-time-location-info">
-                                        <div class="date-info">
-                                            <i class="material-icons-round">calendar_month</i>
-                                            <time datetime="2023-04-12">Wednesday, 12 April 2023</time>
-                                        </div>
-                                        <div class="time">
-                                            <i class="material-icons-round">access_time</i>
-                                            <time datetime="14:00">14:00 WIB</time>
-                                        </div>
-                                        <div class="location">
-                                            <i class="material-icons-round">location_on</i>
-                                            <address>Jl. Kebon Jeruk Raya No. 1, RT. 1/RW. 1, Kebon Jeruk, Kec. Kby. Baru, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11530</address>
-                                        </div>
-                                    </div>
-                                </a> -->
                         </div>
 
                     </div>
@@ -139,8 +96,8 @@
                                     <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
                                 </div>
                                 <div class="tips-and-tricks-content">
-                                    <h6 class="title">"The importance of keeping your air filter clean”</h6>
-                                    <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
+                                    <h6 class="title">"<?= $data['tips']['title'] ?>”</h6>
+                                    <p class="description"><?= $data['tips']['description'] ?></p>
                                     <div class="go-to-detail-content">
                                         <a class="read-more" href="#">Read More</a>
                                     </div>

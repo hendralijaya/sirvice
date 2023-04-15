@@ -14,6 +14,11 @@
 
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-sidebar.css">
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-dashboard.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-add-order.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-detail-order.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-detail-tips.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-notification.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-address-page.css">
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -104,7 +109,7 @@
                         <div class="notification-dropdown-content">
                             <div class="notification-title-and-link">
                                 <h4>Notification</h4>
-                                <a href="#">View All</a>
+                                <a href="<?= BASEURL; ?>/dashboard/notification">View All</a>
                             </div>
 
                             <div class="notification-all-messages">
@@ -112,7 +117,7 @@
                                     <div class="icon-notification-mark">
                                         <i class="material-icons-round info">info</i>
                                     </div>
-                                    <div class="notification-detail-message">
+                                    <div class="notification-detail-message simplified">
                                         <h5>You have Incoming Order Today</h5>
                                         <p>Just a friendly reminder that you have an order scheduled for today! Our team is working hard to ensure that your
                                             order is processed and delivered on time. You can check the progress of your order at any time on our website, and
@@ -125,7 +130,7 @@
                                     <div class="icon-notification-mark">
                                         <i class="material-icons-round check">check_circle</i>
                                     </div>
-                                    <div class="notification-detail-message">
+                                    <div class="notification-detail-message simplified">
                                         <h5>Order Successful!</h5>
                                         <p>Congratulations, your order has been successfully processed! You can now check the progress of your order, and we
                                             look forward to providing you with the best possible experience.</p>
@@ -140,7 +145,7 @@
 
                     <div class="profile-sneakpeek">
                         <button class="profile-dropdown">
-                            <img src="<?= BASEURL; ?>/image/profile-example.png" alt="Profile Picture">
+                            <img src="<?= PROFILE_IMAGE ?><?= $data['user']['profile_picture'] ?>" alt="User Profile Picture">
                             <p class="fullname"><?= $data['user']['name'] ?></p>
                             <i class="material-icons-round">arrow_drop_down</i>
                             <!-- <i class="material-icons-round">arrow_drop_up</i> -->
@@ -148,7 +153,7 @@
 
                         <div class="profile-dropdown-content">
                             <div class="profile-general-info">
-                                <img src="<?= BASEURL; ?>/image/profile-example.png" alt="Profile Picture">
+                                <img src="<?= PROFILE_IMAGE ?><?= $data['user']['profile_picture'] ?>" alt="User Profile Picture">
                                 <div class="profile-info">
                                     <h6 class="fullname"><?= $data['user']['name'] ?></h6>
                                     <p class="email-address"><?= $data['user']['email'] ?></p>

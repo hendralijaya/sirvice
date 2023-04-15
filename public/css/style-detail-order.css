@@ -1,0 +1,292 @@
+
+main > #detail-order > .container > .page-title{
+    padding: 30px 30px 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+main > #detail-order > .container > .page-title.order-title-with-button{
+    justify-content: space-between;
+}
+
+main > #detail-order > .container > .page-title.order-title-with-button > h1.title-page {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #detail-order > .container > .page-title.order-title-with-button > a.add-new-order {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+main > #detail-order > .container > .main-content {
+    margin: 30px 30px 0 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+main > #detail-order > .container > .main-content > .content{
+    padding: 20px 20px 10px 20px;
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .breadcrumbs{
+    display: flex;
+    align-items: center;
+    padding: 0 0 10px 0;
+    gap: 3px;
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .breadcrumbs > .breadcrumb{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .breadcrumbs > .breadcrumb > a{
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .breadcrumbs > .breadcrumb > p.title{
+    font-weight: 500;
+}
+
+/* Status Starts */
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info {
+    padding: 5px 0;
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info > .status > p {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info > .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info > .status.in-progress {
+    background-color: var(--warning-background-color);
+    border: 1px solid var(--warning-border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info > .status.scheduled {
+    background-color: var(--scheduled-background-color);
+    border: 1px solid var(--scheduled-border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info > .status.done {
+    background-color: var(--success-background-color);
+    border: 1px solid var(--success-border-color);
+    color: var(--success-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info > .status > i {
+    font-size: 16px;
+}
+
+main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info > .status.in-progress > i {
+    color: var(--warning-border-color);
+}
+
+
+/* Status Ends */
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order{
+    padding: 10px 0;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile{
+    display: flex;
+    gap: 30px;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-identity{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-identity > h2.title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-identity > .name-and-phone-number {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-identity > .name-and-phone-number > p {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-identity > .name-and-phone-number > p.name {
+    font-weight: 500;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-identity > .name-and-phone-number > p.phone-number {
+    font-weight: 400;
+    padding: 3px 8px;
+    border-left: 2px solid var(--border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-address {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+} 
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-address > p.title-address {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-address > p.address {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 24px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .client-identity-and-address > .client-address > small.note-address {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 400;
+    font-style: italic;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%
+} 
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > h2.title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-image {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-image > img {
+    width: 80px;
+    height: 80px;
+    aspect-ratio: 1/1;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-name-and-phone-number {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-name-and-phone-number > p.technician-name {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .scheduled-date-and-time {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .scheduled-date-and-time > p.title,
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand > .problem-details > p.title,
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand > .ac-brand > p.title{
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand {
+    display: flex;
+    gap: 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand > .problem-details,
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand > .ac-brand {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .history-date-order {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 0 0 0;
+    border-top: 1px solid var(--border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .history-date-order > p {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 400;
+}
