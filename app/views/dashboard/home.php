@@ -23,7 +23,7 @@
                                 <a class="upcoming-order-card" href="#">
                                     <div class="service-technician-status-info">
                                         <div class="status-progress-info">
-                                            <p class="status in-progress"><?= $order['status'] ?></p>
+                                            <p class="status status-order"><?= $order['status'] ?></p>
                                         </div>
                                         <div class="service-technician-info">
                                             <div class="general-info">

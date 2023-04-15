@@ -335,6 +335,30 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
     font-weight: 600;
 }
 
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .button-to-complete-order {
+    padding: 10px 0;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .button-to-complete-order > form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .button-to-complete-order > form > button.submit-form {
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    background: var(--primary-color);
+    color: var(--button-text-primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+}
+
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .history-date-order {
     display: flex;
     justify-content: flex-end;

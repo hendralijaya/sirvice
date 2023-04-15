@@ -36,14 +36,14 @@
                                             <p class="phone-number">(+62)81905197673</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="client-address">
                                         <p class="title-address">Pradita University</p>
                                         <p class="address">Jl. Gading Serpong Boulevard No. 1, Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810</p>
                                         <small class="note-address">“Di gedung 1 , yang deket lapangan basket”</small>
                                     </div>
                                 </div>
-                                
+
                                 <div class="technician-identity">
                                     <h2 class="title">Technician Identity</h2>
                                     <div class="technician-profile">
@@ -121,9 +121,11 @@
                             </div>
 
                             <div class="button-to-complete-order">
-                                
+                                <form action="" method="post">
+                                    <button type="button" id="myBtn" class="primary-button submit-form">Complete Order</button>
+                                </form>
                             </div>
-                            
+
                             <div class="history-date-order">
                                 <p>Ordered on <time datetime="2023-04-10"> Monday, 10 April 2023</time></p>
                             </div>
@@ -138,3 +140,29 @@
 
         <!-- Main End -->
 
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <i class="material-icons-round close">close</i>
+                <div class="modal-main-content">
+                    <div class="icon-modal">
+                        <i class="material-icons-round">info</i>
+                    </div>
+                    <div class="modal-text-content">
+                        <div class="modal-title">
+                            <h2 class="title">Complete Order?</h2>
+                        </div>
+                        <div class="modal-description">
+                            <p>Please make sure that the order is done by our technician.</p>
+                        </div>
+                    </div>
+                    <div class="modal-button">
+                        <div class="secondary-button">
+                            <button type="button" class="secondary-button">Wait a second...</button>
+                        </div>
+                        <div class="main-button">
+                            <button type="submit" class="primary-button">Yes, They've done it</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
