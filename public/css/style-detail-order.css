@@ -69,7 +69,7 @@ main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-
 /* Status Starts */
 
 main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info {
-    padding: 5px 0;
+    padding: 0px 0 10px 0;
 }
 
 main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .status-progress-info > .status > p {
@@ -216,7 +216,7 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-image {
     border-radius: 50%;
-    overflow: hidden;
+    border: 2px solid var(--border-color);
 }
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-image > img {
@@ -247,7 +247,8 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    padding: 10px 0 0 0;
 }
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .scheduled-date-and-time {
@@ -277,6 +278,63 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
     gap: 10px;
 }
 
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table {
+    width: 100%;
+    padding: 30px 0 10px 0;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table th,
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table td {
+    padding: 15px 20px;
+    text-align: center;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table td {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > tbody> tr.invoice-detail {
+    border-bottom: 1px solid var(--border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table th:first-child,
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table td:first-child {
+    text-align: left;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table th:last-child,
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table td:last-child {
+    text-align: right;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > thead{
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > tbody> tr.sub-total > td {
+    padding-top: 30px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > tfoot {
+    border-top: 1px solid var(--border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > tfoot > tr > td {
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .history-date-order {
     display: flex;
     justify-content: flex-end;
@@ -289,4 +347,42 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
     font-size: 14px;
     color: var(--text-color);
     font-weight: 400;
+}
+
+@media screen and (max-width: 960px) {
+    main > #detail-order > .container > .main-content > .content > .breadcrumbs-and-order-status > .breadcrumbs > .breadcrumb{
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    } 
+
+    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 10px 0 20px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity {
+        width: 100%;
+    }
+
+    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand {        
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand > .problem-details, 
+    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand > .ac-brand {
+        width: 100%;
+    }
+
+    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table {
+        overflow-x: scroll;
+    }
+
+    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table {
+        min-width: 700px;
+    }
 }

@@ -80,7 +80,42 @@
 
                                 <div class="invoice-table">
                                     <table>
-
+                                        <thead>
+                                            <tr>
+                                                <th>Service Selection</th>
+                                                <th>Quantity</th>
+                                                <th>Price per AC</th>
+                                                <th>Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="invoice-detail">
+                                                <td>Cleaning Air Conditoner</td>
+                                                <td>3</td>
+                                                <td>Rp. 75.000,-</td>
+                                                <td>Rp. 225.000,-</td>
+                                            </tr>
+                                            <tr class="sub-total">
+                                                <td>Sub Total</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Rp. 200.000,-</td>
+                                            </tr>
+                                            <tr class="tax">
+                                                <td>Service Tax (2%)</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Rp 4.500,-</td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr class="final-total">
+                                                <td>Total</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Rp. 600.000,-</td>
+                                            </tr>
+                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
