@@ -69,11 +69,14 @@
                 <div class= "vision-tittle">
                     <h2>Vision</h2>
                     <p class ="vision-subtitle">What is our vision?</p>
-                    <div class="vision-image">
-                        <img src="<?= BASEURL; ?>/image/vision.png" alt="Vision Image">
-                    </div>
+                </div>
+                <div class="vision-image">
+                    <img src="<?= BASEURL; ?>/image/vision.png" alt="Vision Image">
+                </div>
+                <div class="description">
                     <p class = "description">Our vision is to deliver innovative and high-quality air conditioner solutions that improve comfort and well-being for homeowners. We strive to be the trusted partner for efficient, reliable, and affordable air conditioner solutions and to provide exceptional customer service.</p>
                 </div>
+                
             </div>
         </section>
 
