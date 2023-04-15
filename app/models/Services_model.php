@@ -9,7 +9,7 @@ class Services_model {
         $this->db = new Database;
     }
 
-    public function getAllNameServices()
+    public function getAllServices()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();

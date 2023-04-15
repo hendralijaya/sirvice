@@ -63,7 +63,6 @@ class Dashboard extends Controller {
                 $this->view('templates/dashboard/footer');
             }
         } else {
-            // do something else if $my_var is not an integer
             Flasher::setFlash('Order ', 'not found', 'danger');
             header('Location: ' . BASEURL . '/dashboard/order');
         }
@@ -74,6 +73,8 @@ class Dashboard extends Controller {
     {
         // Get user data
         if(isset($_POST['order'])) {
+            var_dump($_POST);
+            exit;
             if ($this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST) > 0) {
                 Flasher::setFlash('Order has been ', 'created', 'success');
                 header('Location: ' . BASEURL . '/dashboard/order');
@@ -95,6 +96,7 @@ class Dashboard extends Controller {
         }
         $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
         $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
+        $data['services'] = $this->model('Services_model')->getAllServices();
         $data['title'] = 'New Order - Sirvice';
         $data['date'] = date('Y-m-d');
         // $data['services'] = $this->model('Services_model')->getServices();
