@@ -7,32 +7,27 @@
 
                 <div class="main-content">
                     <div class="content">
-                        <div id="tabs">
-                            <div class="tab" data-tab="1">
+                        <div id="steps">
+                            <div class="step active" data-step="1">
                                 <div class="count">1</div>
                                 Personal Information
                                 <i class="material-icons-round">arrow_right</i>
                             </div>
-                            <div class="tab" data-tab="2">
+                            <div class="step" data-step="2">
                                 <div class="count">2</div>
                                 Service
                                 <i class="material-icons-round">arrow_right</i>
                             </div>
-                            <div class="tab" data-tab="3">
+                            <div class="step" data-step="3">
                                 <div class="count">3</div>
                                 Payment
-                                <i class="material-icons-round">arrow_right</i>
-                            </div>
-                            <div class="tab" data-tab="4">
-                                <div class="count">4</div>
-                                Done
                             </div>
                         </div>
                     </div>
 
-                    <div id="tab-content">
+                    <div id="step-content">
                         <form action="" method="post">
-                            <div class="tab-data tab-data-desc" data-tab="1">
+                            <div class="step-data step-data-desc" data-step="1">
                                 <div class="input-form">
                                     <div class="field">
                                         <label for="name">Name</label>
@@ -61,12 +56,12 @@
                                     </div>
 
                                     <div class="button-stepper-form">
-                                        <button class="next">Next</button>
+                                        <button class="next" id="nextBtn1" onclick="nextStep(1)">Next</button>
                                     </div>
                                 </div>
                             </div>
     
-                            <div class="tab-data tab-data-desc" data-tab="2">
+                            <div class="step-data step-data-desc" data-step="2">
                                 <div class="input-form">
                                     <div class="field">
                                         <label for="name">AC Problem Details</label>
@@ -75,7 +70,7 @@
                                     </div>
 
                                     <div class="field">
-                                        <label for="address">Address</label>
+                                        <label for="address">Services</label>
                                         <small>Which services do you want to order from us?</small>
                                         <div class="checkboxes">
                                             <div class="checkbox">
@@ -128,52 +123,52 @@
                                         <small>What kind of brand is your AC?</small>
                                         <div class="checkboxes">
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                                <input type="radio" id="vehicle1" name="vehicle" value="Bike">
                                                 <label for="vehicle1">Service 1</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                                                <input type="radio" id="vehicle2" name="vehicle" value="Car">
                                                 <label for="vehicle2">Service 2</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                                                <input type="radio" id="vehicle3" name="vehicle" value="Boat">
                                                 <label for="vehicle3">Service 3</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Service 1</label><br>
+                                                <input type="radio" id="vehicle4" name="vehicle" value="Bike">
+                                                <label for="vehicle4">Service 1</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                                <label for="vehicle2">Service 2</label><br>
+                                                <input type="radio" id="vehicle5" name="vehicle" value="Car">
+                                                <label for="vehicle5">Service 2</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                                <label for="vehicle3">Service 3</label><br>
+                                                <input type="radio" id="vehicle6" name="vehicle" value="Boat">
+                                                <label for="vehicle6">Service 3</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Service 1</label><br>
+                                                <input type="radio" id="vehicle7" name="vehicle" value="Bike">
+                                                <label for="vehicle7">Service 1</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                                <label for="vehicle2">Service 2</label><br>
+                                                <input type="radio" id="vehicle8" name="vehicle" value="Car">
+                                                <label for="vehicle8">Service 2</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                                <label for="vehicle3">Service 3</label><br>
+                                                <input type="radio" id="vehicle9" name="vehicle" value="Boat">
+                                                <label for="vehicle9">Service 3</label><br>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="button-stepper-form">
-                                        <button class="back">Back</button>
-                                        <button class="next">Next</button>
+                                        <button class="back" id="prevBtn2" onclick="prevStep(0)">Back</button>
+                                        <button class="next" id="nextBtn2" onclick="nextStep(2)">Next</button>
                                     </div>
                                 </div>
                             </div>
     
-                            <div class="tab-data tab-data-desc" data-tab="3">
+                            <div class="step-data step-data-desc" data-step="3">
                                 <div class="input-form">
                                     <div class="field">
                                         <label for="name">Payment Proof</label>
@@ -197,9 +192,9 @@
                                             <input type="file" id="payment-file" name="payment-file" hidden required>
                                         </div>
                                         <div class="document-payment-proof">
-                                            <div class="screenshot" hidden>
+                                            <div class="screenshot" id="screenshot-payment">
                                                 <!-- This will be the one where the file of payment shown -->
-                                                <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="">
+                                                <img src="#" alt="">
                                             </div>
                                             <div class="message-none">
                                                 <p>
@@ -210,10 +205,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
 
                                     <div class="button-stepper-form">
-                                        <button class="back">Back</button>
+                                        <button class="back" id="prevBtn3" onclick="prevStep(1)">Back</button>
                                         <button type="submit" class="submit">Submit</button>
                                     </div>
                                 </div>
@@ -227,4 +221,4 @@
         <!-- Section End-->
         </main>
 
-        <!-- Main End -->
+        <!-- Main End -->  
