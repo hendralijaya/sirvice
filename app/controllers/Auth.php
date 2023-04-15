@@ -45,7 +45,7 @@ class Auth extends Controller {
             } else {
                 // FLASH BERHASIL
                 // echo 'Message has been sent';
-                Flasher::flash('Message has been sent', 'register', 'success');
+                header('Location: ' . BASEURL . '/auth/verification');
             }
             header('Location: ' . BASEURL . '/auth/login');
             exit;
@@ -64,10 +64,13 @@ class Auth extends Controller {
     public function verify($verificationCode)
     {
         if( $this->model('Auth_model')->verify($verificationCode) > 0 ) {
+            // Flash verification success
+            Flasher::setFlash('Verification success : ', 'you can login now', 'success');
             header('Location: ' . BASEURL . '/auth/login');
             exit;
         } else {
             // Flash verification failed
+            Flasher::setFlash('You are not ', 'allowed', 'danger');
             header('Location: ' . BASEURL . '/auth/register');
             exit;
         }
@@ -211,10 +214,17 @@ class Auth extends Controller {
     }
 
     public function passwordrecovery() {
-        $data['title'] = 'Password Recovery - Sirvice';
-        $data['email'] = $_SESSION['email'];
-        $this->view('auth/password-recovery', $data);
-        $this->view('templates/auth/carousel');
+        if (isset($_SESSION['email'])) {
+            $data['title'] = 'Password Recovery - Sirvice';
+            $data['email'] = $_SESSION['email'];
+            $this->view('auth/password-recovery', $data);
+            $this->view('templates/auth/carousel');
+        } else {
+            Flasher::flash('You are not ', 'allowed', 'danger');
+            header('Location: ' . BASEURL . '/auth/login');
+            exit;
+        }
+        
     }
 
     public function changepassword($token = '') {
@@ -250,42 +260,14 @@ class Auth extends Controller {
             $this->view('templates/auth/carousel');
             exit;
         } if($token == '') {
+            Flasher::flash('You are not ', 'allowed', 'danger');
             header('Location: ' . BASEURL . '/auth/login');
             exit;
         } else {
+            Flasher::flash('You are not ', 'allowed', 'danger');
             header('Location: ' . BASEURL . '/auth/login');
             exit;
         }
-        // if ($token == '') {
-        //     header('Location: ' . BASEURL . '/auth/login');
-        //     exit;
-        // } else {
-        //     $user = $this->getResetPasswordUser($token);
-        //     if ($user) {
-        //         if (isset($_POST['change_password'])) {
-        //             if ($_POST['password'] == $_POST['repassword']) {
-        //                 if ($this->model('Auth_model')->changePassword($user['id'], $_POST['password'])) {
-        //                     // FLASH SUCCESS
-        //                     Flasher::flash('Password changed successfully', 'change_password', 'success');
-        //                     header('Location: ' . BASEURL . '/auth/login');
-        //                     exit;
-        //                 } else {
-        //                     // FLASH FAILED
-        //                     Flasher::flash('Password change failed', 'change_password', 'danger');
-        //                 }
-        //             } else {
-        //                 // FLASH FAILED
-        //                 Flasher::flash('Password change failed : ', 'password and password confirmation does not match', 'danger'); 
-        //             }
-        //         }
-        //         $data['title'] = 'Change Password - Sirvice';
-        //         $this->view('auth/change-password', $data);
-        //         $this->view('templates/auth/carousel');
-        //     } else {
-        //         header('Location: ' . BASEURL . '/auth/login');
-        //         exit;
-        //     }
-        // }
     }
 
     public function verification() {
@@ -295,7 +277,7 @@ class Auth extends Controller {
             $this->view('auth/verification', $data);
             $this->view('templates/auth/carousel');
         } else {
-            Flasher::flash('You are not ', 'authorized', 'danger');
+            Flasher::flash('You are not ', 'allowed', 'danger');
             header('Location: ' . BASEURL . '/auth/login');
             exit;
         }

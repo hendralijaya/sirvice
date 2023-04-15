@@ -69,4 +69,11 @@ class Helper {
         return 'File not found.';
     }
   }
+
+  public static function getDay($scheduled_date)
+    {
+    $timestamp = strtotime($scheduled_date);
+    $day = date('l', $timestamp);
+    return $day;
+    }
 }

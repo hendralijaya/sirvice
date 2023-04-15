@@ -73,9 +73,8 @@ class Dashboard extends Controller {
     {
         // Get user data
         if(isset($_POST['order'])) {
-            var_dump($_POST);
-            exit;
-            if ($this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST) > 0) {
+            if ($this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST, $_FILES) > 0) {
+                $this->model('Notifications_model')->createNotification($_SESSION['user_id'], 'New Order', 'You have a new order');
                 Flasher::setFlash('Order has been ', 'created', 'success');
                 header('Location: ' . BASEURL . '/dashboard/order');
                 exit;
@@ -131,7 +130,7 @@ class Dashboard extends Controller {
 
     public function update_profile()
     {
-        if ($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST) > 0) {
+        if ($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST,$_FILES) > 0) {
             // Flash message
             header('Location: ' . BASEURL . '/dashboard/profile');
             exit;

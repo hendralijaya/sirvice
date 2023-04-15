@@ -15,12 +15,6 @@ class Services_model {
         return $this->db->resultSet();
     }
 
-    public function getTenLatestServices()
-    {
-        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY id DESC LIMIT 10');
-        return $this->db->resultSet();
-    }
-
     public function getServicesByOrder($orderId)
     {
         $this->db->query('SELECT * FROM ' . $this->manyToManyTable . ' WHERE order_id=:order_id');

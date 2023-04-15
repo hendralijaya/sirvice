@@ -81,7 +81,6 @@
                         Also you can leave this page if you’re done 
                     </p>
                 </div>
-
                 <form action="<?= BASEURL; ?>/auth/login" method="post">
                     <div class="image">
                         <img src="<?= BASEURL; ?>/image/email-sent.png" alt="">

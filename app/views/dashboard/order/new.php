@@ -41,9 +41,9 @@
 
                                     <div class="field">
                                         <label for="address">Address</label>
-                                        <select name="address" id="address">
+                                        <select name="address_id" id="address">
                                             <?php foreach ($data['addresses'] as $address ) : ?>
-                                            <option value=<?= $address['label_address'] ?>>
+                                            <option value=<?= $address['id'] ?>>
                                                 <?= $address['label_address'] ?>
                                             </option>
                                             <?php endforeach; ?>
@@ -52,12 +52,12 @@
 
                                     <div class="field">
                                         <label for="Date">Date</label>
-                                        <input type="date" id="date" name="date" value="<?= $data['date'] ?>">
+                                        <input type="date" id="date" name="scheduled_date" value="<?= $data['date'] ?>">
                                     </div>
 
                                     <div class="field">
                                         <label for="time">Time</label>
-                                        <input type="time" id="time" name="time" value="10:00">
+                                        <input type="time" id="time" name="scheduled_time" value="10:00">
                                     </div>
 
                                     <div class="button-stepper-form">
@@ -80,7 +80,7 @@
                                         <div class="checkboxes">
                                             <?php foreach ($data['services'] as $service) : ?>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="service_id" value="<?= $service['id'] ?>">
+                                                <input type="checkbox" id="vehicle1" name="service_id[]" value="<?= $service['id'] ?>">
                                                 <label for="vehicle1"><?= $service['name'] . ' - Rp.' . $service['price'] ?></label><br>
                                             </div>
                                             <?php endforeach; ?>
@@ -102,31 +102,31 @@
                                                 <label for="vehicle1">Daikin</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Panasonic">
+                                                <input type="checkbox" id="vehicle2" name="ac_brand" value="Panasonic">
                                                 <label for="vehicle2">Panasonic</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Sharp">
+                                                <input type="checkbox" id="vehicle3" name="ac_brand" value="Sharp">
                                                 <label for="vehicle3">Sharp</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="LG">
+                                                <input type="checkbox" id="vehicle1" name="ac_brand" value="LG">
                                                 <label for="vehicle1">LG</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Mitsubishi Electric">
+                                                <input type="checkbox" id="vehicle2" name="ac_brand" value="Mitsubishi Electric">
                                                 <label for="vehicle2">Mitsubishi Electric</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Samsung">
+                                                <input type="checkbox" id="vehicle3" name="ac_brand" value="Samsung">
                                                 <label for="vehicle3">Samsung</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Toshiba">
+                                                <input type="checkbox" id="vehicle1" name="ac_brand" value="Toshiba">
                                                 <label for="vehicle1">Toshiba</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Polytron">
+                                                <input type="checkbox" id="vehicle2" name="ac_brand" value="Polytron">
                                                 <label for="vehicle2">Polytron</label><br>
                                             </div>
                                         </div>
@@ -177,7 +177,7 @@
                                         </div>
                                     </div>
                                     <input type="hidden" id="login" name="order" value="order">
-                                    <!-- <button type="submit">Submit button</button> -->
+                                    <button type="submit">Submit button</button>
                                     <div class="button-stepper-form">
                                         <button class="back">Back</button>
                                         <button type="submit" class="submit">Submit</button>
