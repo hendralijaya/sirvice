@@ -46,6 +46,7 @@ class Dashboard extends Controller {
                 $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['orders'] = $this->model('Orders_model')->getOrderById($orderId);
                 $data['title'] = 'Order - Sirvice';
+                $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/order/detail', $data);
                 $this->view('templates/dashboard/footer');
@@ -58,6 +59,7 @@ class Dashboard extends Controller {
                 $data['scheduled_orders'] = $this->model('Orders_model')->scheduledOrders($_SESSION['user_id']);
                 $data['history_orders'] = $this->model('Orders_model')->historyOrders($_SESSION['user_id']);
                 $data['technician'] = $this->model('Technicians_model')->getTechnician();
+                $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/order/main', $data);
                 $this->view('templates/dashboard/footer');
@@ -75,7 +77,7 @@ class Dashboard extends Controller {
         if(isset($_POST['order'])) {
             $orderId = $this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST, $_FILES);
             if ($orderId > 0) {
-                $this->model('Notifications_model')->createNotification($_SESSION['user_id'], 'Order Successful!', 'Congratulations, your order has been successfully processed! You can now check the progress of your order, and we look forward to providing you with the best possible experience.', 'http://sirvice/public/dashboard/order/'.$orderId, 'check_circle', 'check');
+                $this->model('Notifications_model')->createNotification($_SESSION['user_id'], 'Order Successful!', 'Congratulations, your order has been successfully processed! You can now check the progress of your order, and we look forward to providing you with the best possible experience.', 'http://sirvice/public/dashboard/order/'.$orderId, 'check_circle', 'check', $orderId, $_POST['scheduled_date']);
                 Flasher::setFlash('Order has been ', 'created', 'success');
                 header('Location: ' . BASEURL . '/dashboard/order');
                 exit;
@@ -84,6 +86,7 @@ class Dashboard extends Controller {
                 $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
                 $data['title'] = 'New Order - Sirvice';
                 $data['date'] = date('Y-m-d');
+                $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
                 // Error Flash Message
                 Flasher::setFlash('Order : All field is ', 'required', 'danger');
                 // $data['services'] = $this->model('Services_model')->getServices();
@@ -101,6 +104,7 @@ class Dashboard extends Controller {
         $data['date'] = date('Y-m-d');
         // $data['services'] = $this->model('Services_model')->getServices();
         // $data['technicians'] = $this->model('Technicians_model')->getTechnician();
+        $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/order/new', $data);
         $this->view('templates/dashboard/footer');
@@ -112,6 +116,7 @@ class Dashboard extends Controller {
         // $data['orders'] = $this->model('Orders_model')->getOrderById($_POST['order_id']);
         // $data['services'] = $this->model('Services_model')->getServices();
         // $data['technicians'] = $this->model('Technicians_model')->getTechnician();
+        
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/order/detail', $data);
         $this->view('templates/dashboard/footer');
@@ -124,6 +129,7 @@ class Dashboard extends Controller {
         // Get user data
         $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
         $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
+        $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/profile/main', $data);
         $this->view('templates/dashboard/footer');
@@ -173,6 +179,7 @@ class Dashboard extends Controller {
                 $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['tips'] = $this->model('Tips_model')->getTipsById($tipId);
                 $data['title'] = 'Tips - Sirvice';
+                $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/tips/detail', $data);
                 $this->view('templates/dashboard/footer');
@@ -182,6 +189,7 @@ class Dashboard extends Controller {
                 $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['title'] = 'Tips - Sirvice';
                 $data['tips'] = $this->model('Tips_model')->getAllTips();
+                $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/tips/main', $data);
                 $this->view('templates/dashboard/footer');
@@ -196,7 +204,7 @@ class Dashboard extends Controller {
         $data['title'] = 'Notification - Sirvice';
         // Get user data
         $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
-        $data['notification'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
+        $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
         $this->view('templates/dashboard/header-sidebar', $data);
         $this->view('dashboard/notification/main', $data);
         $this->view('templates/dashboard/footer');
@@ -239,6 +247,7 @@ class Dashboard extends Controller {
                 $data['address'] = $this->model('Address_model')->getAddressById($addressId);
                 $data['title'] = 'Address - Sirvice';
                 $data['view'] = 'update';
+                $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/profile/address', $data);
                 $this->view('templates/dashboard/footer');
@@ -248,6 +257,7 @@ class Dashboard extends Controller {
                 $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['title'] = 'Address - Sirvice';
                 $data['view'] = 'add';
+                $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/profile/address', $data);
                 $this->view('templates/dashboard/footer');

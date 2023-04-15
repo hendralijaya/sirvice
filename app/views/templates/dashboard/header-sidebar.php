@@ -50,19 +50,19 @@
                 </svg>
             </div>
 
-            <li class="active">
+            <li <?= ($_SERVER['REQUEST_URI'] == '/public/dashboard/home') ? "class='active'" : null; ?>>
                 <a href="<?= BASEURL; ?>/dashboard/home"><i class="material-icons-round">home</i></a>
                 <span class="tooltip">Home</span>
             </li>
-            <li>
+            <li <?= ($_SERVER['REQUEST_URI'] == '/public/dashboard/order') ? "class='active'" : null; ?>>
                 <a href="<?= BASEURL; ?>/dashboard/order"><i class="material-icons-round">list_alt</i></a>
                 <span class="tooltip">Order</span>
             </li>
-            <li>
+            <li <?= ($_SERVER['REQUEST_URI'] == '/public/dashboard/profile') ? "class='active'" : null; ?>>
                 <a href="<?= BASEURL; ?>/dashboard/profile"><i class="material-icons-round">person</i></a>
                 <span class="tooltip">Profile</span>
             </li>
-            <li>
+            <li <?= ($_SERVER['REQUEST_URI'] == '/public/dashboard/tips') ? "class='active'" : null; ?>>
                 <a href="<?= BASEURL; ?>/dashboard/tips"><i class="material-icons-round">tips_and_updates</i></a>
                 <span class="tooltip">Tips</span>
             </li>
