@@ -31,7 +31,7 @@
                     </div>
 
                     <div id="tab-content">
-                        <form action="" method="post">
+                        <form action="<?= BASEURL ?>/dashboard/neworder" method="post" enctype="multipart/form-data">
                             <div class="tab-data tab-data-desc" data-tab="1">
                                 <div class="input-form">
                                     <div class="field">
@@ -71,56 +71,26 @@
                                     <div class="field">
                                         <label for="name">AC Problem Details</label>
                                         <small>Please tell us what’s the problem with the AC. Make it as detail as possible so that we can save more time on diagnosing the problem :D</small>
-                                        <input type="text" id="name" name="name" placeholder="Example: The temperature is not as what expected, It smells bad, etc." required>
+                                        <input type="text" id="name" name="description" placeholder="Example: The temperature is not as what expected, It smells bad, etc." required>
                                     </div>
 
                                     <div class="field">
-                                        <label for="address">Address</label>
+                                        <label for="address">Services</label>
                                         <small>Which services do you want to order from us?</small>
                                         <div class="checkboxes">
+                                            <?php foreach ($data['services'] as $service) : ?>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Service 1</label><br>
+                                                <input type="checkbox" id="vehicle1" name="service_id" value="<?= $service['id'] ?>">
+                                                <label for="vehicle1"><?= $service['name'] . ' - Rp.' . $service['price'] ?></label><br>
                                             </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                                <label for="vehicle2">Service 2</label><br>
-                                            </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                                <label for="vehicle3">Service 3</label><br>
-                                            </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Service 1</label><br>
-                                            </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                                <label for="vehicle2">Service 2</label><br>
-                                            </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                                <label for="vehicle3">Service 3</label><br>
-                                            </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Service 1</label><br>
-                                            </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                                <label for="vehicle2">Service 2</label><br>
-                                            </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                                <label for="vehicle3">Service 3</label><br>
-                                            </div>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
 
                                     <div class="field">
                                         <label for="ac-unit">Number of AC Units</label>
                                         <small>How many AC that you want us to repair?</small>
-                                        <input type="number" placeholder="Example: 3" id="ac-unit" name="ac-unit">
+                                        <input type="number" placeholder="Example: 3" id="ac-unit" name="number_unit">
                                     </div>
 
                                     <div class="field">
@@ -128,40 +98,36 @@
                                         <small>What kind of brand is your AC?</small>
                                         <div class="checkboxes">
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Service 1</label><br>
+                                                <input type="checkbox" id="vehicle1" name="ac_brand" value="Daikin">
+                                                <label for="vehicle1">Daikin</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                                <label for="vehicle2">Service 2</label><br>
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Panasonic">
+                                                <label for="vehicle2">Panasonic</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                                <label for="vehicle3">Service 3</label><br>
+                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Sharp">
+                                                <label for="vehicle3">Sharp</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Service 1</label><br>
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="LG">
+                                                <label for="vehicle1">LG</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                                <label for="vehicle2">Service 2</label><br>
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Mitsubishi Electric">
+                                                <label for="vehicle2">Mitsubishi Electric</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                                <label for="vehicle3">Service 3</label><br>
+                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Samsung">
+                                                <label for="vehicle3">Samsung</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Service 1</label><br>
+                                                <input type="checkbox" id="vehicle1" name="vehicle1" value="Toshiba">
+                                                <label for="vehicle1">Toshiba</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                                                <label for="vehicle2">Service 2</label><br>
-                                            </div>
-                                            <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                                                <label for="vehicle3">Service 3</label><br>
+                                                <input type="checkbox" id="vehicle2" name="vehicle2" value="Polytron">
+                                                <label for="vehicle2">Polytron</label><br>
                                             </div>
                                         </div>
                                     </div>
@@ -194,7 +160,7 @@
                                             <i class="material-icons-round">description</i>
                                             <p>We only accept file with .png, .jpg, and .jpeg type</p>
                                             <label for="payment-file">Choose File</label>
-                                            <input type="file" id="payment-file" name="payment-file" hidden required>
+                                            <input type="file" id="payment-file" name="payment" hidden required>
                                         </div>
                                         <div class="document-payment-proof">
                                             <div class="screenshot" hidden>
@@ -210,8 +176,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-
+                                    <input type="hidden" id="login" name="order" value="order">
+                                    <!-- <button type="submit">Submit button</button> -->
                                     <div class="button-stepper-form">
                                         <button class="back">Back</button>
                                         <button type="submit" class="submit">Submit</button>
