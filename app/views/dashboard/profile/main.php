@@ -115,7 +115,7 @@
                                     <input type="search" placeholder="Search Address" id="address" name="address">
                                 </form>
 
-                                <a class="add-address" href="#">+ Add New Address</a>
+                                <a class="add-address" href="<?= BASEURL ?>/dashboard/new_address">+ Add New Address</a>
                             </div>
 
                             <div class="address-cards" id="address-suggestion">

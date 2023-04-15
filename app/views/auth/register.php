@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/style-credentials-form.css">
     <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -101,8 +102,8 @@
 
                     <div class="field password-container">
                         <label for="password">Re-Password</label>
-                        <input type="password" id="password" name="repassword" placeholder="*******" required value="<?php echo isset($_POST['repassword']) ? $_POST['repassword'] : ''; ?>">
-                        <span toggle="#password" class="eye-icon"></span>
+                        <input type="password" id="repassword" name="repassword" placeholder="*******" required value="<?php echo isset($_POST['repassword']) ? $_POST['repassword'] : ''; ?>">
+                        <span toggle="#repassword" class="eye-icon"></span>
                     </div>
                     
                     <div class="field">
@@ -342,7 +343,7 @@
     <script src="<?= BASEURL; ?>/js/script.js"></script>
     <script src="<?= BASEURL; ?>/js/script-loader.js"></script>
     <script src="<?= BASEURL; ?>/js/script-credentials.js"></script>
-    <script src="<?= BASEURL; ?>/js/auth/password-check.js"></script>
+    <script src="<?= BASEURL; ?>/js/script-password-field.js"></script>
     <script src="<?= BASEURL; ?>/js/script-alert.js"></script>
 </body>
 </html>

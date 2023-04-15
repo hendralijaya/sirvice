@@ -25,7 +25,6 @@
                                 </div>
                             </div>
                         </div>
-                        
 
                         <div class="overall-detail-order">
                             <div class="technician-and-client-profile">

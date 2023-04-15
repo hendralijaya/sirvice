@@ -219,7 +219,7 @@ class Dashboard extends Controller {
                 $data['address'] = $this->model('Address_model')->getAddressById($addressId);
                 $data['title'] = 'New Address - Sirvice';
                 $this->view('templates/dashboard/header-sidebar', $data);
-                $this->view('dashboard/profile/new-address', $data);
+                $this->view('dashboard/profile/address', $data);
                 $this->view('templates/dashboard/footer');
                 return;
             } else {
@@ -227,7 +227,7 @@ class Dashboard extends Controller {
                 $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['title'] = 'New Address - Sirvice';
                 $this->view('templates/dashboard/header-sidebar', $data);
-                $this->view('dashboard/profile/new-address', $data);
+                $this->view('dashboard/profile/address', $data);
                 $this->view('templates/dashboard/footer');
             }
         } else {
