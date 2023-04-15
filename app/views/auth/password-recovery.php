@@ -86,7 +86,7 @@
                     <div class="image">
                         <img src="<?= BASEURL; ?>/image/email-sent.png" alt="">
                     </div>
-                    <button type="submit" class="primary-button submit-form" value="login">Go to Email</button>
+                    <a href="https://gmail.com/" class="primary-button submit-form" value="login">Go to Email</a>
                 </form>
             </div>
         </div>

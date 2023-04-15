@@ -276,3 +276,17 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
     flex-direction: column;
     gap: 10px;
 }
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .history-date-order {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 0 0 0;
+    border-top: 1px solid var(--border-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .history-date-order > p {
+    font-size: 14px;
+    color: var(--text-color);
+    font-weight: 400;
+}

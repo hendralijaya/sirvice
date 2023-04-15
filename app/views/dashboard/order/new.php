@@ -7,32 +7,27 @@
 
                 <div class="main-content">
                     <div class="content">
-                        <div id="tabs">
-                            <div class="tab" data-tab="1">
+                        <div id="steps">
+                            <div class="step active" data-step="1">
                                 <div class="count">1</div>
                                 Personal Information
                                 <i class="material-icons-round">arrow_right</i>
                             </div>
-                            <div class="tab" data-tab="2">
+                            <div class="step" data-step="2">
                                 <div class="count">2</div>
                                 Service
                                 <i class="material-icons-round">arrow_right</i>
                             </div>
-                            <div class="tab" data-tab="3">
+                            <div class="step" data-step="3">
                                 <div class="count">3</div>
                                 Payment
-                                <i class="material-icons-round">arrow_right</i>
-                            </div>
-                            <div class="tab" data-tab="4">
-                                <div class="count">4</div>
-                                Done
                             </div>
                         </div>
                     </div>
 
-                    <div id="tab-content">
+                    <div id="step-content">
                         <form action="<?= BASEURL ?>/dashboard/neworder" method="post" enctype="multipart/form-data">
-                            <div class="tab-data tab-data-desc" data-tab="1">
+                            <div class="step-data step-data-desc" data-step="1">
                                 <div class="input-form">
                                     <div class="field">
                                         <label for="name">Name</label>
@@ -61,12 +56,12 @@
                                     </div>
 
                                     <div class="button-stepper-form">
-                                        <button class="next">Next</button>
+                                        <button class="next" id="nextBtn1" onclick="nextStep(1)">Next</button>
                                     </div>
                                 </div>
                             </div>
     
-                            <div class="tab-data tab-data-desc" data-tab="2">
+                            <div class="step-data step-data-desc" data-step="2">
                                 <div class="input-form">
                                     <div class="field">
                                         <label for="name">AC Problem Details</label>
@@ -98,48 +93,48 @@
                                         <small>What kind of brand is your AC?</small>
                                         <div class="checkboxes">
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="ac_brand" value="Daikin">
+                                                <input type="radio" id="vehicle1" name="ac_brand" value="Daikin">
                                                 <label for="vehicle1">Daikin</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="ac_brand" value="Panasonic">
+                                                <input type="radio" id="vehicle2" name="vehicle2" value="Panasonic">
                                                 <label for="vehicle2">Panasonic</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="ac_brand" value="Sharp">
+                                                <input type="radio" id="vehicle3" name="vehicle3" value="Sharp">
                                                 <label for="vehicle3">Sharp</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="ac_brand" value="LG">
+                                                <input type="radio" id="vehicle1" name="vehicle1" value="LG">
                                                 <label for="vehicle1">LG</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="ac_brand" value="Mitsubishi Electric">
+                                                <input type="radio" id="vehicle2" name="vehicle2" value="Mitsubishi Electric">
                                                 <label for="vehicle2">Mitsubishi Electric</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle3" name="ac_brand" value="Samsung">
+                                                <input type="radio" id="vehicle3" name="vehicle3" value="Samsung">
                                                 <label for="vehicle3">Samsung</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="ac_brand" value="Toshiba">
+                                                <input type="radio" id="vehicle1" name="vehicle1" value="Toshiba">
                                                 <label for="vehicle1">Toshiba</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle2" name="ac_brand" value="Polytron">
+                                                <input type="radio" id="vehicle2" name="vehicle2" value="Polytron">
                                                 <label for="vehicle2">Polytron</label><br>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="button-stepper-form">
-                                        <button class="back">Back</button>
-                                        <button class="next">Next</button>
+                                        <button class="back" id="prevBtn2" onclick="prevStep(0)">Back</button>
+                                        <button class="next" id="nextBtn2" onclick="nextStep(2)">Next</button>
                                     </div>
                                 </div>
                             </div>
     
-                            <div class="tab-data tab-data-desc" data-tab="3">
+                            <div class="step-data step-data-desc" data-step="3">
                                 <div class="input-form">
                                     <div class="field">
                                         <label for="name">Payment Proof</label>
@@ -163,9 +158,9 @@
                                             <input type="file" id="payment-file" name="payment" hidden required>
                                         </div>
                                         <div class="document-payment-proof">
-                                            <div class="screenshot" hidden>
+                                            <div class="screenshot" id="screenshot-payment">
                                                 <!-- This will be the one where the file of payment shown -->
-                                                <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="">
+                                                <img src="#" alt="">
                                             </div>
                                             <div class="message-none">
                                                 <p>
@@ -176,10 +171,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="hidden" id="login" name="order" value="order">
-                                    <button type="submit">Submit button</button>
                                     <div class="button-stepper-form">
-                                        <button class="back">Back</button>
+                                        <button class="back" id="prevBtn3" onclick="prevStep(1)">Back</button>
                                         <button type="submit" class="submit">Submit</button>
                                     </div>
                                 </div>
@@ -193,4 +186,4 @@
         <!-- Section End-->
         </main>
 
-        <!-- Main End -->
+        <!-- Main End -->  

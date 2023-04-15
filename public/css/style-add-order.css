@@ -40,7 +40,7 @@ main > #add-order > .container > .main-content > .content::-webkit-scrollbar {
     display: none;
 }
 
-main > #add-order > .container > .main-content > .content > #tabs {
+main > #add-order > .container > .main-content > .content > #steps {
     font-size: var(--nav-text);
     letter-spacing: var(--letterspace-nav-text);
     display: flex;
@@ -49,7 +49,7 @@ main > #add-order > .container > .main-content > .content > #tabs {
     border-bottom: 1px solid var(--border-color);
 }
 
-main > #add-order > .container > .main-content > .content > #tabs > .tab{
+main > #add-order > .container > .main-content > .content > #steps > .step{
     text-decoration: none;
     color: var(--text-color);
     border-bottom: 3px solid rgba(255, 255, 255, 0);
@@ -63,7 +63,7 @@ main > #add-order > .container > .main-content > .content > #tabs > .tab{
     filter: grayscale(1);
 }
 
-main > #add-order > .container > .main-content > .content > #tabs > .tab > .count{
+main > #add-order > .container > .main-content > .content > #steps > .step > .count{
     padding: 7px;
     width: 16px;
     height: 16px;
@@ -77,12 +77,7 @@ main > #add-order > .container > .main-content > .content > #tabs > .tab > .coun
     align-items: center;
 }
 
-main > #add-order > .container > .main-content > .content > #tabs > .tab:hover{
-    color: var(--primary-color);
-    transition: all 0.3s ease-in-out;
-}
-
-main > #add-order > .container > .main-content > .content > #tabs > .tab.active{
+main > #add-order > .container > .main-content > .content > #steps > .step.active{
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 500;
@@ -90,61 +85,65 @@ main > #add-order > .container > .main-content > .content > #tabs > .tab.active{
     filter: grayscale(0);
 }
 
-main > #add-order > .container > .main-content > #tab-content {
+main > #add-order > .container > .main-content > #step-content {
     padding: 0 20px 20px 20px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data {
+main > #add-order > .container > .main-content > #step-content > form > .step-data {
     display: none;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form {
+main > #add-order > .container > .main-content > #step-content > form > .step-data:first-child {
+    display: block;
+}
+
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field{
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field{
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > label{
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > label{
     font-size: 16px;
     font-weight: 500;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > input {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > input {
     border-radius: 5px;
     border: 0.5px solid var(--border-color);
     padding: 10px 15px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > input:disabled {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > input:disabled {
     background-color: var(--disabled-background-color);
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > small {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > small {
     font-style: italic;
     font-size: 14px;
     padding: 3px 0;
     line-height: 21px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > select{
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > select{
     border-radius: 5px;
     border: 0.5px solid var(--border-color);
     padding: 10px 15px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > .checkboxes {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes {
     display: flex;
     flex-flow: row wrap;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > .checkboxes > .checkbox {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes > .checkbox {
     display: flex;
     align-items: center;
     flex-basis: 50%;
@@ -152,22 +151,22 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
     padding: 5px 0;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > .checkboxes > .checkbox > input {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes > .checkbox > input {
     width: 18px;
     height: 18px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > .checkboxes > .checkbox > label {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes > .checkbox > label {
     font-size: 14px;
     font-weight: 400;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field {
     display: flex;
     gap: 10px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .field {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field {
     border: 3px dashed var(--primary-color);
     padding: 50px;
     display: flex;
@@ -178,13 +177,13 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
     border-radius: 10px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .field > i {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field > i {
     font-size: 50px;
     color: var(--primary-color);
     opacity: 0.5;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .field >  p {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field >  p {
     text-align: center;
     font-size: 14px;
     font-weight: 400;
@@ -192,7 +191,7 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
     line-height: 24px   ;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .field > label {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field > label {
     background-color: var(--primary-color);
     color: white;
     border: 0;
@@ -203,7 +202,7 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
     text-align: center;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .document-payment-proof {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .document-payment-proof {
     border: 1px solid var(--primary-color);
     padding: 100px 20px;
     display: flex;
@@ -213,19 +212,19 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
     width: 100%;
 } 
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .document-payment-proof > .screenshot > img{
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .document-payment-proof > .screenshot > img{
     width: 100%;
     height: 300px;
     object-fit: fill;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .document-payment-proof > .message-none > p{
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .document-payment-proof > .message-none > p{
     text-align: center;
     color: var(--border-color);
     line-height: 24px;
 }
 
-/* main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .field > input[type="file"]{
+/* main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .field > input[type="file"]{
     background-color: var(--primary-color);
     color: white;
     border: 0;
@@ -234,14 +233,14 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
     cursor: pointer;
 } */
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 5px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.back {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.back {
     background-color: var(--background-color);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -255,8 +254,8 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
     margin-top: 20px;
 }
 
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.next,
-main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.submit {
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.next,
+main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.submit {
     background-color: var(--primary-color);
     color: var(--background-color);
     border: none;
@@ -280,48 +279,48 @@ main > #add-order > .container > .main-content > #tab-content > form > .tab-data
         font-size: 12px;
     }
 
-    main > #add-order > .container > .main-content > .content > #tabs {
+    main > #add-order > .container > .main-content > .content > #steps {
         gap: 5px;
     }
 
-    main > #add-order > .container > .main-content > .content > #tabs > .tab{
+    main > #add-order > .container > .main-content > .content > #steps > .step{
         font-size: 12px;
         padding: 0 5px 8px 5px;
     }
 
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .field > .checkboxes > .checkbox {
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .field > .checkboxes > .checkbox {
         flex-basis: 100%;
     }
 
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field {
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field {
         flex-direction: column;
     }
 
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .payment-field > .document-payment-proof {
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .payment-field > .document-payment-proof {
         padding: 50px 0;
     }
     
 }
 
 @media screen and (max-width: 500px) {
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form {
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form {
         flex-direction: column;
         gap: 0px;
     }
 
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.next,
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.back,
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button.submit {
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.next,
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.back,
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button.submit {
         width: 100%;
         justify-content: center;
         margin-top: 10px;
     }
 
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button:nth-child(1){
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button:nth-child(1){
         order: 2
     }
 
-    main > #add-order > .container > .main-content > #tab-content > form > .tab-data > .input-form > .button-stepper-form > button:nth-child(2){
+    main > #add-order > .container > .main-content > #step-content > form > .step-data > .input-form > .button-stepper-form > button:nth-child(2){
         order: 1
     }
 }

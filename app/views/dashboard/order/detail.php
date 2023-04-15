@@ -87,7 +87,7 @@
                             </div>
 
                             <div class="button-to-complete-order">
-
+                                
                             </div>
                             
                             <div class="history-date-order">
