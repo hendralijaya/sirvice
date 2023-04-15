@@ -97,31 +97,31 @@
                                                 <label for="vehicle1">Daikin</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle2" name="vehicle2" value="Panasonic">
+                                                <input type="radio" id="vehicle2" name="ac_brand" value="Panasonic">
                                                 <label for="vehicle2">Panasonic</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle3" name="vehicle3" value="Sharp">
+                                                <input type="radio" id="vehicle3" name="ac_brand" value="Sharp">
                                                 <label for="vehicle3">Sharp</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle1" name="vehicle1" value="LG">
+                                                <input type="radio" id="vehicle1" name="ac_brand" value="LG">
                                                 <label for="vehicle1">LG</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle2" name="vehicle2" value="Mitsubishi Electric">
+                                                <input type="radio" id="vehicle2" name="ac_brand" value="Mitsubishi Electric">
                                                 <label for="vehicle2">Mitsubishi Electric</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle3" name="vehicle3" value="Samsung">
+                                                <input type="radio" id="vehicle3" name="ac_brand" value="Samsung">
                                                 <label for="vehicle3">Samsung</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle1" name="vehicle1" value="Toshiba">
+                                                <input type="radio" id="vehicle1" name="ac_brand" value="Toshiba">
                                                 <label for="vehicle1">Toshiba</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle2" name="vehicle2" value="Polytron">
+                                                <input type="radio" id="vehicle2" name="ac_brand" value="Polytron">
                                                 <label for="vehicle2">Polytron</label><br>
                                             </div>
                                         </div>
