@@ -23,7 +23,7 @@ class Dashboard extends Controller {
         $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
         // Get notification data
         $this->model('Notifications_model')->createNotificationToday($_SESSION['user_id']);
-        $data['notification'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
+        $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
         // Get dashboard data
         $data['upcoming_order'] = $this->model('Orders_model')->upcomingOrders($_SESSION['user_id']);
         $data['appointment_scheduled'] = $this->model('Orders_model')->countUpcomingOrders($_SESSION['user_id']);
@@ -73,8 +73,9 @@ class Dashboard extends Controller {
     {
         // Get user data
         if(isset($_POST['order'])) {
-            if ($this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST, $_FILES) > 0) {
-                $this->model('Notifications_model')->createNotification($_SESSION['user_id'], 'New Order', 'You have a new order');
+            $orderId = $this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST, $_FILES);
+            if ($orderId > 0) {
+                $this->model('Notifications_model')->createNotification($_SESSION['user_id'], 'Order Successful!', 'Congratulations, your order has been successfully processed! You can now check the progress of your order, and we look forward to providing you with the best possible experience.', 'http://sirvice/public/dashboard/order/'.$orderId, 'check_circle', 'check');
                 Flasher::setFlash('Order has been ', 'created', 'success');
                 header('Location: ' . BASEURL . '/dashboard/order');
                 exit;
@@ -150,16 +151,6 @@ class Dashboard extends Controller {
         echo json_encode($data);
     }
 
-    public function address() {
-        $data['title'] = 'Address - Sirvice';
-        // Get user data
-        $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
-        $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
-        $this->view('templates/dashboard/header-sidebar', $data);
-        $this->view('dashboard/profile/address', $data);
-        $this->view('templates/dashboard/footer');
-    }
-
     public function delete_profile()
     {
         if ($this->model('Users_model')->deleteUser($_SESSION['user_id']) > 0) {
@@ -211,13 +202,43 @@ class Dashboard extends Controller {
         $this->view('templates/dashboard/footer');
     }
 
-    public function new_address($addressId = 0){
+    public function address($addressId = 0){
+        var_dump($_POST);
+        if (isset($_POST['add_address'])) {
+            if ($this->model('Address_model')->addAddress($_SESSION['user_id'],$_POST) > 0) {
+                // Flash message
+                Flasher::setFlash('Address successfully ', 'added', 'success');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            } else {
+                // Flash message
+                Flasher::setFlash('Address failed to be ', 'added', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            }
+        }
+        if (isset($_POST['update_address']) && isset($_SESSION['address_id'])) {
+            if ($this->model('Address_model')->updateAddress($_SESSION['user_id'], $_SESSION['address_id'],$_POST) > 0) {
+                // Flash message
+                unset($_SESSION['address_id']);
+                Flasher::setFlash('Address successfully ', 'updated', 'success');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            } else {
+                // Flash message
+                Flasher::setFlash('Address failed to be ', 'updated', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            }
+        }
         if(is_numeric($addressId)){
             if ($addressId != 0) {
                 // Get user data
+                $_SESSION['address_id'] = $addressId;
                 $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['address'] = $this->model('Address_model')->getAddressById($addressId);
-                $data['title'] = 'New Address - Sirvice';
+                $data['title'] = 'Address - Sirvice';
+                $data['view'] = 'update';
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/profile/address', $data);
                 $this->view('templates/dashboard/footer');
@@ -225,7 +246,8 @@ class Dashboard extends Controller {
             } else {
                 // Get user data
                 $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
-                $data['title'] = 'New Address - Sirvice';
+                $data['title'] = 'Address - Sirvice';
+                $data['view'] = 'add';
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/profile/address', $data);
                 $this->view('templates/dashboard/footer');
@@ -236,42 +258,42 @@ class Dashboard extends Controller {
         }
     }
 
-    public function add_address(){
-        if ($this->model('Address_model')->createAddress($_SESSION['user_id'],$_POST) > 0) {
-            // Flash message
-            Flasher::setFlash('Address successfully ', 'added', 'success');
-            header('Location: ' . BASEURL . '/dashboard/profile');
-            exit;
-        } else {
-            // Flash message
-            Flasher::setFlash('Address failed to be ', 'added', 'danger');
-            header('Location: ' . BASEURL . '/dashboard/profile');
-            exit;
-        }
-    }
+    // public function add_address(){
+    //     if ($this->model('Address_model')->createAddress($_SESSION['user_id'],$_POST) > 0) {
+    //         // Flash message
+    //         Flasher::setFlash('Address successfully ', 'added', 'success');
+    //         header('Location: ' . BASEURL . '/dashboard/profile');
+    //         exit;
+    //     } else {
+    //         // Flash message
+    //         Flasher::setFlash('Address failed to be ', 'added', 'danger');
+    //         header('Location: ' . BASEURL . '/dashboard/profile');
+    //         exit;
+    //     }
+    // }
 
-    public function update_address($addressId = 0){
-        if(is_numeric($addressId)){
-            if($addressId > 0){
-                if ($this->model('Address_model')->updateAddress($_SESSION['user_id'],$addressId,$_POST) > 0) {
-                    // Flash message
-                    Flasher::setFlash('Address successfully ', 'updated', 'success');
-                    header('Location: ' . BASEURL . '/dashboard/profile');
-                    exit;
-                } else {
-                    // Flash message
-                    Flasher::setFlash('Address failed to be ', 'updated', 'danger');
-                    header('Location: ' . BASEURL . '/dashboard/profile');
-                    exit;
-                }
-            } else {
-                // Flash message
-                Flasher::setFlash('Address id ', 'not found', 'danger');
-                header('Location: ' . BASEURL . '/dashboard/profile');
-                exit;
-            }
-        }
-    }
+    // public function update_address($addressId = 0){
+    //     if(is_numeric($addressId)){
+    //         if($addressId > 0){
+    //             if ($this->model('Address_model')->updateAddress($_SESSION['user_id'],$addressId,$_POST) > 0) {
+    //                 // Flash message
+    //                 Flasher::setFlash('Address successfully ', 'updated', 'success');
+    //                 header('Location: ' . BASEURL . '/dashboard/profile');
+    //                 exit;
+    //             } else {
+    //                 // Flash message
+    //                 Flasher::setFlash('Address failed to be ', 'updated', 'danger');
+    //                 header('Location: ' . BASEURL . '/dashboard/profile');
+    //                 exit;
+    //             }
+    //         } else {
+    //             // Flash message
+    //             Flasher::setFlash('Address id ', 'not found', 'danger');
+    //             header('Location: ' . BASEURL . '/dashboard/profile');
+    //             exit;
+    //         }
+    //     }
+    // }
 
     public function delete_address($addressId = 0){
         if(is_numeric($addressId)){

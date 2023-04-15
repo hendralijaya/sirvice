@@ -8,8 +8,8 @@ class Helper {
       $phpmailer->Host = 'sandbox.smtp.mailtrap.io';
       $phpmailer->SMTPAuth = true;
       $phpmailer->Port = 2525;
-      $phpmailer->Username = 'f514ea0d6d5a5a';
-      $phpmailer->Password = '7b391a8928484b';
+      $phpmailer->Username = 'b272e14150bdf4';
+      $phpmailer->Password = 'a23971afb634c7';
       $phpmailer->setFrom('sirvice@gmail.com', 'Sirvice Corps');
       $phpmailer->addAddress($email, $name);
       $phpmailer->Subject = $subject;

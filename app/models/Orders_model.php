@@ -95,7 +95,7 @@ class Orders_model {
             $this->db->bind('service_id', $serviceId);
             $this->db->execute();
         }
-        return $this->db->rowCount();
+        return $orderId;
     }
 
     private function getTotalPrice($servicesId, $number_unit)
@@ -106,6 +106,7 @@ class Orders_model {
             $this->db->bind('id', $serviceId);
             $totalPrice += $this->db->single()['price'];
         }
-        return $totalPrice * $number_unit;
+        $totalPrice = $totalPrice * $number_unit;
+        return $totalPrice + ($totalPrice * 0.02);
     }
 }

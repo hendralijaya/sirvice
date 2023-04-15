@@ -33,22 +33,27 @@ class Auth extends Controller {
             $this->view('auth/register', $data);
             exit;
         }
-
+        // Validate password and repassword
+        if( $_POST['password'] != $_POST['repassword'] ) {
+            Flasher::setFlash('Password and repassword must be same', ' in register', 'danger');
+            $data['title'] = 'Register - Sirvice';
+            $this->view('auth/register', $data);
+            exit;
+        }
         $_POST['verification_code'] = uniqid();
         if( $this->model('Auth_model')->register($_POST) > 0) {
             $_SESSION['email'] = $_POST['email'];
             $mailer = Helper::setUpMailConfiguration($_POST['email'], $_POST['name'], 'Verification Code', '<a href="' . BASEURL . '/auth/verify/' . $_POST['verification_code'] . '">Click here to verify your account</a>');
-            if(!$mailer->send()) {
-                // FLASH GAGAL
-                // echo 'Message could not be sent. Mailer Error: ' . $mailer->ErrorInfo;
-                Flasher::flash('Message could not be sent. Mailer Error: ' . $mailer->ErrorInfo, 'register', 'danger');
-            } else {
-                // FLASH BERHASIL
-                // echo 'Message has been sent';
+            $success = $mailer->send();
+            if ($success) {
                 header('Location: ' . BASEURL . '/auth/verification');
+                exit;
+            } else {
+                Flasher::flash('Message could not be sent. Mailer Error: ', 'register', 'danger');
+                header('Location: ' . BASEURL . '/auth/login');
+                exit;
             }
-            header('Location: ' . BASEURL . '/auth/login');
-            exit;
+            
         } else {
             // Flash register failed
             Flasher::setFlash('Register failed : ', 'email or phone number is duplicate', 'danger');
