@@ -218,7 +218,7 @@
                                     <input type="hidden" name="order" id="login" value="order">
                                     <div class="button-stepper-form">
                                         <button class="back" id="prevBtn3" onclick="prevStep(1)">Back</button>
-                                        <button type="submit" class="submit">Submit</button>
+                                        <button type="button" id="myBtn" class="primary-button submit submit-form">Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -232,3 +232,32 @@
         </main>
 
         <!-- Main End -->  
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <i class="material-icons-round close">close</i>
+                <div class="modal-main-content">
+                    <div class="modal-icon">
+                        <i class="material-icons-round">info</i>
+                    </div>
+                    <div class="modal-text-content">
+                        <div class="modal-title">
+                            <h2 class="title">Proceed the Order?</h2>
+                        </div>
+                        <div class="modal-description">
+                            <p>If you request for this service to be provided, you will not be able to cancel the order.</p>
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="modal-button">
+                            <div class="secondary-button">
+                                <button type="button" class="secondary-button" id="cancel">No, Go Back</button>
+                            </div>
+                            <div class="main-button">
+                                <button type="submit" class="primary-button">Yes, Order This</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

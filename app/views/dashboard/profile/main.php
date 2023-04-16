@@ -132,10 +132,10 @@
                                                 <span>Edit</span>
                                             </a>
                                             <form action="#">
-                                                <a href="#" class="delete-address">
+                                                <button type="button" id="myBtn" class="delete-address">
                                                     <i class="material-icons-round">delete</i>
                                                     <span>Delete</span>
-                                                </a>
+                                                </button>
                                             </form>
                                         </div>
                                     </div>
@@ -153,3 +153,32 @@
         </main>
 
         <!-- Main End -->
+
+        <div id="myModal" class="modal danger">
+            <div class="modal-content">
+                <i class="material-icons-round close">close</i>
+                <div class="modal-main-content">
+                    <div class="modal-icon">
+                        <i class="material-icons-round">warning</i>
+                    </div>
+                    <div class="modal-text-content">
+                        <div class="modal-title">
+                            <h2 class="title">Delete Address?</h2>
+                        </div>
+                        <div class="modal-description">
+                            <p>Are you sure you want to delete this address? You can’t undo this action. </p>
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="modal-button">
+                            <div class="secondary-button">
+                                <button type="button" class="secondary-button" id="cancel">No, Keep It</button>
+                            </div>
+                            <div class="main-button">
+                                <button type="submit" class="primary-button">Yes, Delete Address</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>

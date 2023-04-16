@@ -385,7 +385,6 @@ main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 15px;
     padding: 0 20px;
 }
 
@@ -1215,7 +1214,7 @@ main > #profile > .container > .main-content > #tab-content > .tab-data > .addre
 }
 
 main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a,
-main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form a{
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form button{
     text-decoration: none;
     cursor: pointer;
     border-radius: 5px;
@@ -1238,25 +1237,27 @@ main > #profile > .container > .main-content > #tab-content > .tab-data > .addre
     transition: 0.2s all ease-in-out;
 }
 
-main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form a.delete-address {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form button.delete-address {
     background-color: var(--background-color);
     color: var(--danger-color);
     border: 1px solid var(--danger-color);
     transition: 0.2s all ease-in-out;
 }
 
-main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form a.delete-address:hover {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form button.delete-address:hover {
     background-color: var(--danger-color);
     color: var(--background-color);
     transition: 0.2s all ease-in-out;
 }
 
-main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a i {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a i,
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete button i{
     font-size: 20px;
     font-weight: 500;
 }
 
-main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a span {
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a span,
+main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete button span {
     display: none;
 }
 
@@ -1317,7 +1318,7 @@ main > #profile > .container > .main-content > #tab-content > .tab-data > .addre
     }
 
     main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a.edit-address,
-    main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form a.delete-address{
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete form button.delete-address{
         width: 100%;
         justify-content: center;
     }
@@ -1401,13 +1402,13 @@ main > #tips > .container > .main-content > .content > .tips-and-tricks-cards {
 }
 
 main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card{
-    height: 100%;
     width: 25%;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 30px;
+    height: inherit;
     padding: 30px;
     margin: 5px 0;
 }
@@ -1427,23 +1428,31 @@ main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > 
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .date-title-description{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
     gap: 15px;
     padding: 0 20px;
 }
 
-main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > time {
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .date-title-description > time {
     font-size: 14px;
     font-weight: 400;
     line-height: 16px;
 }
 
-main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > h6.title {
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .date-title-description > h6.title {
     font-size: 18px;
     font-weight: 500;
     line-height: 28px;
 }
 
-main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > p.description {
+main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .date-title-description > p.description {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
@@ -1451,7 +1460,9 @@ main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > 
 
 main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .go-to-detail-content {
     padding: 10px 0;
+    margin: 10px 0;
     width: inherit;
+    bottom: 0;
 }
 
 main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > .tips-and-tricks-card > .tips-and-tricks-content > .go-to-detail-content > a.read-more {
