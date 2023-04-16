@@ -1307,7 +1307,8 @@ main > #profile > .container > .main-content > #tab-content > .tab-data > .addre
         width: 100%;
     }
 
-    main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a span {
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete a span,
+    main > #profile > .container > .main-content > #tab-content > .tab-data > .address-cards > .address-card > .button-edit-and-delete button span {
         display: block;
         font-size: 14px;
         font-weight: 500;
