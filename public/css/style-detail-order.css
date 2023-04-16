@@ -195,46 +195,81 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
     font-style: italic;
 }
 
-main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity {
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .technician-identity {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 50%
 } 
 
-main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > h2.title {
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .technician-identity > h2.title {
     font-size: 20px;
     font-weight: 500;
     color: var(--text-color);
 }
 
-main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile {
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .technician-identity > .technician-profile {
     display: flex;
     gap: 10px;
     align-items: center;
 }
 
-main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-image {
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .technician-identity > .technician-profile > .technician-image {
     border-radius: 50%;
     border: 2px solid var(--border-color);
 }
 
-main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-image > img {
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .technician-identity > .technician-profile > .technician-image > img {
     width: 80px;
     height: 80px;
     aspect-ratio: 1/1;
 }
 
-main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-name-and-phone-number {
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .technician-identity > .technician-profile > .technician-name-and-phone-number {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity > .technician-profile > .technician-name-and-phone-number > p.technician-name {
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .technician-identity > .technician-profile > .technician-name-and-phone-number > p.technician-name {
     font-size: 16px;
     color: var(--text-color);
     font-weight: 500;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .rating-score {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .rating-score > h2.title {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .rating-score > .rating {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .rating-score > .rating > i {
+    font-size: 36px;
+    color: var(--star-active-color);
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating > .rating-score > .rating > p {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 400;
 }
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details {
@@ -307,11 +342,13 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table th:first-child,
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table td:first-child {
     text-align: left;
+    border-radius: 10px 0 0 0;
 }
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table th:last-child,
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table td:last-child {
     text-align: right;
+    border-radius: 0 10px 0 0;
 }
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > thead{
@@ -327,12 +364,21 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > tfoot {
     border-top: 1px solid var(--border-color);
+    background-color: var(--quote-color);
 }
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > tfoot > tr > td {
     padding-top: 20px;
     font-size: 16px;
     font-weight: 600;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > tfoot > tr > td:first-child {
+    border-radius: 0 0 0 10px;
+}
+
+main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .invoice-table > table > tfoot > tr > td:last-child {
+    border-radius: 0 0 10px 0;
 }
 
 main > #detail-order > .container > .main-content > .content > .overall-detail-order > .button-to-complete-order {
@@ -388,8 +434,9 @@ main > #detail-order > .container > .main-content > .content > .overall-detail-o
         border-bottom: 1px solid var(--border-color);
     }
 
-    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-identity {
+    main > #detail-order > .container > .main-content > .content > .overall-detail-order > .technician-and-client-profile > .technician-and-rating {
         width: 100%;
+        gap: 30px;
     }
 
     main > #detail-order > .container > .main-content > .content > .overall-detail-order > .order-details > .date-time-problem-and-ac-brand > .problem-and-ac-brand {        

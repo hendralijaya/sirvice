@@ -137,7 +137,7 @@
                             <div class="step-data step-data-desc" data-step="3">
                                 <div class="input-form">
                                     <div class="field">
-                                        <label for="payment" style="">Payment Details</label>
+                                        <label for="payment">Payment Details</label>
                                         <div class="invoice-table">
                                             <table>
                                                 <thead>
