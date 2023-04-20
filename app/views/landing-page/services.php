@@ -43,6 +43,14 @@
                     <p>Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.</p>
                 </div>
 
+                <!-- Looping Services -->
+                <!-- <?php foreach ($data['services'] as $service) : ?>
+                    <div class="checkbox">
+                        <input type="checkbox" id="vehicle1" name="service_id[]" value="<?= $service['id'] ?>">
+                        <label for="vehicle1"><?= $service['name'] . ' - Rp.' . $service['price'] ?></label><br>
+                    </div>
+                <?php endforeach; ?> -->
+
                 <div id="Paris" class="tabcontent">
                 <h3>Paris</h3>
                 <p>Paris is the capital of France.</p>

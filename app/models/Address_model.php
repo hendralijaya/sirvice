@@ -9,10 +9,11 @@ class Address_model {
         $this->db = new Database;
     }
 
-    public function getAddressById($id)
+    public function getAddressById($userId, $addressId)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
-        $this->db->bind('id', $id);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE user_id=:user_id AND id=:id');
+        $this->db->bind('user_id', $userId);
+        $this->db->bind('id', $addressId);
         return $this->db->single();
     }
 

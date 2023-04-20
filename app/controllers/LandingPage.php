@@ -25,6 +25,7 @@ class LandingPage extends Controller {
     public function services()
     {
         $data['title'] = 'Services - Sirvice';
+        $data['services'] = $this->model('Services_model')->getAllServices();
         $this->view('templates/landing-page/header', $data);
         $this->view('landing-page/services', $data);
         $this->view('templates/landing-page/footer');

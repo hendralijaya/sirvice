@@ -19,7 +19,7 @@
                         <div class="tab-data tab-data-desc" data-tab="1">
                             <div class="upcoming-order-cards">
                                 <?php foreach ($data['inprogress_orders'] as $order) : ?>
-                                    <a class="upcoming-order-card" href="#">
+                                    <a class="upcoming-order-card" href="<?= BASEURL ?>/dashboard/order/<?= $order['id'] ?>">
                                         <div class="service-technician-status-info">
                                             <div class="status-progress-info">
                                                 <div class="status in-progress">
@@ -29,7 +29,7 @@
                                             </div>
                                             <div class="service-technician-info">
                                                 <div class="general-info">
-                                                    <p class="service-id-full">Service ID. <span><?= $order['id'] ?></span></p>
+                                                    <p class="service-id-full">Order ID. <span><?= $order['id'] ?></span></p>
                                                     <p class="technician-name"><?= $data['technician']['name'] ?></p>
                                                 </div>
                                                 <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="location">
                                                 <i class="material-icons-round">location_on</i>
-                                                <?php $address = $this->model('Address_model')->getAddressById($order['address_id']); ?>
+                                                <?php $address = $this->model('Address_model')->getAddressById($_SESSION['user_id'], $order['address_id']); ?>
                                                 <address><?= $address['street'] ?>, <?= $address['sub_district'] ?>, <?= $address['district'] ?>, <?= $address['regency'] ?>, <?= $address['province'] ?>, <?= $address['post_code'] ?></address>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                         <div class="tab-data tab-data-desc" data-tab="2">
                             <div class="upcoming-order-cards">
                                 <?php foreach ($data['scheduled_orders'] as $order) : ?>
-                                    <a class="upcoming-order-card" href="#">
+                                    <a class="upcoming-order-card" href="<?= BASEURL ?>/dashboard/order/<?= $order['id'] ?>">
                                         <div class="service-technician-status-info">
                                             <div class="status-progress-info">
                                                 <div class="status scheduled">
@@ -84,7 +84,7 @@
                                             </div>
                                             <div class="service-technician-info">
                                                 <div class="general-info">
-                                                    <p class="service-id-full">Service ID. <span><?= $order['id'] ?></span></p>
+                                                    <p class="service-id-full">Order ID. <span><?= $order['id'] ?></span></p>
                                                     <p class="technician-name"><?= $data['technician']['name'] ?></p>
                                                 </div>
                                                 <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
@@ -112,7 +112,7 @@
                                             </div>
                                             <div class="location">
                                                 <i class="material-icons-round">location_on</i>
-                                                <?php $address = $this->model('Address_model')->getAddressById($order['address_id']); ?>
+                                                <?php $address = $this->model('Address_model')->getAddressById( $_SESSION['user_id'], $order['address_id']); ?>
                                                 <address><?= $address['street'] ?>, <?= $address['sub_district'] ?>, <?= $address['district'] ?>, <?= $address['regency'] ?>, <?= $address['province'] ?>, <?= $address['post_code'] ?></address>
                                             </div>
                                         </div>
@@ -127,7 +127,7 @@
                         <div class="tab-data tab-data-desc" data-tab="3">
                             <div class="upcoming-order-cards">
                                 <?php foreach ($data['history_orders'] as $order) : ?>
-                                    <a class="upcoming-order-card" href="#">
+                                    <a class="upcoming-order-card" href="<?= BASEURL ?>/dashboard/order/<?= $order['id'] ?>">
                                         <div class="service-technician-status-info">
                                             <div class="status-progress-info">
                                                 <div class="status done">
@@ -137,7 +137,7 @@
                                             </div>
                                             <div class="service-technician-info">
                                                 <div class="general-info">
-                                                    <p class="service-id-full">Service ID. <span><?= $order['id'] ?></span></p>
+                                                    <p class="service-id-full">Order ID. <span><?= $order['id'] ?></span></p>
                                                     <p class="technician-name"><?= $data['technician']['name'] ?></p>
                                                 </div>
                                                 <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
@@ -165,7 +165,7 @@
                                             </div>
                                             <div class="location">
                                                 <i class="material-icons-round">location_on</i>
-                                                <?php $address = $this->model('Address_model')->getAddressById($order['address_id']); ?>
+                                                <?php $address = $this->model('Address_model')->getAddressById($_SESSION['user_id'], $order['address_id']); ?>
                                                 <address><?= $address['street'] ?>, <?= $address['sub_district'] ?>, <?= $address['district'] ?>, <?= $address['regency'] ?>, <?= $address['province'] ?>, <?= $address['post_code'] ?></address>
                                             </div>
                                         </div>

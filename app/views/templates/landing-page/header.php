@@ -90,8 +90,8 @@
                         <li><a class="nav-link <?= ($_SERVER['REQUEST_URI'] == '/public/landingpage/services') ? 'active' : null; ?>" href="<?= BASEURL; ?>/landingpage/services">Services</a></li>
                         
                         <div class="login-and-register">
-                            <li class="nav-link login-button"><a href="login.html">Log in</a></li>
-                            <li class="nav-link register-button"><a href="register.html">Register Now!</a></li>
+                            <li class="nav-link login-button"><a href="<?= BASEURL; ?>/auth/login">Log in</a></li>
+                            <li class="nav-link register-button"><a href="<?= BASEURL; ?>/auth/register">Register Now!</a></li>
                         </div>
                     </ul>
                 </div>

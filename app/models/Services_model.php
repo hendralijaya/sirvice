@@ -11,7 +11,7 @@ class Services_model {
 
     public function getAllServices()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query('SELECT *, TRIM(TRAILING ",000" FROM FORMAT(75000, 3, "id_ID")) AS price FROM ' . $this->table);
         return $this->db->resultSet();
     }
 
@@ -23,6 +23,20 @@ class Services_model {
         $services = [];
         foreach ($order_service as $os) {
             $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+            $this->db->bind('id', $os['service_id']);
+            $services[] = $this->db->single();
+        }
+        return $services;
+    }
+
+    public function getServiceByOrderId($orderId)
+    {
+        $this->db->query('SELECT * FROM ' . $this->manyToManyTable . ' WHERE order_id=:order_id');
+        $this->db->bind('order_id', $orderId);
+        $order_service = $this->db->resultSet();
+        $services = [];
+        foreach ($order_service as $os) {
+            $this->db->query('SELECT *, TRIM(TRAILING ",000" FROM FORMAT(75000, 3, "id_ID")) AS price FROM ' . $this->table . ' WHERE id=:id');
             $this->db->bind('id', $os['service_id']);
             $services[] = $this->db->single();
         }

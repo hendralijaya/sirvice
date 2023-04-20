@@ -27,7 +27,7 @@ class Orders_model {
 
     public function upcomingOrders($userId)
     {
-        $this->db->query('SELECT *, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date FROM ' . $this->table . ' WHERE user_id=:user_id AND (status="Scheduled" OR status="In Progress") ORDER BY order_date ASC');
+        $this->db->query('SELECT *, TIME_FORMAT(scheduled_time, "%H:%i") AS scheduled_time, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date FROM ' . $this->table . ' WHERE user_id=:user_id AND (status="Scheduled" OR status="In Progress") ORDER BY order_date ASC');
         $this->db->bind('user_id', $userId);
         return $this->db->resultSet();
     }
@@ -48,21 +48,21 @@ class Orders_model {
 
     public function inprogressOrders($userId)
     {
-        $this->db->query('SELECT *, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date, DATE_FORMAT(order_date, "%d-%m-%Y") AS order_date FROM ' . $this->table . ' WHERE user_id=:user_id AND status="In Progress" ORDER BY order_date ASC');
+        $this->db->query('SELECT *, TIME_FORMAT(scheduled_time, "%H:%i") AS scheduled_time, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date, DATE_FORMAT(order_date, "%d-%m-%Y") AS order_date FROM ' . $this->table . ' WHERE user_id=:user_id AND status="In Progress" ORDER BY order_date ASC');
         $this->db->bind('user_id', $userId);
         return $this->db->resultSet();
     }
 
     public function scheduledOrders($userId)
     {
-        $this->db->query('SELECT *, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date, DATE_FORMAT(order_date, "%d-%m-%Y") AS order_date FROM ' . $this->table . ' WHERE user_id=:user_id AND status="Scheduled" ORDER BY order_date ASC');
+        $this->db->query('SELECT *, TIME_FORMAT(scheduled_time, "%H:%i") AS scheduled_time, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date, DATE_FORMAT(order_date, "%d-%m-%Y") AS order_date FROM ' . $this->table . ' WHERE user_id=:user_id AND status="Scheduled" ORDER BY order_date ASC');
         $this->db->bind('user_id', $userId);
         return $this->db->resultSet();
     }
 
     public function historyOrders($userId)
     {
-        $this->db->query('SELECT *, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date, DATE_FORMAT(order_date, "%d-%m-%Y") AS order_date FROM ' . $this->table . ' WHERE user_id=:user_id AND status="Done" ORDER BY order_date DESC');
+        $this->db->query('SELECT *, TIME_FORMAT(scheduled_time, "%H:%i") AS scheduled_time, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date, DATE_FORMAT(order_date, "%d-%m-%Y") AS order_date FROM ' . $this->table . ' WHERE user_id=:user_id AND status="Done" ORDER BY order_date DESC');
         $this->db->bind('user_id', $userId);
         return $this->db->resultSet();
     }
@@ -72,7 +72,7 @@ class Orders_model {
         $payment_file = Helper::uploadFile($files['payment'], PAYMENT_PATH);
         $total_price = $this->getTotalPrice($data['service_id'], $data['number_unit']);
         $scheduled_day = Helper::getDay($data['scheduled_date']);
-        $this->db->query('INSERT INTO ' . $this->table . ' (user_id, address_id, technician_id, total_price, scheduled_date, scheduled_day, scheduled_time, status, payment, number_unit, ac_brand, description) VALUES (:user_id, :address_id, :technician_id, :total_price, :scheduled_date, :scheduled_day, :scheduled_time, :status, :payment, :number_unit, :ac_brand, :description)');
+        $this->db->query('INSERT INTO ' . $this->table . ' (user_id, address_id, technician_id, total_price, scheduled_date, scheduled_day, scheduled_time, status, icon, payment, number_unit, ac_brand, description) VALUES (:user_id, :address_id, :technician_id, :total_price, :scheduled_date, :scheduled_day, :scheduled_time, :status, :icon, :payment, :number_unit, :ac_brand, :description)');
         $this->db->bind('user_id', $userId);
         $this->db->bind('address_id', $data['address_id']);
         $this->db->bind('technician_id', random_int(1, 3));
@@ -81,6 +81,7 @@ class Orders_model {
         $this->db->bind('scheduled_day', $scheduled_day);
         $this->db->bind('scheduled_time', $data['scheduled_time']);
         $this->db->bind('status', 'Scheduled');
+        $this->db->bind('icon', 'schedule');
         $this->db->bind('payment', $payment_file);
         $this->db->bind('number_unit', $data['number_unit']);
         $this->db->bind('ac_brand', $data['ac_brand']);
@@ -98,6 +99,14 @@ class Orders_model {
         return $orderId;
     }
 
+    public function getOrderById($orderId, $userId)
+    {
+        $this->db->query('SELECT *, TIME_FORMAT(scheduled_time, "%H:%i") AS scheduled_time, DATE_FORMAT(scheduled_date, "%d-%m-%Y") AS scheduled_date, DATE_FORMAT(order_date, "%d-%m-%Y") AS order_date FROM ' . $this->table . ' WHERE id=:id AND user_id=:user_id');
+        $this->db->bind('id', $orderId);
+        $this->db->bind('user_id', $userId);
+        return $this->db->single();
+    }
+
     private function getTotalPrice($servicesId, $number_unit)
     {
         $totalPrice = 0;
@@ -108,5 +117,13 @@ class Orders_model {
         }
         $totalPrice = $totalPrice * $number_unit;
         return $totalPrice + ($totalPrice * 0.02);
+    }
+
+    public function checkOrderById($orderId, $userId)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id AND user_id=:user_id');
+        $this->db->bind('id', $orderId);
+        $this->db->bind('user_id', $userId);
+        return $this->db->single();
     }
 }

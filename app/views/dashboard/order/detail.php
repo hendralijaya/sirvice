@@ -1,3 +1,6 @@
+        <?php 
+        $subtotal = 0;
+         ?>
         <!-- Section Start -->
         <section id="detail-order">
             <div class="container">
@@ -14,14 +17,14 @@
                                     <i class="material-icons-round">arrow_right</i>
                                 </div>
                                 <div class="breadcrumb">
-                                    <p class="title">Detail Order #8194</p>
+                                    <p class="title">Detail Order #<?= $data['order']['id'] ?></p>
                                 </div>
                             </div>
 
                             <div class="status-progress-info">
                                 <div class="status scheduled">
-                                    <i class="material-icons-round">schedule</i>
-                                    <p>Scheduled</p>
+                                    <i class="material-icons-round"><?= $data['order']['icon'] ?></i>
+                                    <p><?= $data['order']['status'] ?></p>
                                 </div>
                             </div>
                         </div>
@@ -32,15 +35,15 @@
                                     <div class="client-identity">
                                         <h2 class="title">Client Identity & Address</h2>
                                         <div class="name-and-phone-number">
-                                            <p class="name">Patricia Ho</p>
-                                            <p class="phone-number">(+62)81905197673</p>
+                                            <p class="name"><?= $data['user']['name'] ?></p>
+                                            <p class="phone-number"><?= $data['user']['phone_number'] ?></p>
                                         </div>
                                     </div>
 
                                     <div class="client-address">
-                                        <p class="title-address">Pradita University</p>
-                                        <p class="address">Jl. Gading Serpong Boulevard No. 1, Curug Sangereng, Kec. Klp. Dua, Kabupaten Tangerang, Banten 15810</p>
-                                        <small class="note-address">“Di gedung 1 , yang deket lapangan basket”</small>
+                                        <p class="title-address"><?= $data['address']['label_address'] ?></p>
+                                        <p class="address"><?= $data['address']['street'] ?>, <?= $data['address']['sub_district'] ?>, <?= $data['address']['district'] ?>, <?= $data['address']['regency'] ?>, <?= $data['address']['province'] ?>, <?= $data['address']['post_code'] ?></p>
+                                        <small class="note-address">“<?= $data['address']['additional_information'] ?>”</small>
                                     </div>
                                 </div>
 
@@ -51,8 +54,8 @@
                                             <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
                                         </div>
                                         <div class="technician-name-and-phone-number">
-                                            <p class="technician-name">Aldy Kusumo</p>
-                                            <p class="technician-phone-number">(+62)818765234</p>
+                                            <p class="technician-name"><?= $data['technician']['name'] ?></p>
+                                            <p class="technician-phone-number"><?= $data['technician']['phone_number'] ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -62,18 +65,18 @@
                                 <div class="date-time-problem-and-ac-brand">
                                     <div class="scheduled-date-and-time">
                                         <p class="title">Scheduled Date and Time:</p>
-                                        <p class="content">Wednesday, 12 April 2023 - 14:00 WIB</p>
+                                        <p class="content"><?= "{$data['order']['scheduled_day']}, {$data['order']['scheduled_date']}" ?> - <?= $data['order']['scheduled_time'] ?> WIB</p>
                                     </div>
 
                                     <div class="problem-and-ac-brand">
                                         <div class="problem-details">
                                             <p class="title">Problem Details:</p>
-                                            <p class="content">AC tidak dingin dan berbau tak sedap.</p>
+                                            <p class="content"><?= $data['order']['description'] ?></p>
                                         </div>
 
                                         <div class="ac-brand">
                                             <p class="title">AC Brand:</p>
-                                            <p class="content">LG, Daikin, Panasonic</p>
+                                            <p class="content"><?= $data['order']['ac_brand'] ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -89,23 +92,26 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr class="invoice-detail">
-                                                <td>Cleaning Air Conditoner</td>
-                                                <td>3</td>
-                                                <td>Rp. 75.000,-</td>
-                                                <td>Rp. 225.000,-</td>
-                                            </tr>
+                                            <?php foreach ($data['services'] as $service) : ?>
+                                                <tr class="invoice-detail">
+                                                    <td><?= $service['name'] ?></td>
+                                                    <td><?= $data['order']['number_unit'] ?></td>
+                                                    <td>Rp. <?= $service['price'] ?>,-</td>
+                                                    <td>Rp. <?= number_format($service['price'] * $data['order']['number_unit'], 3, '.', '') ?>,-</td>
+                                                </tr>
+                                                <?php $subtotal += $service['price'] * $data['order']['number_unit'] ?>
+                                            <?php endforeach; ?>
                                             <tr class="sub-total">
                                                 <td>Sub Total</td>
                                                 <td></td>
                                                 <td></td>
-                                                <td>Rp. 200.000,-</td>
+                                                <td>Rp. <?= number_format($subtotal, 3, '.', '') ?>,-</td>
                                             </tr>
                                             <tr class="tax">
                                                 <td>Service Tax (2%)</td>
                                                 <td></td>
                                                 <td></td>
-                                                <td>Rp 4.500,-</td>
+                                                <td>Rp <?= number_format($subtotal * 0.02, 3, '.', '') ?>,-</td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
@@ -113,21 +119,21 @@
                                                 <td>Total</td>
                                                 <td></td>
                                                 <td></td>
-                                                <td>Rp. 600.000,-</td>
+                                                <td>Rp. <?= number_format($subtotal + $subtotal * 0.02, 3, '.', '') ?>,-</td>
                                             </tr>
                                         </tfoot>
                                     </table>
                                 </div>
                             </div>
-
+                            <?php if($data['order']['status'] == "In Progress") : ?>
                             <div class="button-to-complete-order">
                                 <form action="" method="post">
                                     <button type="button" id="myBtn" class="primary-button submit-form">Complete Order</button>
                                 </form>
                             </div>
-
+                            <?php endif; ?>
                             <div class="history-date-order">
-                                <p>Ordered on <time datetime="2023-04-10"> Monday, 10 April 2023</time></p>
+                                <p>Ordered on <time datetime="2023-04-10"><?= $data['order']['order_date'] ?></time></p>
                             </div>
                         </div>
                     </div>

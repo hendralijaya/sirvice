@@ -20,7 +20,7 @@
                         </div>
                         <div class="upcoming-order-cards">
                             <?php foreach ($data['upcoming_order'] as $order) : ?>
-                                <a class="upcoming-order-card" href="#">
+                                <a class="upcoming-order-card" href="<?= BASEURL ?>/dashboard/order/<?= $order['id'] ?>">
                                     <div class="service-technician-status-info">
                                         <div class="status-progress-info">
                                             <p class="status status-order"><?= $order['status'] ?></p>
@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="location">
                                             <i class="material-icons-round">location_on</i>
-                                            <?php $address = $this->model('Address_model')->getAddressById($order['address_id']) ?>
+                                            <?php $address = $this->model('Address_model')->getAddressById($_SESSION['user_id'], $order['address_id']) ?>
                                             <address><?= $address['street'] ?>, <?= $address['sub_district'] ?>, <?= $address['district'] ?>, <?= $address['regency'] ?>, <?= $address['province'] ?>, <?= $address['country'] ?>, <?= $address['post_code']; ?></address>
                                         </div>
                                     </div>

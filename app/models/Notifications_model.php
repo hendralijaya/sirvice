@@ -45,9 +45,9 @@ class Notifications_model {
       }
     }
 
-    public function createNotification($userId, $title, $description, $link, $icon, $icon_class, $orderId = 0, $date)
+    public function createNotification($userId, $title, $description, $link, $icon, $icon_class, $orderId = 0, $scheduled_date)
     {
-        $this->db->query("INSERT INTO $this->table (user_id, title, description, link, icon, icon_class, order_id, date) VALUES (:user_id, :title, :description, :link, :icon, :icon_class, :order_id, :date)");
+        $this->db->query("INSERT INTO $this->table (user_id, title, description, link, icon, icon_class, order_id, scheduled_date) VALUES (:user_id, :title, :description, :link, :icon, :icon_class, :order_id, :scheduled_date)");
         $this->db->bind('user_id', $userId);
         $this->db->bind('title', $title);
         $this->db->bind('description', $description);
@@ -55,7 +55,7 @@ class Notifications_model {
         $this->db->bind('icon', $icon);
         $this->db->bind('icon_class', $icon_class);
         $this->db->bind('order_id', $orderId);
-        $this->db->bind('date', $date);
+        $this->db->bind('scheduled_date', $scheduled_date);
         $this->db->execute();
         return $this->db->rowCount();
     }

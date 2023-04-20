@@ -115,7 +115,7 @@
                                     <input type="search" placeholder="Search Address" id="address" name="address">
                                 </form>
 
-                                <a class="add-address" href="<?= BASEURL ?>/dashboard/new_address">+ Add New Address</a>
+                                <a class="add-address" href="<?= BASEURL ?>/dashboard/address">+ Add New Address</a>
                             </div>
 
                             <div class="address-cards" id="address-suggestion">
@@ -127,12 +127,12 @@
                                             <small class="note-address">“<?= $address['additional_information'] ?>”</small>
                                         </div>
                                         <div class="button-edit-and-delete">
-                                            <a href="#" class="edit-address">
+                                            <a href="<?= BASEURL ?>/dashboard/address/<?= $address['id'] ?>" class="edit-address">
                                                 <i class="material-icons-round">edit</i>
                                                 <span>Edit</span>
                                             </a>
                                             <form action="#">
-                                                <a href="#" class="delete-address">
+                                                <a href="<?= BASEURL ?>/dashboard/delete_address/<?= $address['id'] ?>" class="delete-address">
                                                     <i class="material-icons-round">delete</i>
                                                     <span>Delete</span>
                                                 </a>
