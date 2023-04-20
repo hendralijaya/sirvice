@@ -5,7 +5,7 @@
         <section id="detail-order">
             <div class="container">
                 <div class="page-title order-title-with-button">
-                    <h1 class="title-page">Tips & Tricks</h1>
+                    <h1 class="title-page">Detail Order</h1>
                 </div>
 
                 <div class="main-content">
@@ -47,18 +47,28 @@
                                     </div>
                                 </div>
 
-                                <div class="technician-identity">
-                                    <h2 class="title">Technician Identity</h2>
-                                    <div class="technician-profile">
-                                        <div class="technician-image">
-                                            <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
+                                <div class="technician-and-rating">
+                                    <div class="technician-identity">
+                                        <h2 class="title">Technician Identity</h2>
+                                        <div class="technician-profile">
+                                            <div class="technician-image">
+                                                <img src="<?= BASEURL; ?>/image/technician-profile/technician-profile-1.png" alt="Technician Profile Picture">
+                                            </div>
+                                            <div class="technician-name-and-phone-number">
+                                                <p class="technician-name"><?= $data['technician']['name'] ?></p>
+                                                <p class="technician-phone-number"><?= $data['technician']['phone_number'] ?></p>
+                                            </div>
                                         </div>
-                                        <div class="technician-name-and-phone-number">
-                                            <p class="technician-name"><?= $data['technician']['name'] ?></p>
-                                            <p class="technician-phone-number"><?= $data['technician']['phone_number'] ?></p>
+                                        
+                                    <div class="rating-score">
+                                        <h2 class="title">Rating Score</h2>
+                                        <div class="rating">
+                                            <i class="material-icons-round">star</i>
+                                            <p>4/5 Stars</p>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="order-details">
@@ -129,6 +139,7 @@
                             <div class="button-to-complete-order">
                                 <form action="" method="post">
                                     <button type="button" id="myBtn" class="primary-button submit-form">Complete Order</button>
+                                    <button type="button" id="myBtnFeedback" class="primary-button submit-form">Give Feedback</button>
                                 </form>
                             </div>
                             <?php endif; ?>
@@ -150,7 +161,7 @@
             <div class="modal-content">
                 <i class="material-icons-round close">close</i>
                 <div class="modal-main-content">
-                    <div class="icon-modal">
+                    <div class="modal-icon">
                         <i class="material-icons-round">info</i>
                     </div>
                     <div class="modal-text-content">
@@ -161,14 +172,62 @@
                             <p>Please make sure that the order is done by our technician.</p>
                         </div>
                     </div>
-                    <div class="modal-button">
-                        <div class="secondary-button">
-                            <button type="button" class="secondary-button">Wait a second...</button>
+                    <form action="">
+                        <div class="modal-button">
+                            <div class="secondary-button">
+                                <button type="button" class="secondary-button" id="cancel">Wait a second...</button>
+                            </div>
+                            <div class="main-button">
+                                <button type="submit" class="primary-button">Yes, They've done it</button>
+                            </div>
                         </div>
-                        <div class="main-button">
-                            <button type="submit" class="primary-button">Yes, They've done it</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModalFeedback" class="modal">
+            <div class="modal-content">
+                <i class="material-icons-round close">close</i>
+                <div class="modal-main-content">
+                    <div class="modal-text-content">
+                        <div class="modal-title">
+                            <h2 class="title">Give Feedback</h2>
+                        </div>
+                        <div class="modal-description">
+                            <p>Rate our services from 1 to 5 stars</p>
                         </div>
                     </div>
+
+                    <form action="">
+                        <div class="input-form">
+                            <div class="feedback-stars">
+                                <ul class="stars">
+                                    <li><input type="radio" name="rating" id="star1" value="1"><label class="star" for="star1"><i class="material-icons-round">star</i></label></li>
+                                    <li><input type="radio" name="rating" id="star2" value="2"><label class="star" for="star2"><i class="material-icons-round">star</i></label></li>
+                                    <li><input type="radio" name="rating" id="star3" value="3"><label class="star" for="star3"><i class="material-icons-round">star</i></label></li>
+                                    <li><input type="radio" name="rating" id="star4" value="4"><label class="star" for="star4"><i class="material-icons-round">star</i></label></li>
+                                    <li><input type="radio" name="rating" id="star5" value="5"><label class="star" for="star5"><i class="material-icons-round">star</i></label></li>
+                                </ul>
+                            </div>
+
+                            <div class="field">
+                                <label for="name">Suggestions</label>
+                                <small>Any suggestions to improve our service?</small>
+                                <input type="text" id="name" name="name" value="" placeholder="Example: Sir-vice is the best" required>
+                            </div>
+
+                            <div class="modal-button">
+                                <div class="main-button">
+                                    <button type="submit" class="primary-button">Submit Feedback</button>
+                                </div>
+                                <div class="secondary-button">
+                                    <button type="button" class="secondary-button" id="cancelFeedback">I'll do the feedback later...</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>

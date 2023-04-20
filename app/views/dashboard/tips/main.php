@@ -21,9 +21,12 @@
                                     <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
                                 </div>
                                 <div class="tips-and-tricks-content">
-                                    <time datetime="2021-05-01"><?= $tip['date'] ?></time>
-                                    <h6 class="title">"<?= $tip['title'] ?>"</h6>
-                                    <p class="description"><?= $tip['description'] ?></p>
+                                    <div class="date-title-description">
+                                        <time datetime="2021-05-01"><?= $tip['date'] ?></time>
+                                        <h6 class="title">"<?= $tip['title'] ?>"</h6>
+                                        <p class="description"><?= $tip['description'] ?></p>
+                                    </div>
+                                    
                                     <div class="go-to-detail-content">
                                         <a class="read-more" href="<?= BASEURL; ?>/dashboard/tips/<?= $tip['id'] ?>">Read More</a>
                                     </div>

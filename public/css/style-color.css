@@ -30,6 +30,7 @@
     --scheduled-border-color: #ADADAD;
 
     --disabled-background-color: #BCBCBC;
+    --star-active-color: #F5C400;
 }
 
 html[data-theme='light'] {

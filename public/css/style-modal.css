@@ -3,7 +3,7 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     width: 100vw;
     height: 100vh;
     justify-content: center;
@@ -28,6 +28,10 @@
     gap: 10px;
 }
 
+.modal-content > i {
+    font-size: 30px;
+}
+
 .modal-content > .modal-main-content,
 .modal-content > .modal-main-content > .modal-text-content {
     width: 100%;
@@ -40,8 +44,17 @@
 }
 
 .modal-content > .modal-main-content > .modal-icon > i {
-    font-size: 50px;
+    font-size: 100px;
     color: var(--primary-color);
+}
+
+.modal-content > .modal-main-content > .modal-text-content {
+    padding: 10px 0 30px 0;
+}
+
+.modal-content > .modal-main-content > .modal-text-content > .modal-title,
+.modal-content > .modal-main-content > .modal-text-content > .modal-description {
+    padding: 0 20px;
 }
 
 .modal-content > .modal-main-content > .modal-text-content > .modal-title > h2.title {
@@ -55,7 +68,7 @@
     line-height: 24px;
 }
 
-.modal-content > .modal-main-content > .modal-button {
+.modal-button {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -63,9 +76,9 @@
     gap: 10px;
 }
 
-.modal-content > .modal-main-content > .modal-button > .main-button > button {
+.modal-button > .main-button > button {
     width: 100%;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -74,9 +87,9 @@
     border-radius: 5px;
 }
 
-.modal-content > .modal-main-content > .modal-button > .secondary-button > button {
+.modal-button > .secondary-button > button {
     width: 100%;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: var(--background-color);
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
@@ -89,11 +102,127 @@
     cursor: pointer;
 }
 
-button#myBtn {
+button#myBtn, button#myBtnFeedback {
     padding: 10px 20px;
-    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
     font-size: 16px;
+}
+
+/* Danger Modal */
+
+.modal.danger > .modal-content > .modal-main-content > .modal-icon > i {
+    font-size: 100px;
+    color: var(--danger-color);
+}
+
+.modal.danger > .modal-content > .modal-main-content .modal-button > .main-button > button {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.modal.danger > .modal-content > .modal-main-content .modal-button > .secondary-button > button {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: var(--background-color);
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/* For Feedback Stars */
+
+#myModalFeedback > .modal-content {
+    gap: 0px;
+}
+
+#myModalFeedback > .modal-content > .modal-main-content > .modal-text-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    text-align: center;
+    padding: 10px 0 0 0;
+}
+
+#myModalFeedback > .modal-content > .modal-main-content > .modal-text-content > .modal-title,
+#myModalFeedback > .modal-content > .modal-main-content > .modal-text-content > .modal-description {
+    padding: 0 10px;
+}
+
+.feedback-stars {
+    padding: 10px 0 20px 0;
+}
+
+.feedback-stars > .stars {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.feedback-stars > .stars .star {
+    color: var(--background-color);
+    display: inline-block;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.feedback-stars > .stars .star:hover,
+.feedback-stars > .stars .star:hover~.star {
+    color: var(--star-active-color);
+}
+
+.feedback-stars > .stars .star:hover i:before {
+    width: 100%;
+}
+
+.feedback-stars > .stars input[type="radio"] {
+    display: none;
+}
+
+.feedback-stars > .stars .star > i {
+    font-size: 50px;
+    position: relative;
+    display: inline-block;  
+}
+
+#myModalFeedback > .modal-content > .modal-main-content > form > .input-form > .field{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 8px;
+    padding: 20px 0;
+}
+
+#myModalFeedback > .modal-content > .modal-main-content > form > .input-form > .field > label{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#myModalFeedback > .modal-content > .modal-main-content > form > .input-form > .field > input {
+    border-radius: 5px;
+    border: 0.5px solid var(--border-color);
+    padding: 10px 15px;
+    width: 90%;
+}
+
+#myModalFeedback > .modal-content > .modal-main-content > form > .input-form > .field > small {
+    font-style: italic;
+    font-size: 14px;
+    padding: 3px 0;
+    line-height: 21px;
 }
