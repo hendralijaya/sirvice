@@ -1,4 +1,4 @@
-    const eyeIcons = document.querySelectorAll('.eye-icon');
+const eyeIcons = document.querySelectorAll('.eye-icon');
 
 eyeIcons.forEach(icon => {
     const passwordField = document.getElementById(icon.previousElementSibling.getAttribute('id'));

@@ -74,8 +74,8 @@
                                 <form action="" class="change-password-form">
                                     <div class="input-form">
                                         <div class="field password-container">
-                                            <label for="password">Current Password</label>
-                                            <input type="password" id="password" name="password" placeholder="*******" required>
+                                            <label for="old_password">Current Password</label>
+                                            <input type="password" id="old_password" name="old_password" placeholder="*******" required>
                                             <span toggle="#password" class="eye-icon"></span>
                                         </div>
 
@@ -86,8 +86,8 @@
                                         </div>
 
                                         <div class="field password-container">
-                                            <label for="password">Confirm New Password</label>
-                                            <input type="password" id="password" name="password" placeholder="*******" required>
+                                            <label for="repassword">Confirm New Password</label>
+                                            <input type="password" id="repassword" name="repassword" placeholder="*******" required>
                                             <span toggle="#password" class="eye-icon"></span>
                                         </div>
 
