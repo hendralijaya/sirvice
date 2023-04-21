@@ -49,4 +49,20 @@ class Users_model {
             return $this->db->rowCount();
         }
     }
+
+    public function change_password($userId, $data) {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $userId);
+        $user = $this->db->single();
+        if (password_verify($data['old_password'], $user['password'])) {
+            $newPassword = password_hash($data['password'], PASSWORD_DEFAULT);
+            $this->db->query('UPDATE ' . $this->table . ' SET password=:password WHERE id=:id');
+            $this->db->bind('id', $userId);
+            $this->db->bind('password', $newPassword);
+            $this->db->execute();
+            return $this->db->rowCount();
+        }else {
+            return 0;
+        }
+    }
 }

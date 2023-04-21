@@ -42,7 +42,7 @@
                                             <input type="phone_number" id="phone_number" name="phone_number" value="<?= $data['user']['phone_number'] ?>" required disabled>
                                             <span toggle="#phone_number" class="flag-icon"></span>
                                         </div>
-
+                                        <input type="hidden" value="update_profile" name="update_profile">
                                         <button type="submit" class="save-changes">Save Changes</button>
                                     </div>
 
@@ -71,7 +71,7 @@
 
                         <div class="tab-data tab-data-desc" data-tab="2">
                             <div class="overall-change-password">
-                                <form action="" class="change-password-form">
+                                <form action="<?= BASEURL ?>/dashboard/change_password" class="change-password-form" method="post">
                                     <div class="input-form">
                                         <div class="field password-container">
                                             <label for="password">Current Password</label>
@@ -90,7 +90,7 @@
                                             <input type="password" id="password" name="password" placeholder="*******" required>
                                             <span toggle="#password" class="eye-icon"></span>
                                         </div>
-
+                                            <input type="hidden" name='change_password' value="change_password">
                                         <button type="submit" class="save-changes">Save Changes</button>
                                     </div>
 

@@ -87,7 +87,7 @@
                     <div class="tips-and-tricks">
                         <div class="tips-and-tricks-header">
                             <h5 class="title">Tips & Tricks</h5>
-                            <a href="#">View All</a>
+                            <a href="<?= BASEURL ?>/dashboard/tips">View All</a>
                         </div>
 
                         <div class="tips-and-tricks-cards">
@@ -99,7 +99,7 @@
                                     <h6 class="title">"<?= $data['tips']['title'] ?>”</h6>
                                     <p class="description"><?= $data['tips']['description'] ?></p>
                                     <div class="go-to-detail-content">
-                                        <a class="read-more" href="#">Read More</a>
+                                        <a class="read-more" href="<?= BASEURL ?>/dashboard/tips/<?= $data['tips']['id'] ?>">Read More</a>
                                     </div>
                                 </div>
                             </div>

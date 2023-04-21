@@ -4,6 +4,7 @@ class Dashboard extends Controller {
     {
         if (!isset($_SESSION['logged_in']) && $_SERVER['REQUEST_URI'] != '/public/dashboard/search_address') {
             // User is not logged in and is not accessing the allowed route
+            Flasher::setFlash('You are not logged in ', 'Please login to access the dashboard', 'danger');
             header('Location: ' . BASEURL . '/auth/login');
             exit;
         }
@@ -142,14 +143,44 @@ class Dashboard extends Controller {
         $this->view('templates/dashboard/footer');
     }
 
-    public function update_profile()
+    public function change_password()
     {
-        if ($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST,$_FILES) > 0) {
-            // Flash message
-            header('Location: ' . BASEURL . '/dashboard/profile');
-            exit;
+        if (isset($_POST['change_password'])){
+            if ($this->model('Users_model')->changePassword($_SESSION['user_id'],$_POST) > 0) {
+                // Flash message
+                Flasher::setFlash('Password has been ', 'changed', 'success');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            } else {
+                // Flash message
+                Flasher::setFlash('Password : ', 'wrong password', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            }
         } else {
             // Flash message
+            Flasher::setFlash('You are not ', 'allowed', 'danger');
+            header('Location: ' . BASEURL . '/dashboard/profile');
+            exit;
+        }
+    }
+
+    public function update_profile()
+    {
+        if(isset($_POST['update_profile'])) {
+            if ($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST,$_FILES) > 0) {
+                // Flash message
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            } else {
+                // Flash message
+                Flasher::setFlash('Profile : ', 'failed to update', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            }
+        } else {
+            // Flash message
+            Flasher::setFlash('You are not ', 'allowed', 'danger');
             header('Location: ' . BASEURL . '/dashboard/profile');
             exit;
         }
