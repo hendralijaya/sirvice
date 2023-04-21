@@ -248,16 +248,14 @@
                             <p>If you request for this service to be provided, you will not be able to cancel the order.</p>
                         </div>
                     </div>
-                    <form action="">
-                        <div class="modal-button">
-                            <div class="secondary-button">
-                                <button type="button" class="secondary-button" id="cancel">No, Go Back</button>
-                            </div>
-                            <div class="main-button">
-                                <button type="submit" class="primary-button">Yes, Order This</button>
-                            </div>
+                    <div class="modal-button">
+                        <div class="secondary-button">
+                            <button type="button" class="secondary-button" id="cancel">No, Go Back</button>
                         </div>
-                    </form>
+                        <div class="main-button">
+                            <button type="submit" class="primary-button" id="submitForm">Yes, Order This</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

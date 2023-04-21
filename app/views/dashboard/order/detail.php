@@ -59,6 +59,7 @@
                                                 <p class="technician-phone-number"><?= $data['technician']['phone_number'] ?></p>
                                             </div>
                                         </div>
+                                    </div>
                                         
                                     <div class="rating-score">
                                         <h2 class="title">Rating Score</h2>
@@ -172,16 +173,14 @@
                             <p>Please make sure that the order is done by our technician.</p>
                         </div>
                     </div>
-                    <form action="">
-                        <div class="modal-button">
-                            <div class="secondary-button">
-                                <button type="button" class="secondary-button" id="cancel">Wait a second...</button>
-                            </div>
-                            <div class="main-button">
-                                <button type="submit" class="primary-button">Yes, They've done it</button>
-                            </div>
+                    <div class="modal-button">
+                        <div class="secondary-button">
+                            <button type="button" class="secondary-button" id="cancel">Wait a second...</button>
                         </div>
-                    </form>
+                        <div class="main-button">
+                            <button type="submit" class="primary-button" id="submitForm">Yes, They've done it</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

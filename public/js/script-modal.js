@@ -2,7 +2,16 @@
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var close = document.getElementsByClassName("close")[0];
-var cancel = document.getElementById("cancel");
+var cancel = document.getElementsByClassName("cancellation-button");
+var submitBtn = document.getElementById("submitForm");
+// Modal Delete Address 
+var deleteAddressBtns = document.querySelectorAll(".delete-address-modal-show");
+
+deleteAddressBtns.forEach(function(deleteAddressBtn) {
+    deleteAddressBtn.onclick = function () {
+        modal.style.display = "flex";
+    }
+});
 
 btn.onclick = function () {
     modal.style.display = "flex";
@@ -21,6 +30,11 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+submitBtn.onclick = function() {
+    document.querySelector('form').submit();
+}
+
 
 // Modal for feedback
 var modalFeedback = document.getElementById("myModalFeedback");

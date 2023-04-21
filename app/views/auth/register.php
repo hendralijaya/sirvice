@@ -334,6 +334,7 @@
                 <div class="modal-icon">
                     <i class="material-icons-round">info</i>
                 </div>
+
                 <div class="modal-text-content">
                     <div class="modal-title">
                         <h2 class="title">Check Your Data</h2>
@@ -342,16 +343,15 @@
                         <p>Remember that the <span style="font-weight: 600;">email</span> and <span style="font-weight: 600;">phone number</span> that you registered here is only for one account and can’t be change anymore</p>
                     </div>
                 </div>
-                <form action="">
-                    <div class="modal-button">
-                        <div class="secondary-button">
-                            <button type="button" class="secondary-button" id="cancel">Well, I’ll think about it</button>
-                        </div>
-                        <div class="main-button">
-                            <button type="submit" class="primary-button">Yes, I understand</button>
-                        </div>
+
+                <div class="modal-button">
+                    <div class="secondary-button">
+                        <button type="button" class="secondary-button" id="cancel">Well, I’ll think about it</button>
                     </div>
-                </form>
+                    <div class="main-button">
+                        <button type="submit" class="primary-button" id="submitForm">Yes, I understand</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

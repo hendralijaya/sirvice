@@ -132,7 +132,7 @@
                                                 <span>Edit</span>
                                             </a>
                                             <form action="#">
-                                                <button type="button" id="myBtn" class="delete-address">
+                                                <button type="button" id="myBtn" class="delete-address delete-address-modal-show">
                                                     <i class="material-icons-round">delete</i>
                                                     <span>Delete</span>
                                                 </button>
@@ -169,7 +169,7 @@
                             <p>Are you sure you want to delete this address? You can’t undo this action. </p>
                         </div>
                     </div>
-                    <form onsubmit="window.location.href = '<?= BASEURL ?>/dashboard/delete_address/<?= $address['id'] ?>';">
+                    <form action="<?= BASEURL ?>/dashboard/delete_address/<?= $address['id'] ?>" >
                         <div class="modal-button">
                             <div class="secondary-button">
                                 <button type="button" class="secondary-button" id="cancel">No, Keep It</button>
