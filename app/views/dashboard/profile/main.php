@@ -74,8 +74,8 @@
                                 <form action="<?= BASEURL ?>/dashboard/change_password" class="change-password-form" method="post">
                                     <div class="input-form">
                                         <div class="field password-container">
-                                            <label for="password">Current Password</label>
-                                            <input type="password" id="password" name="password" placeholder="*******" required>
+                                            <label for="old_password">Current Password</label>
+                                            <input type="password" id="old_password" name="old_password" placeholder="*******" required>
                                             <span toggle="#password" class="eye-icon"></span>
                                         </div>
 
@@ -86,8 +86,8 @@
                                         </div>
 
                                         <div class="field password-container">
-                                            <label for="password">Confirm New Password</label>
-                                            <input type="password" id="password" name="password" placeholder="*******" required>
+                                            <label for="repassword">Confirm New Password</label>
+                                            <input type="password" id="repassword" name="repassword" placeholder="*******" required>
                                             <span toggle="#password" class="eye-icon"></span>
                                         </div>
                                             <input type="hidden" name='change_password' value="change_password">

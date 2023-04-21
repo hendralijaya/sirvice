@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="field password-container">
-                        <label for="password">Re-Password</label>
+                        <label for="repassword">Re-Password</label>
                         <input type="password" id="repassword" name="repassword" placeholder="*******" required value="<?php echo isset($_POST['repassword']) ? $_POST['repassword'] : ''; ?>">
                         <span toggle="#repassword" class="eye-icon"></span>
                     </div>
