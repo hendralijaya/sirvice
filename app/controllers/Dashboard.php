@@ -2,7 +2,7 @@
 class Dashboard extends Controller {
     public function __construct()
     {
-        if (!isset($_SESSION['logged_in']) && $_SERVER['REQUEST_URI'] != '/public/dashboard/search_address') {
+        if (!isset($_SESSION['logged_in']) && $_SERVER['REQUEST_URI'] != '/public/dashboard/search_address' && $_SERVER['REQUEST_URI'] != '/public/dashboard/search_tips') {
             // User is not logged in and is not accessing the allowed route
             Flasher::setFlash('You are not logged in ', 'Please login to access the dashboard', 'danger');
             header('Location: ' . BASEURL . '/auth/login');
@@ -236,6 +236,15 @@ class Dashboard extends Controller {
             // do something else if $my_var is not an integer
             header('Location: ' . BASEURL . '/notfound/index');
         }
+    }
+
+    // search tips
+    public function search_tips()
+    {
+        $tipsQuery = $_POST['tips'];
+        $data = $this->model('Tips_model')->searchTips($tipsQuery);
+        header('Content-Type: application/json');
+        echo json_encode($data);
     }
 
     public function notification(){

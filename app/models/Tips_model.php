@@ -26,4 +26,12 @@ class Tips_model {
     $this->db->bind('id', $id);
     return $this->db->single();
   }
+
+  public function searchTips($searchQuery, $userId)
+  {
+    $this->db->query('SELECT *, DATE_FORMAT(date, "%d-%m-%Y") AS date FROM ' . $this->table . ' WHERE user_id = :user_id AND (LOWER(title) LIKE LOWER(:query) OR LOWER(description) LIKE LOWER(:query))');
+    $this->db->bind('query', '%' . $searchQuery . '%');
+    $this->db->bind('user_id', $userId);
+    return $this->db->resultSet();
+  }
 }

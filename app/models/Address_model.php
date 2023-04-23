@@ -19,11 +19,12 @@ class Address_model {
 
     public function searchAddress($query, $userId)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE user_id:user_id AND (label_address LIKE :query OR street LIKE :query OR sub_district LIKE :query OR district LIKE :query OR regency LIKE :query OR province LIKE :query OR country LIKE :query OR post_code LIKE :query)');
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE user_id = :user_id AND (LOWER(label_address) LIKE LOWER(:query) OR LOWER(street) LIKE LOWER(:query) OR LOWER(sub_district) LIKE LOWER(:query) OR LOWER(district) LIKE LOWER(:query) OR LOWER(regency) LIKE LOWER(:query) OR LOWER(province) LIKE LOWER(:query) OR LOWER(country) LIKE LOWER(:query) OR LOWER(post_code) LIKE LOWER(:query))');
         $this->db->bind('query', '%' . $query . '%');
         $this->db->bind('user_id', $userId);
         return $this->db->resultSet();
     }
+
 
     public function getAddressByUserId($userId)
     {
