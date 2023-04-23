@@ -27,11 +27,10 @@ class Tips_model {
     return $this->db->single();
   }
 
-  public function searchTips($searchQuery, $userId)
+  public function searchTips($searchQuery)
   {
-    $this->db->query('SELECT *, DATE_FORMAT(date, "%d-%m-%Y") AS date FROM ' . $this->table . ' WHERE user_id = :user_id AND (LOWER(title) LIKE LOWER(:query) OR LOWER(description) LIKE LOWER(:query))');
-    $this->db->bind('query', '%' . $searchQuery . '%');
-    $this->db->bind('user_id', $userId);
+    $this->db->query('SELECT *, DATE_FORMAT(date, "%d-%m-%Y") AS date FROM ' . $this->table . ' WHERE LOWER(title) LIKE LOWER(:searchQuery) OR LOWER(description) LIKE LOWER(:searchQuery) ORDER BY date ASC');
+    $this->db->bind('searchQuery', '%' . $searchQuery . '%');
     return $this->db->resultSet();
   }
 }
