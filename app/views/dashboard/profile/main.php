@@ -112,7 +112,7 @@
                             <div class="search-bar-and-add-address">
                                 <form action="" class="search-bar">
                                     <i class="material-icons-round">search</i>    
-                                    <input type="search" placeholder="Search Address" id="address" name="address">
+                                    <input type="search" placeholder="Search Address" id="address-search-bar" name="address">
                                 </form>
 
                                 <a class="add-address" href="<?= BASEURL ?>/dashboard/address">+ Add New Address</a>
@@ -132,11 +132,41 @@
                                                 <span>Edit</span>
                                             </a>
                                             <form action="#">
-                                                <button type="button" id="myBtn" class="delete-address delete-address-modal-show">
+                                                <button type="button" class="delete-address delete-address-modal-show" onclick="modalTriggered('myModal<?= $address['id'] ?>');modalClosedWindow('myModal<?= $address['id'] ?>')">
                                                     <i class="material-icons-round">delete</i>
                                                     <span>Delete</span>
+                                                    <p class="address_id"><?= $address['id'] ?></p>
                                                 </button>
                                             </form>
+                                        </div>
+                                    </div>
+
+                                    <div id="myModal<?= $address['id'] ?>" class="modal danger">
+                                        <div class="modal-content">
+                                            <i class="material-icons-round close" onclick="modalClosedButton('myModal<?= $address['id'] ?>')">close</i>
+                                            <div class="modal-main-content">
+                                                <div class="modal-icon">
+                                                    <i class="material-icons-round">warning</i>
+                                                </div>
+                                                <div class="modal-text-content">
+                                                    <div class="modal-title">
+                                                        <h2 class="title">Delete Address?</h2>
+                                                    </div>
+                                                    <div class="modal-description">
+                                                        <p>Are you sure you want to delete this address? You can’t undo this action. </p>
+                                                    </div>
+                                                </div>
+                                                <form action="<?= BASEURL ?>/dashboard/delete_address/<?= $address['id'] ?>" >
+                                                    <div class="modal-button">
+                                                        <div class="secondary-button">
+                                                            <button type="button" class="secondary-button" id="cancel" onclick="modalClosedButton('myModal<?= $address['id'] ?>')">No, Keep It</button>
+                                                        </div>
+                                                        <div class="main-button">
+                                                            <button type="submit" class="primary-button">Yes, Delete Address</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -154,8 +184,8 @@
 
         <!-- Main End -->
 
-        <div id="myModal" class="modal danger">
-            <div class="modal-content">
+        <!-- <div id="myModal" class="modal danger">
+            <div class="modal-content"> 
                 <i class="material-icons-round close">close</i>
                 <div class="modal-main-content">
                     <div class="modal-icon">
@@ -181,4 +211,4 @@
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->

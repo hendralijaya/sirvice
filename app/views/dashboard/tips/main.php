@@ -10,11 +10,11 @@
                         <div class="search-bar-and-add-address">
                             <form action="" class="search-bar">
                                 <i class="material-icons-round">search</i>    
-                                <input type="search" placeholder="Search tips and tricks" id="address" name="address">
+                                <input type="search" placeholder="Search tips and tricks" id="tips-search-bar" name="tips">
                             </form>
                         </div>
 
-                        <div class="tips-and-tricks-cards">
+                        <div class="tips-and-tricks-cards" id="tips-suggestion">
                             <?php foreach($data['tips'] as $tip) : ?>
                             <div class="tips-and-tricks-card">
                                 <div class="tips-and-tricks-vector">
@@ -33,75 +33,6 @@
                                 </div>
                             </div>
                             <?php endforeach; ?>
-                            <!-- <div class="tips-and-tricks-card">
-                                <div class="tips-and-tricks-vector">
-                                    <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
-                                </div>
-                                <div class="tips-and-tricks-content">
-                                    <time datetime="2021-05-01">May 1, 2021</time>
-                                    <h6 class="title">"The importance of keeping your air filter clean”</h6>
-                                    <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
-                                    <div class="go-to-detail-content">
-                                        <a class="read-more" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tips-and-tricks-card">
-                                <div class="tips-and-tricks-vector">
-                                    <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
-                                </div>
-                                <div class="tips-and-tricks-content">
-                                    <time datetime="2021-05-01">May 1, 2021</time>
-                                    <h6 class="title">"The importance of keeping your air filter clean”</h6>
-                                    <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
-                                    <div class="go-to-detail-content">
-                                        <a class="read-more" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tips-and-tricks-card">
-                                <div class="tips-and-tricks-vector">
-                                    <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
-                                </div>
-                                <div class="tips-and-tricks-content">
-                                    <time datetime="2021-05-01">May 1, 2021</time>
-                                    <h6 class="title">"The importance of keeping your air filter clean”</h6>
-                                    <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
-                                    <div class="go-to-detail-content">
-                                        <a class="read-more" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tips-and-tricks-card">
-                                <div class="tips-and-tricks-vector">
-                                    <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
-                                </div>
-                                <div class="tips-and-tricks-content">
-                                    <time datetime="2021-05-01">May 1, 2021</time>
-                                    <h6 class="title">"The importance of keeping your air filter clean”</h6>
-                                    <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
-                                    <div class="go-to-detail-content">
-                                        <a class="read-more" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tips-and-tricks-card">
-                                <div class="tips-and-tricks-vector">
-                                    <img src="<?= BASEURL; ?>/svg/tips-and-tricks-cleaning.svg" alt="">
-                                </div>
-                                <div class="tips-and-tricks-content">
-                                    <time datetime="2021-05-01">May 1, 2021</time>
-                                    <h6 class="title">"The importance of keeping your air filter clean”</h6>
-                                    <p class="description">Your air conditioning unit is like the    superhero of your home - it saves you from the heat and humidity, keeps you comfortable and makes...</p>
-                                    <div class="go-to-detail-content">
-                                        <a class="read-more" href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
 

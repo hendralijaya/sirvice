@@ -385,6 +385,7 @@ main > #home > .container > .main-content > .tips-and-tricks > .tips-and-tricks-
     text-align: center;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     padding: 0 20px;
 }
 

@@ -7,11 +7,34 @@ var submitBtn = document.getElementById("submitForm");
 // Modal Delete Address 
 var deleteAddressBtns = document.querySelectorAll(".delete-address-modal-show");
 
-deleteAddressBtns.forEach(function(deleteAddressBtn) {
-    deleteAddressBtn.onclick = function () {
-        modal.style.display = "flex";
+// deleteAddressBtns.forEach(function(deleteAddressBtn) {
+//     var modalSelected = document.querySelectorAll(".modal.danger");
+//     forEach(function(modal) {
+//         modal.style.display = "flex";
+//     });
+//     deleteAddressBtn.onclick = function () {
+//         modalSelected.style.display = "flex";
+//     }
+// });
+
+function modalTriggered(modal) {
+    var modalSelected = document.getElementById(modal);
+    modalSelected.style.display = "flex";
+}
+
+function modalClosedButton(modal) {
+    var modalSelected = document.getElementById(modal);
+    modalSelected.style.display = "none";
+}
+
+function modalClosedWindow(modal) {
+    var modalSelected = document.getElementById(modal);
+    window.onclick = function (event) {
+        if (event.target == modalSelected) {
+            modalSelected.style.display = "none";
+        }
     }
-});
+}
 
 btn.onclick = function () {
     modal.style.display = "flex";
