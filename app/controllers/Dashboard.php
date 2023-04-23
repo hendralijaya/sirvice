@@ -242,7 +242,7 @@ class Dashboard extends Controller {
     public function search_tips()
     {
         $tipsQuery = $_POST['tips'];
-        $data = $this->model('Tips_model')->searchTips($tipsQuery);
+        $data = $this->model('Tips_model')->searchTips($tipsQuery, $_SESSION['user_id']);
         header('Content-Type: application/json');
         echo json_encode($data);
     }
