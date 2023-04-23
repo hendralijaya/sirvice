@@ -2,7 +2,7 @@
 class Dashboard extends Controller {
     public function __construct()
     {
-        if (!isset($_SESSION['logged_in']) && $_SERVER['REQUEST_URI'] != '/public/dashboard/search_address' && $_SERVER['REQUEST_URI'] != '/public/dashboard/search_tips') {
+        if (!isset($_SESSION['logged_in'])) {
             // User is not logged in and is not accessing the allowed route
             Flasher::setFlash('You are not logged in ', 'Please login to access the dashboard', 'danger');
             header('Location: ' . BASEURL . '/auth/login');
