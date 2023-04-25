@@ -79,6 +79,24 @@ class Dashboard extends Controller {
         
     }
 
+    public function createReview()
+    {
+        if(isset($_POST['review'])) {
+            if($this->model('Reviews_model')->createReview($_SESSION['user_id'], $_POST)) {
+                Flasher::setFlash('Review has been ', 'created', 'success');
+                header('Location: ' . BASEURL . '/dashboard/order/'.$_POST['order_id']);
+                exit;
+            } else {
+                Flasher::setFlash('Review has not been ', 'created', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/order/'.$_POST['order_id']);
+                exit;
+            }
+        } else {
+            Flasher::setFlash('You are not ', 'allowed', 'danger');
+            header('Location: ' . BASEURL . '/dashboard/order');
+        }
+    }
+
     public function newOrder()
     {
         // Get user data
