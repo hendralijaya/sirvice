@@ -100,182 +100,28 @@
                             </svg>
                         </button>
                     </div>
+                    <?php 
+                    $i = 0;
+                     ?>
+                    <?php foreach ($data['services'] as $service) : ?>
+                    <?php $i++; ?>
+                    <div id= "content<?= $i ?>" class="tab-content">
+                        <div class="title">
+                            <div class = "left-sec">
+                                <h4><?= $service['name'] ?></h4>
+                            </div>
+                            <div class = "right-sec">
+                                <h4>Rp. <?= $service['price'] ?></h4>
+                            </div>
+                        </div>
+                        
+                        <div class = "description">
+                        <p><?= $service['description'] ?>
+                            </p>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                     
-                    <div id= "content1" class="tab-content">
-                        <div class="title">
-                            <div class = "left-sec">
-                                <h4>Checking Air Conditioner</h4>
-                            </div>
-                            <div class = "right-sec">
-                                <h4>Rp. 75.000</h4>
-                            </div>
-                        </div>
-                        
-                        <div class = "description">
-                        <p>Ensure the efficiency and longevity of your air conditioner with our "checking air conditioner" service. 
-                                Our team of experts will perform a comprehensive inspection of your AC unit to identify any potential problems and ensure it is functioning optimally.<br><br>
-
-                                Our inspection includes checking refrigerant levels, inspecting the condenser and evaporator coils, and testing the electrical components for proper operation. 
-                                With our service, you can expect a detailed report of any issues and recommendations for repairs, if necessary.<br><br>
-
-                                Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="content2" class="tab-content">
-                        <div class="title">
-                            <div class = "left-sec">
-                                <h4>Add Freon</h4>
-                            </div>
-                            <div class = "right-sec">
-                                <h4>Rp. 25.000</h4>
-                            </div>
-                        </div>
-                        
-                        <div class = "description">
-                        <p>Ensure the efficiency and longevity of your air conditioner with our "checking air conditioner" service. 
-                                Our team of experts will perform a comprehensive inspection of your AC unit to identify any potential problems and ensure it is functioning optimally.<br><br>
-
-                                Our inspection includes checking refrigerant levels, inspecting the condenser and evaporator coils, and testing the electrical components for proper operation. 
-                                With our service, you can expect a detailed report of any issues and recommendations for repairs, if necessary.<br><br>
-
-                                Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="content3" class="tab-content">
-                        <div class="title">
-                            <div class = "left-sec">
-                                <h4>Replacement Air Conditioner</h4>
-                            </div>
-                            <div class = "right-sec">
-                                <h4>Rp. 50.000</h4>
-                            </div>
-                        </div>
-                        
-                        <div class = "description">
-                        <p>Ensure the efficiency and longevity of your air conditioner with our "checking air conditioner" service. 
-                                Our team of experts will perform a comprehensive inspection of your AC unit to identify any potential problems and ensure it is functioning optimally.<br><br>
-
-                                Our inspection includes checking refrigerant levels, inspecting the condenser and evaporator coils, and testing the electrical components for proper operation. 
-                                With our service, you can expect a detailed report of any issues and recommendations for repairs, if necessary.<br><br>
-
-                                Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="content4" class="tab-content">
-                        <div class="title">
-                            <div class = "left-sec">
-                                <h4>Vacuum Air Conditioner</h4>
-                            </div>
-                            <div class = "right-sec">
-                                <h4>Rp. 50.000</h4>
-                            </div>
-                        </div>
-                        
-                        <div class = "description">
-                        <p>Ensure the efficiency and longevity of your air conditioner with our "checking air conditioner" service. 
-                                Our team of experts will perform a comprehensive inspection of your AC unit to identify any potential problems and ensure it is functioning optimally.<br><br>
-
-                                Our inspection includes checking refrigerant levels, inspecting the condenser and evaporator coils, and testing the electrical components for proper operation. 
-                                With our service, you can expect a detailed report of any issues and recommendations for repairs, if necessary.<br><br>
-
-                                Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="content5" class="tab-content">
-                        <div class="title">
-                            <div class = "left-sec">
-                                <h4>Cleaning Air Conditioner</h4>
-                            </div>
-                            <div class = "right-sec">
-                                <h4>Rp. 100.000</h4>
-                            </div>
-                        </div>
-                        
-                        <div class = "description">
-                        <p>Ensure the efficiency and longevity of your air conditioner with our "checking air conditioner" service. 
-                                Our team of experts will perform a comprehensive inspection of your AC unit to identify any potential problems and ensure it is functioning optimally.<br><br>
-
-                                Our inspection includes checking refrigerant levels, inspecting the condenser and evaporator coils, and testing the electrical components for proper operation. 
-                                With our service, you can expect a detailed report of any issues and recommendations for repairs, if necessary.<br><br>
-
-                                Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="content6" class="tab-content">
-                        <div class="title">
-                            <div class = "left-sec">
-                                <h4>Fill Freon</h4>
-                            </div>
-                            <div class = "right-sec">
-                                <h4>Rp. 25.000</h4>
-                            </div>
-                        </div>
-                        
-                        <div class = "description">
-                        <p>Ensure the efficiency and longevity of your air conditioner with our "checking air conditioner" service. 
-                                Our team of experts will perform a comprehensive inspection of your AC unit to identify any potential problems and ensure it is functioning optimally.<br><br>
-
-                                Our inspection includes checking refrigerant levels, inspecting the condenser and evaporator coils, and testing the electrical components for proper operation. 
-                                With our service, you can expect a detailed report of any issues and recommendations for repairs, if necessary.<br><br>
-
-                                Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="content7" class="tab-content">
-                        <div class="title">
-                            <div class = "left-sec">
-                                <h4>Installation Air Conditioner</h4>
-                            </div>
-                            <div class = "right-sec">
-                                <h4>Rp. 125.000</h4>
-                            </div>
-                        </div>
-                        
-                        <div class = "description">
-                        <p>Ensure the efficiency and longevity of your air conditioner with our "checking air conditioner" service. 
-                                Our team of experts will perform a comprehensive inspection of your AC unit to identify any potential problems and ensure it is functioning optimally.<br><br>
-
-                                Our inspection includes checking refrigerant levels, inspecting the condenser and evaporator coils, and testing the electrical components for proper operation. 
-                                With our service, you can expect a detailed report of any issues and recommendations for repairs, if necessary.<br><br>
-
-                                Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="content8" class="tab-content">
-                        <div class="title">
-                            <div class = "left-sec">
-                                <h4>Flushing Air Conditioner</h4>
-                            </div>
-                            <div class = "right-sec">
-                                <h4>Rp. 100.000</h4>
-                            </div>
-                        </div>
-                        
-                        <div class = "description">
-                        <p>Ensure the efficiency and longevity of your air conditioner with our "checking air conditioner" service. 
-                                Our team of experts will perform a comprehensive inspection of your AC unit to identify any potential problems and ensure it is functioning optimally.<br><br>
-
-                                Our inspection includes checking refrigerant levels, inspecting the condenser and evaporator coils, and testing the electrical components for proper operation. 
-                                With our service, you can expect a detailed report of any issues and recommendations for repairs, if necessary.<br><br>
-
-                                Don't let a malfunctioning air conditioner impact your comfort, choose our "checking air conditioner" service for peace of mind and a healthy AC system.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
