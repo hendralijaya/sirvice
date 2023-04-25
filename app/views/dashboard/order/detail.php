@@ -60,14 +60,25 @@
                                             </div>
                                         </div>
                                     </div>
-                                        
+                                    <?php if($data['order']['status'] == "Done" && $data['review_status'] == 0) : ?>
                                     <div class="rating-score">
                                         <h2 class="title">Rating Score</h2>
                                         <div class="rating">
                                             <i class="material-icons-round">star</i>
-                                            <p>4/5 Stars</p>
+                                            <p>-/5 Stars</p>
                                         </div>
                                     </div>
+                                    <?php endif; ?>
+                                    <?php if($data['order']['status'] == "Done" && $data['review_status'] == 1) : ?>
+                                    <?php $review = $this->model('Reviews_model')->getReview($_SESSION['user_id'], $data['order']['id']) ?>
+                                        <div class="rating-score">
+                                        <h2 class="title">Rating Score</h2>
+                                        <div class="rating">
+                                            <i class="material-icons-round">star</i>
+                                            <p><?= $review['rating'] ?>/5 Stars</p>
+                                        </div>
+                                    </div>
+                                    <?php endif; ?>
                                 </div>
 
                             </div>
@@ -138,16 +149,12 @@
                             </div>
                             <?php if($data['order']['status'] == "In Progress") : ?>
                             <div class="button-to-complete-order">
-                                <form action="" method="post">
-                                    <button type="button" id="myBtn" class="primary-button submit-form">Complete Order</button>
-                                </form>
+                                <button type="button" id="myBtn" class="primary-button submit-form">Complete Order</button>
                             </div>
                             <?php endif; ?>
                             <?php if($data['order']['status'] == "Done" && $data['review_status'] == 0) : ?>
                             <div class="button-to-complete-order">
-                                <form action="" method="post">
                                     <button type="button" id="myBtnFeedback" class="primary-button submit-form">Give Feedback</button>
-                                </form>
                             </div>
                             <?php endif; ?>
                             <div class="history-date-order">
@@ -179,9 +186,11 @@
                             <p>Please make sure that the order is done by our technician.</p>
                         </div>
                     </div>
-                    <form action="">
+                    <form action="<?= BASEURL ?>/dashboard/completeOrder" method="post">
                         <div class="modal-button">
                             <div class="secondary-button">
+                                <input type="hidden" name="order_id" value="<?= $data['order']['id'] ?>">
+                                <input type="hidden" name="complete_order" value="complete_order">
                                 <button type="button" class="secondary-button" id="cancel">Wait a second...</button>
                             </div>
                             <div class="main-button">
@@ -207,7 +216,7 @@
                         </div>
                     </div>
 
-                    <form action="">
+                    <form action="<?= BASEURL ?>/dashboard/giveFeedback" method="post">
                         <div class="input-form">
                             <div class="feedback-stars">
                                 <ul class="stars">
@@ -222,9 +231,9 @@
                             <div class="field">
                                 <label for="name">Suggestions</label>
                                 <small>Any suggestions to improve our service?</small>
-                                <input type="text" id="name" name="name" value="" placeholder="Example: Sir-vice is the best" required>
+                                <input type="text" id="name" name="description" value="" placeholder="Example: Sir-vice is the best" required>
                             </div>
-
+                            <input type="hidden" name="order_id" value="<?= $data['order']['id'] ?>">
                             <div class="modal-button">
                                 <div class="main-button">
                                     <button type="submit" class="primary-button">Submit Feedback</button>

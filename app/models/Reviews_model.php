@@ -45,4 +45,12 @@ class Reviews_model {
         return $this->db->single()['value'];
     }
 
+    public function getReview($userId, $orderId)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE user_id=:user_id AND order_id=:order_id');
+        $this->db->bind('user_id', $userId);
+        $this->db->bind('order_id', $orderId);
+        return $this->db->single();
+    }
+
 }
