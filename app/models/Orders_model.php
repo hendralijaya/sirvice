@@ -126,4 +126,19 @@ class Orders_model {
         $this->db->bind('user_id', $userId);
         return $this->db->single();
     }
+
+    public function updateOrderInProgress($userId) {
+        $this->db->query('UPDATE ' . $this->table . ' SET status="In Progress" WHERE user_id=:user_id AND status="Scheduled" AND scheduled_date <= CURDATE()');
+        $this->db->bind('user_id', $userId);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
+    public function updateOrderDone($userId, $orderId) {
+        $this->db->query('UPDATE ' . $this->table . ' SET status="Done", icon="check" WHERE user_id=:user_id AND id=:id');
+        $this->db->bind('user_id', $userId);
+        $this->db->bind('id', $orderId);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }

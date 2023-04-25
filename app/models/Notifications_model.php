@@ -45,7 +45,7 @@ class Notifications_model {
       }
     }
 
-    public function createNotification($userId, $title, $description, $link, $icon, $icon_class, $orderId = 0, $scheduled_date)
+    public function createNotification($userId, $title, $description, $link, $icon, $icon_class, $orderId = 0, $scheduled_date=NULL)
     {
         $this->db->query("INSERT INTO $this->table (user_id, title, description, link, icon, icon_class, order_id, scheduled_date) VALUES (:user_id, :title, :description, :link, :icon, :icon_class, :order_id, :scheduled_date)");
         $this->db->bind('user_id', $userId);

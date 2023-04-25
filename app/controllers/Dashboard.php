@@ -49,6 +49,7 @@ class Dashboard extends Controller {
                 $data['address'] = $this->model('Address_model')->getAddressById($_SESSION['user_id'], $data['order']['address_id']);
                 $data['technician'] = $this->model('Technicians_model')->getTechnicianById($data['order']['technician_id']);
                 $data['title'] = 'Order - Sirvice';
+                $data['review_status'] = $this->model('Reviews_model')->checkReviewRows($_SESSION['user_id'], $orderId);
                 $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
                 $data['services'] = $this->model('Services_model')->getServiceByOrderId($orderId);
                 $this->view('templates/dashboard/header-sidebar', $data);
@@ -56,6 +57,8 @@ class Dashboard extends Controller {
                 $this->view('templates/dashboard/footer');
                 return;
             } else if ($orderId == 0) {
+                // update order status
+                $this->model('Orders_model')->updateOrderInProgress($_SESSION['user_id']);
                 // Get user data
                 $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
                 $data['title'] = 'Order - Sirvice';
@@ -79,7 +82,26 @@ class Dashboard extends Controller {
         
     }
 
-    public function createReview()
+    public function completeOrder()
+    {
+        if(isset($_POST['complete_order'])) {
+            if($this->model('Orders_model')->completeOrder($_SESSION['user_id'], $_POST['order_id'])) {
+                $this->model('Notifications_model')->createNotification($_SESSION['user_id'], 'Order Completed!', "Congratulations, your order has been successfully completed! We hope you had a great experience with us, 't forget to give feedback and we look forward to providing you with the best possible experience.", 'http://sirvice/public/dashboard/order/'.$_POST['order_id'], 'check_circle', 'check', $_POST['order_id']);
+                Flasher::setFlash('Order has been ', 'completed', 'success');
+                header('Location: ' . BASEURL . '/dashboard/order');
+                exit;
+            } else {
+                Flasher::setFlash('Order has not been ', 'completed', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/order');
+                exit;
+            }
+        } else {
+            Flasher::setFlash('You are not ', 'allowed', 'danger');
+            header('Location: ' . BASEURL . '/dashboard/order');
+        }
+    }
+
+    public function giveFeedback()
     {
         if(isset($_POST['review'])) {
             if($this->model('Reviews_model')->createReview($_SESSION['user_id'], $_POST)) {

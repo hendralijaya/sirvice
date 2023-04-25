@@ -36,4 +36,13 @@ class Reviews_model {
         $this->db->execute();
         return $this->db->rowCount();
     }
+
+    public function checkReviewRows($userId, $orderId)
+    {
+        $this->db->query('SELECT COUNT(*) AS value FROM ' . $this->table . ' WHERE user_id=:user_id AND order_id=:order_id');
+        $this->db->bind('user_id', $userId);
+        $this->db->bind('order_id', $orderId);
+        return $this->db->single()['value'];
+    }
+
 }

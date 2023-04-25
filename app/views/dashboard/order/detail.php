@@ -140,6 +140,12 @@
                             <div class="button-to-complete-order">
                                 <form action="" method="post">
                                     <button type="button" id="myBtn" class="primary-button submit-form">Complete Order</button>
+                                </form>
+                            </div>
+                            <?php endif; ?>
+                            <?php if($data['order']['status'] == "Done" && $data['review_status'] == 0) : ?>
+                            <div class="button-to-complete-order">
+                                <form action="" method="post">
                                     <button type="button" id="myBtnFeedback" class="primary-button submit-form">Give Feedback</button>
                                 </form>
                             </div>
