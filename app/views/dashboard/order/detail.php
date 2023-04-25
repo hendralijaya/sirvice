@@ -22,9 +22,9 @@
                             </div>
 
                             <div class="status-progress-info">
-                                <div class="status scheduled">
+                                <div class="status">
                                     <i class="material-icons-round"><?= $data['order']['icon'] ?></i>
-                                    <p><?= $data['order']['status'] ?></p>
+                                    <p class="status-order"><?= $data['order']['status'] ?></p>
                                 </div>
                             </div>
                         </div>
@@ -173,14 +173,17 @@
                             <p>Please make sure that the order is done by our technician.</p>
                         </div>
                     </div>
-                    <div class="modal-button">
-                        <div class="secondary-button">
-                            <button type="button" class="secondary-button" id="cancel">Wait a second...</button>
+                    <form action="">
+                        <div class="modal-button">
+                            <div class="secondary-button">
+                                <button type="button" class="secondary-button" id="cancel">Wait a second...</button>
+                            </div>
+                            <div class="main-button">
+                                <button type="submit" class="primary-button" id="submitForm">Yes, They've done it</button>
+                            </div>
                         </div>
-                        <div class="main-button">
-                            <button type="submit" class="primary-button" id="submitForm">Yes, They've done it</button>
-                        </div>
-                    </div>
+                    </form>
+                    
                 </div>
             </div>
         </div>
