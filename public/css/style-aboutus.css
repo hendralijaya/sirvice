@@ -1,36 +1,43 @@
-#about-us > .container > .about-us > .about-us-details > .about-us-detail > p.servs {
+#about-us > .container > .about-us > .about-us-details > .about-us-detail {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#about-us > .container > .about-us > .about-us-details > .about-us-detail > p.servs {
     font-weight: 500;
     font-size: 18px;
     line-height: 1.5;
-    justify-content: center;
-    text-align: center;
     color: var(--primary-color);
 }
+
 #about-us > .container > .about-us > .about-us-details > .about-us-detail > h1.about-us-title {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 48px;
-    line-height: 1.2;
+    font-size: 40px;
+    line-height: 1.5;
     font-weight: 500;
-    margin-bottom: 1.5rem;
+    text-align: center;
 }
+
 #about-us > .container > .about-us > .about-us-details > .about-us-detail > p.about-us-description {
-    display: flex;
     font-size: 18px;
     line-height: 1.5;
-    justify-content: center;
     text-align: center;
 }
-#about-us > .container > .about-us > .about-us-details > .about-us-detail > .about-us-image{
+
+#about-us > .container > .about-us > .about-us-details > .about-us-image{
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 30px;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    margin-top: 50px;
 }
+
+#about-us > .container > .about-us > .about-us-details > .about-us-image > img{
+    width: 90%;
+}
+
 
 /* Service Offer Section */
 #about-us-offer {
@@ -94,6 +101,7 @@
     position: relative;
     z-index: 1;
 }
+
 #about-us-offer > .container > .offer-cards > .card > .service-desc > p.title {
     font-size: 36px;
     justify-content: center;
@@ -101,6 +109,7 @@
     margin-bottom: 25px;
     font-weight: 500;
 }
+
 #about-us-offer > .container > .offer-cards > .card > .service-desc > p.sub {
     font-size: 18px;
     font-weight: 400;
@@ -109,402 +118,173 @@
     text-align: center;
 }
 
-
-
-
-
-#vision > .vision-description > .vision-tittle > h2 {
+#vision > .container > .vision-description > .vision-tittle {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
+    gap: 15px;
+}
+
+#vision > .container > .vision-description > .vision-tittle > h2 {
     font-size: 48px;
     line-height: 1.2;
     font-weight: 500;
-    margin-bottom: 1.5rem;
 }
-#vision > .vision-description > .vision-tittle > p.vision-subtitle {
+
+#vision > .container > .vision-description > .vision-tittle > p.vision-subtitle {
     font-size: 18px;
     line-height: 1.5;
     justify-content: center;
     text-align: center;
-    margin-bottom: 70px;
-
 }
-#vision > .vision-description > .vision-image{
+
+#vision > .container > .vision-description > .vision-image{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
-    height: auto;
-}
-#vision > .vision-description >.description {
-    display: flex;
-    font-size: 18px;
-    line-height: 1.5;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 100px;
-    padding: 80px 120px 0 120px;
+    width: 100%;
+    padding: 50px 0;
 }
 
-#mission > .mission-description > .mission-tittle > h2 {
+#vision > .container > .vision-description >.description {
     display: flex;
+    font-size: 18px;
+    line-height: 30px;
     justify-content: center;
     text-align: center;
+    padding: 0 0 80px 0;
+}
+
+#mission {
+    padding: 50px 0 0 0;
+}
+
+#mission > .container > .mission-description > .mission-tittle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+#mission > .container > .mission-description > .mission-tittle > h2 {
     font-size: 48px;
     line-height: 1.2;
     font-weight: 500;
-    margin-bottom: 1.5rem;
 }
 
-#mission > .mission-description > .mission-tittle > p {
+#mission > .container > .mission-description > .mission-tittle > p {
     display: flex;
     font-size: 18px;
     line-height: 1.5;
     justify-content: center;
     text-align: center;
-    margin: 35px;
-    margin-bottom: -50px;
 }
-#mission > .mission-description > .our-mission > .mission1 > .mission1-description >.description {
+
+#mission > .container > .mission-description > .our-mission {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#mission > .container > .mission-description > .our-mission > .mission1,
+#mission > .container > .mission-description > .our-mission > .mission2,
+#mission > .container > .mission-description > .our-mission > .mission3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+#mission > .container > .mission-description > .our-mission > .mission1 > .mission1-image,
+#mission > .container > .mission-description > .our-mission > .mission2 > .mission2-image,
+#mission > .container > .mission-description > .our-mission > .mission3 > .mission3-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mission > .container > .mission-description > .our-mission > .mission1 > .mission1-image > img,
+#mission > .container > .mission-description > .our-mission > .mission2 > .mission2-image > img,
+#mission > .container > .mission-description > .our-mission > .mission3 > .mission3-image > img {
+    width: 350px;
+    object-fit: cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description,
+#mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description,
+#mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description > .description,
+#mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description > .description,
+#mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description > .description {
     display: flex; 
     flex-direction: column; 
     gap: 20px;
 }
-#mission > .mission-description > .our-mission > .mission1 > .mission1-description >.description > h4 {
-    display:flex;
-    font-size: 18px;
-    font-weight: 600;
-}
-#mission > .mission-description > .our-mission > .mission1 > .mission1-description {
-    display: flex;
-}
 
-#mission > .mission-description > .our-mission > .mission1 > .mission1-description > .description > p {
-    display:flex;
+#mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description > .description > p,
+#mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description > .description > p,
+#mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description > .description > p {
+    display: flex;
     font-size: 18px;
     line-height: 36px;
     font-weight: 400;
 }
-#mission > .mission-description > .our-mission > .mission1 {
-   display: flex;
-   justify-content: center;
-   padding: 150px;
-   margin-bottom: -250px;
+
+#mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description >.description > h4,
+#mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description >.description > h4,
+#mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description >.description > h4 {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
 }
-#mission > .mission-description > .our-mission > .mission1 > .mission1-description > .number {
-    width: 40px;
-    height: 40px;
-    padding: 0 15px;
+
+#mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description > .number,
+#mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description > .number,
+#mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description > .number {
+    max-width: 40px;
+    max-height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--primary-color);
     border-radius: 50%;
     margin-top: -10px;
-    margin-left: -10px;
-    margin-right: 10px;
-  }
-  
-#mission > .mission-description > .our-mission > .mission1 > .mission1-description > .number > p {
-    text-align: center;
-    color: var(--background-color);
-  }
-#mission > .mission-description > .our-mission > .mission2 {
-    display: flex;
-    justify-content: center; 
-    padding: 150px;
-    margin-bottom: -250px;
-    flex-direction: row-reverse;
- }
-
- #mission > .mission-description > .our-mission > .mission2 > .mission2-description >.description {
-    display: flex; 
-    flex-direction: column; 
-    gap: 20px;
-}
-
- #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .description > h4 {
-    display:flex;
-    font-size: 18px;
-    font-weight: 600;
-}
-
-#mission > .mission-description > .our-mission > .mission2 > .mission2-description > .description > p {
-    display:flex;
-    font-size: 18px;
-    line-height: 36px;
-    font-weight: 400;
-}
-#mission > .mission-description > .our-mission > .mission2 > .mission2-description > .number {
-    width: 40px;
-    height: 40px;
-    padding: 0 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    margin-top: -10px;
-    margin-left: -10px;
-    margin-right: 10px;
-  }
-#mission > .mission-description > .our-mission > .mission2 > .mission2-description > .number > p {
-    text-align: center;
     color: var(--background-color);
 }
 
-#mission > .mission-description > .our-mission > .mission2 > .mission2-description {
-    display: flex;
-}
-  
-#mission > .mission-description > .our-mission > .mission3 > .mission3-description >.description {
-    display: flex; 
-    flex-direction: column; 
-    gap: 20px;
-}
-
-#mission > .mission-description > .our-mission > .mission3 {
-    display: flex; 
-    justify-content: center;
-    padding: 200px;
-}
-#mission > .mission-description > .our-mission > .mission3 > .mission3-description > .description > h4 {
-    display:flex;
-    font-size: 18px;
-    font-weight: 600;
-}
-#mission > .mission-description > .our-mission > .mission3 > .mission3-description > .description > p {
-    display:flex;
-    font-size: 18px;
-    line-height: 36px;
-    font-weight: 400;
-}
-#mission > .mission-description > .our-mission > .mission3 > .mission3-description > .number {
-    width: 40px;
-    height: 40px;
-    padding: 0 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary-color);
-    border-radius: 50%;
-    margin-top: -10px;
-    margin-left: -10px;
-    margin-right: 10px;
-  }
-  
-#mission > .mission-description > .our-mission > .mission3 > .mission3-description > .number > p {
+#mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description > .number > p,
+#mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description > .number > p,
+#mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description > .number > p {
     text-align: center;
     color: var(--background-color);
-  }
-
-#mission > .mission-description > .our-mission > .mission3 > .mission3-description {
-    display: flex;
+    padding: 20px;
 }
 
-@media screen and (max-width: 960px) {
-    #about-us > .container > .about-us > .about-us-details > .about-us-detail > .about-us-image img {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        margin-top: 30px;
-        max-width: 80%;
-        height: auto;
-    }
-    
-    #vision > .vision-description > .vision-image img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 80%;
-        height: auto;
-    }
-    #mission {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-    }
-    
-    #mission > .mission-description > .mission-tittle > h2 {
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        font-size: 48px;
-        line-height: 1.2;
-        font-weight: 500;
-        margin-bottom: 1.5rem;
-    }
-    
-    #mission > .mission-description > .mission-tittle > p {
-        display: flex;
-        font-size: 18px;
-        line-height: 1.5;
-        justify-content: center;
-        text-align: center;
-    }
-    #mission > .mission-description > .our-mission > .mission1  {
-        flex-direction: column; 
-        text-align: center;
-        justify-content: center;
-        margin-top : 100px;
-    }
-    #mission > .mission-description > .our-mission > .mission1 > .mission1-description {
-        justify-content: center;
-        align-items: center;
-        padding: 0 100px;
-        position: relative;
-        display: block;
-    }
-    #mission > .mission-description > .our-mission > .mission1 > .mission1-description > .number {
-        width: 25px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        margin: auto;
-        padding: 10px;
-      }
-      
-    #mission > .mission-description > .our-mission > .mission1 > .mission1-description > .number > p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: var(--background-color);
-      }
-     #mission > .mission-description > .our-mission > .mission1 > .mission1-description > .description > h4 {
-        display:flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-        font-weight: 600;
-    }
-    #mission > .mission-description > .our-mission > .mission1 > .mission1-description > .description > p {
-        display:flex;
-        font-size: 18px;
-        line-height: 36px;
-        font-weight: 400;
-    }
-
-    #mission > .mission-description > .our-mission > .mission2  {
-        display: flex; 
-        flex-direction: column; 
-        text-align: center;
-        justify-content: center;
-        margin-top : 100px;
-    }
-    #mission > .mission-description > .our-mission > .mission2 > .mission2-description {
-        justify-content: center;
-        align-items: center;
-        padding: 0 100px;
-        display: block;
-    }
-    #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .number {
-        width: 25px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        margin: auto;
-        padding: 10px;
-      }
-      
-    #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .number > p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: var(--background-color);
-      }
-     #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .description > h4 {
-        display:flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-        font-weight: 600;
-    }
-    #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .description > p {
-        display:flex;
-        font-size: 18px;
-        line-height: 36px;
-        font-weight: 400;
-    }
-    
-    #mission > .mission-description > .our-mission > .mission3  {
-        display: flex; 
-        flex-direction: column; 
-        text-align: center;
-        justify-content: center;
-        margin-top : 100px;
-    }
-    #mission > .mission-description > .our-mission > .mission3 > .mission3-description {
-        justify-content: center;
-        align-items: center;
-        padding: 0 100px;
-        margin-bottom: 100px;
-        display: block;
-    }
-    #mission > .mission-description > .our-mission > .mission3 > .mission3-description > .number {
-        width: 25px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-        align-items: center;
-        background-color: var(--primary-color);
-        border-radius: 50%;
-        margin: auto;
-        padding: 10px;
-      }
-      
-    #mission > .mission-description > .our-mission > .mission3 > .mission3-description > .number > p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: var(--background-color);
-      }
-     #mission > .mission-description > .our-mission > .mission3 > .mission3-description > .description > h4 {
-        display:flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        font-size: 18px;
-        font-weight: 600;
-    }
-    #mission > .mission-description > .our-mission > .mission3 > .mission3-description > .description > p {
-        display:flex;
-        font-size: 18px;
-        line-height: 36px;
-        font-weight: 400;
-    }
-    #background > .background-description > .background-image img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 80%;
-        height: auto;
-    }
-    #background > .background-description > p.description {
-        display: flex;
-        font-size: 18px;
-        line-height: 1.5;
-        justify-content: center;
-        text-align: center;
-        padding: 50px 100px;
-    }
+#mission > .container > .mission-description > .our-mission > .mission2 > .mission2-order:nth-child(2) {
+    order: 1;
 }
 
-#background > .background-description > .background-tittle > h2 {
+#mission > .container > .mission-description > .our-mission > .mission2 > .mission2-order:nth-child(1) {
+    order: 2;
+}
+
+#background {
+    padding: 50px 0 0 0;
+}
+
+#background > .container > .background-description > .background-tittle > h2 {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -514,7 +294,7 @@
     margin-bottom: 1.5rem;
 }
 
-#background > .background-description > .background-tittle > p.subtitle {
+#background > .container > .background-description > .background-tittle > p.subtitle {
     display: flex;
     font-size: 18px;
     line-height: 1.5;
@@ -523,19 +303,119 @@
     margin-bottom: 50px;
 }
 
-#background > .background-description > .background-image {
+#background > .container > .background-description > .background-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
+}
+
+#background > .container > .background-description > .background-image > img  {
+    max-width: 80%;
     height: auto;
 }
 
-#background > .background-description > p.description {
+#background > .container > .background-description > p.description {
     display: flex;
     font-size: 18px;
     line-height: 1.5;
     justify-content: center;
     text-align: center;
-    padding: 50px 200px;
+    padding: 50px 0;
+    line-height: 36px;
 }
+
+@media screen and (max-width: 960px) {
+    #vision > .container > .vision-description > .vision-image img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+        height: auto;
+    }
+
+    #mission > .container > .mission-description > .our-mission > .mission2 > .mission2-order:nth-child(2) {
+        order: 2;
+    }
+    
+    #mission > .container > .mission-description > .our-mission > .mission2 > .mission2-order:nth-child(1) {
+        order: 1;
+    }
+
+    #mission > .container > .mission-description > .our-mission > .mission1,
+    #mission > .container > .mission-description > .our-mission > .mission2,
+    #mission > .container > .mission-description > .our-mission > .mission3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+        position: relative;
+        display: block;
+    }
+
+    #mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description,
+    #mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description,
+    #mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description {
+        padding-top: 10px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description > .number,
+    #mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description > .number,
+    #mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description > .number {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    #mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description > .number > p,
+    #mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description > .number > p,
+    #mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description > .number > p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--background-color);
+    }
+
+    #mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description > .description > h4,
+    #mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description > .description > h4,
+    #mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description > .description > h4 {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 36px;
+    }
+
+    #mission > .container > .mission-description > .our-mission > .mission1 > .number-and-description > .description > p,
+    #mission > .container > .mission-description > .our-mission > .mission2 > .number-and-description > .description > p,
+    #mission > .container > .mission-description > .our-mission > .mission3 > .number-and-description > .description > p {
+        display: flex;
+        text-align: center;
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: 400;
+    }
+
+    #background > .container > .background-description > .background-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #background > .container > .background-description > .background-image > img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
