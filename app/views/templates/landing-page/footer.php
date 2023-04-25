@@ -83,5 +83,6 @@
     <script src="<?= BASEURL; ?>/js/script.js"></script>
     <script src="<?= BASEURL; ?>/js/script-landing-page.js"></script>
     <script src="<?= BASEURL; ?>/js/script-loader.js"></script>
+    <script src="<?= BASEURL; ?>/js/script-tab-service.js"></script>
 </body>
 </html>

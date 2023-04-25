@@ -23,12 +23,94 @@
     justify-content: center;
     text-align: center;
 }
-#about-us > .container > .about-us > .about-us-details > .about-us-detail > .about-us-image {
+#about-us > .container > .about-us > .about-us-details > .about-us-detail > .about-us-image{
     display: flex;
     justify-content: center;
     text-align: center;
     margin-top: 30px;
+    max-width: 100%;
+    height: auto;
 }
+
+/* Service Offer Section */
+#about-us-offer {
+    padding: 100px 0;
+}
+
+#about-us-offer > .container > .offer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 10px;
+    height: 100%;
+}
+
+#about-us-offer > .container > .offer-cards > .card {
+    margin: 0 auto 15px;
+    width: 200px;
+    height: 200px;
+    background-color: var(--background-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 40px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+#about-us-offer > .container > .offer-cards > .card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+#about-us-offer > .container > .offer-cards > .card > .service-detail-title {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+#about-us-offer > .container > .offer-cards > .card > .service-icon {
+    position: absolute;
+    color: var(--primary-color);
+    width: 50%;
+    font-size: 50px;
+    left: 0;
+    bottom: 0;
+}
+
+#about-us-offer > .container > .offer-cards > .card > .service-icon > i{
+    font-size: 150px;
+    opacity: 0.5;
+    display: flex;
+}
+
+#about-us-offer > .container > .offer-cards > .card > .service-desc{
+    position: relative;
+    z-index: 1;
+}
+#about-us-offer > .container > .offer-cards > .card > .service-desc > p.title {
+    font-size: 36px;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+#about-us-offer > .container > .offer-cards > .card > .service-desc > p.sub {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
 
 
 #vision > .vision-description > .vision-tittle > h2 {
@@ -47,10 +129,12 @@
     margin-bottom: 70px;
 
 }
-#vision > .vision-description > .vision-image {
+#vision > .vision-description > .vision-image{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 100%;
+    height: auto;
 }
 #vision > .vision-description >.description {
     display: flex;
@@ -59,7 +143,7 @@
     justify-content: center;
     text-align: center;
     margin-bottom: 100px;
-    padding: 120px;
+    padding: 80px 120px 0 120px;
 }
 
 #mission > .mission-description > .mission-tittle > h2 {
@@ -130,6 +214,7 @@
     justify-content: center; 
     padding: 150px;
     margin-bottom: -250px;
+    flex-direction: row-reverse;
  }
 
  #mission > .mission-description > .our-mission > .mission2 > .mission2-description >.description {
@@ -216,6 +301,209 @@
 #mission > .mission-description > .our-mission > .mission3 > .mission3-description {
     display: flex;
 }
+
+@media screen and (max-width: 960px) {
+    #about-us > .container > .about-us > .about-us-details > .about-us-detail > .about-us-image img {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 30px;
+        max-width: 80%;
+        height: auto;
+    }
+    
+    #vision > .vision-description > .vision-image img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+        height: auto;
+    }
+    #mission {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+    
+    #mission > .mission-description > .mission-tittle > h2 {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+    }
+    
+    #mission > .mission-description > .mission-tittle > p {
+        display: flex;
+        font-size: 18px;
+        line-height: 1.5;
+        justify-content: center;
+        text-align: center;
+    }
+    #mission > .mission-description > .our-mission > .mission1  {
+        flex-direction: column; 
+        text-align: center;
+        justify-content: center;
+        margin-top : 100px;
+    }
+    #mission > .mission-description > .our-mission > .mission1 > .mission1-description {
+        justify-content: center;
+        align-items: center;
+        padding: 0 100px;
+        position: relative;
+        display: block;
+    }
+    #mission > .mission-description > .our-mission > .mission1 > .mission1-description > .number {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        margin: auto;
+        padding: 10px;
+      }
+      
+    #mission > .mission-description > .our-mission > .mission1 > .mission1-description > .number > p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--background-color);
+      }
+     #mission > .mission-description > .our-mission > .mission1 > .mission1-description > .description > h4 {
+        display:flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    #mission > .mission-description > .our-mission > .mission1 > .mission1-description > .description > p {
+        display:flex;
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: 400;
+    }
+
+    #mission > .mission-description > .our-mission > .mission2  {
+        display: flex; 
+        flex-direction: column; 
+        text-align: center;
+        justify-content: center;
+        margin-top : 100px;
+    }
+    #mission > .mission-description > .our-mission > .mission2 > .mission2-description {
+        justify-content: center;
+        align-items: center;
+        padding: 0 100px;
+        display: block;
+    }
+    #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .number {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        margin: auto;
+        padding: 10px;
+      }
+      
+    #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .number > p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--background-color);
+      }
+     #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .description > h4 {
+        display:flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    #mission > .mission-description > .our-mission > .mission2 > .mission2-description > .description > p {
+        display:flex;
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: 400;
+    }
+    
+    #mission > .mission-description > .our-mission > .mission3  {
+        display: flex; 
+        flex-direction: column; 
+        text-align: center;
+        justify-content: center;
+        margin-top : 100px;
+    }
+    #mission > .mission-description > .our-mission > .mission3 > .mission3-description {
+        justify-content: center;
+        align-items: center;
+        padding: 0 100px;
+        margin-bottom: 100px;
+        display: block;
+    }
+    #mission > .mission-description > .our-mission > .mission3 > .mission3-description > .number {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        margin: auto;
+        padding: 10px;
+      }
+      
+    #mission > .mission-description > .our-mission > .mission3 > .mission3-description > .number > p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: var(--background-color);
+      }
+     #mission > .mission-description > .our-mission > .mission3 > .mission3-description > .description > h4 {
+        display:flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    #mission > .mission-description > .our-mission > .mission3 > .mission3-description > .description > p {
+        display:flex;
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: 400;
+    }
+    #background > .background-description > .background-image img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 80%;
+        height: auto;
+    }
+    #background > .background-description > p.description {
+        display: flex;
+        font-size: 18px;
+        line-height: 1.5;
+        justify-content: center;
+        text-align: center;
+        padding: 50px 100px;
+    }
+}
+
 #background > .background-description > .background-tittle > h2 {
     display: flex;
     justify-content: center;
@@ -239,7 +527,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    max-width: 100%;
+    height: auto;
 }
 
 #background > .background-description > p.description {
@@ -248,5 +537,5 @@
     line-height: 1.5;
     justify-content: center;
     text-align: center;
-    padding: 60px;
+    padding: 50px 200px;
 }

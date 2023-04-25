@@ -22,25 +22,27 @@
             </div>
         </section>
 
-        <section id="service-offer">
+        <section id="about-us-offer">
             <div class="container">
                 <div class="offer-cards">
                     <div class="card">
                         <div class="service-icon">
-                        <i class="material-icons-round">
-                            people
-                        </i>                          
+                            <i class="material-icons-round">people</i>                          
                         </div>
-                        <p class="about-us-detail-title">Countries</p>
+                        <div class="service-desc">
+                            <p class="title">132k+</p>
+                            <p class="sub">Customer</p>
+                        </div> 
                     </div>
 
                     <div class="card">
                         <div class="service-icon">
-                        <i class="material-icons-round">
-                            language
-                        </i>                             
+                            <i class="material-icons-round">language</i>                             
                         </div>
-                        <p class="about-us-detail-title">Countries</p>
+                        <div class="service-desc">
+                            <p class="title">13</p>
+                            <p class="sub">Countries</p>
+                        </div> 
                     </div>
 
                     <div class="card">
@@ -49,7 +51,10 @@
                             star
                         </i>
                         </div>
-                        <p class="about-us-detail-title">Rating</p>
+                        <div class="service-desc">
+                            <p class="title">4.5/5</p>
+                            <p class="sub">Rating</p>
+                        </div> 
                     </div>
 
                     <div class="card">
@@ -58,7 +63,10 @@
                                 person
                             </i>
                         </div>
-                        <p class="about-us-detail-title">Technician</p>
+                        <div class="service-desc">
+                            <p class="title">230+</p>
+                            <p class="sub">Technician</p>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -89,6 +97,9 @@
                 <div class="our-mission">
                     <div class="mission1">
                         <div class="mission1-description">
+                            <div class="mission1-image">
+                                <img src="<?= BASEURL; ?>/image/mission1.png" alt="Mission 1">
+                            </div>
                             <div class="number">
                                 <p>1</p>
                             </div>
@@ -98,10 +109,9 @@
                                 but also efficient and affordable. The company recognizes the importance of delivering solutions that meet the customer's needs while also being mindful of cost constraints.
                                 </p>
                             </div>
+                            
                         </div>
-                            <div class="mission1-image">
-                                <img src="<?= BASEURL; ?>/image/mission1.png" alt="Mission 1">
-                            </div>
+                            
                     </div>
                     
                     <div class="mission2">
@@ -124,6 +134,9 @@
 
                     <div class="mission3">
                         <div class="mission3-description">
+                            <div class="mission3-image">
+                                <img src="<?= BASEURL; ?>/image/mission3.png" alt="Mission 1">
+                            </div>
                             <div class="number">
                                 <p>3</p>
                             </div>
@@ -135,9 +148,7 @@
                             </div>
                         </div>
 
-                        <div class="mission3-image">
-                            <img src="<?= BASEURL; ?>/image/mission3.png" alt="Mission 1">
-                        </div>
+                        
                      </div>
                 </div>
             </div>
