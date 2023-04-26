@@ -147,16 +147,15 @@
                                     </table>
                                 </div>
                             </div>
-                            <?php if($data['order']['status'] == "In Progress") : ?>
                             <div class="button-to-complete-order">
+                                <?php if($data['order']['status'] == "In Progress") : ?>
                                 <button type="button" id="myBtn" class="primary-button submit-form">Complete Order</button>
-                            </div>
-                            <?php endif; ?>
-                            <?php if($data['order']['status'] == "Done" && $data['review_status'] == 0) : ?>
-                            <div class="button-to-complete-order">
-                                    <button type="button" id="myBtnFeedback" class="primary-button submit-form">Give Feedback</button>
-                            </div>
-                            <?php endif; ?>
+                                <?php endif; ?>
+
+                                <?php if($data['order']['status'] == "Done" && $data['review_status'] == 0) : ?>
+                                <button type="button" id="myBtnFeedback" class="primary-button submit-form">Give Feedback</button>
+                                <?php endif; ?>
+                                </div>
                             <div class="history-date-order">
                                 <p>Ordered on <time datetime="2023-04-10"><?= $data['order']['order_date'] ?></time></p>
                             </div>
@@ -236,7 +235,7 @@
                             <input type="hidden" name="order_id" value="<?= $data['order']['id'] ?>">
                             <div class="modal-button">
                                 <div class="main-button">
-                                    <button type="submit" class="primary-button">Submit Feedback</button>
+                                    <button type="submit" class="primary-button" id="submitFormFeedback">Submit Feedback</button>
                                 </div>
                                 <div class="secondary-button">
                                     <button type="button" class="secondary-button" id="cancelFeedback">I'll do the feedback later...</button>

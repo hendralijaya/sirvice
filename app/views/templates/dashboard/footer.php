@@ -13,6 +13,7 @@
     <script src="<?= BASEURL; ?>/js/script-address-search.js"></script>
     <script src="<?= BASEURL; ?>/js/script-tips-search.js"></script>
     <script src="<?= BASEURL; ?>/js/script-modal.js"></script>
+    <script src="<?= BASEURL; ?>/js/script-modal-feedback.js"></script>
     <script src="<?= BASEURL; ?>/js/script-sidebar.js"></script>
     <script src="<?= BASEURL; ?>/js/script-status-order-info.js"></script>
     <script src="<?= BASEURL; ?>/js/script-stepper.js"></script>

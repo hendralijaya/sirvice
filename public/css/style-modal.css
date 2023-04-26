@@ -143,6 +143,10 @@ button#myBtn, button#myBtnFeedback {
 
 /* For Feedback Stars */
 
+#myModalFeedback {
+    display: none;
+}
+
 #myModalFeedback > .modal-content {
     gap: 0px;
 }
