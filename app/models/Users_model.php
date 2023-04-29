@@ -63,4 +63,19 @@ class Users_model {
             return 0;
         }
     }
+
+    public function deleteUser($id)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $id);
+        $user = $this->db->single();
+        $profilePicture = $user['profile_picture'];
+        if ($profilePicture != 'profile-example.png') {
+            Helper::deleteFile($profilePicture);
+        }
+        $this->db->query('DELETE FROM ' . $this->table . ' WHERE id=:id');
+        $this->db->bind('id', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
 }
