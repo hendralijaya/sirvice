@@ -211,6 +211,7 @@ class Dashboard extends Controller {
         if(isset($_POST['update_profile'])) {
             if ($this->model('Users_model')->updateUser($_SESSION['user_id'],$_POST,$_FILES) > 0) {
                 // Flash message
+                Flasher::setFlash('Profile has been ', 'updated', 'success');
                 header('Location: ' . BASEURL . '/dashboard/profile');
                 exit;
             } else {
