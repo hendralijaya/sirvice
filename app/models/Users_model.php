@@ -24,12 +24,12 @@ class Users_model {
 
     public function updateUser($id, $data, $file)
     {
-        if (!isset($file['profile_picture'])) {
+        if (empty($file['profile_picture']['name'])) {
             $this->db->query('UPDATE ' . $this->table . ' SET name=:name WHERE id=:id');
             $this->db->bind('id', $id);
             $this->db->bind('name', $data['name']);
             $this->db->execute();
-            return $this->db->rowCount();
+            return 1;
         } else {
             $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
             $this->db->bind('id', $id);

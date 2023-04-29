@@ -22,6 +22,7 @@
                                     <div class="profile-image">
                                         <img src="<?= PROFILE_IMAGE ?><?= $data['user']['profile_picture'] ?>" alt="User Profile Picture">
                                         <div class="edit-profile">
+                                            <input type="hidden" name="old_profile_picture" value="<?= $data['user']['profile_picture'] ?>">
                                             <input type="file" id="profile_picture" name="profile_picture">
                                             <i class="material-icons-round">photo_camera</i>
                                         </div>
