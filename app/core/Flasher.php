@@ -16,7 +16,7 @@ class Flasher {
             echo '<div class="alert alert-' . $_SESSION['flash']['type'] . '">
             <div class="messages">
                 <p>
-                     ' . $_SESSION["flash"]["message"] . ' ' . $_SESSION["flash"]["action"] . '
+                    ' . $_SESSION["flash"]["message"] . ' ' . $_SESSION["flash"]["action"] . '
                 </p>
             </div>
             <div class="alert-close">

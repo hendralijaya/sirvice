@@ -10,7 +10,7 @@ class Tips_model {
 
   public function getFirstTips()
   {
-    $this->db->query('SELECT * FROM SUBSTRING(description, 1, 140) as description' . $this->table . ' ORDER BY id ASC LIMIT 1');
+    $this->db->query('SELECT *, SUBSTRING(description, 1, 140) as description, DATE_FORMAT(date, "%d-%m-%Y") AS date FROM ' . $this->table . ' ORDER BY id ASC LIMIT 1');
     return $this->db->single();
   }
 

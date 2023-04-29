@@ -13,8 +13,9 @@
                             <div class="tab" data-tab="3">Address List</div>
                         </div>
                     </div>
-                    <?php Flasher::flash() ?>
+                    
                     <div id="tab-content">
+                    <?php Flasher::flash() ?>
                         <div class="tab-data tab-data-desc" data-tab="1">
                             <div class="overall-edit-profile">
                                 <form action="<?= BASEURL; ?>/dashboard/update_profile" class="edit-profile-form" method="POST" enctype="multipart/form-data">
@@ -135,7 +136,7 @@
                                                 <button type="button" class="delete-address delete-address-modal-show" onclick="modalTriggered('myModal<?= $address['id'] ?>');modalClosedWindow('myModal<?= $address['id'] ?>')">
                                                     <i class="material-icons-round">delete</i>
                                                     <span>Delete</span>
-                                                    <p class="address_id"><?= $address['id'] ?></p>
+                                                    <p class="address_id" hidden><?= $address['id'] ?></p>
                                                 </button>
                                             </form>
                                         </div>

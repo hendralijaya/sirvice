@@ -14,8 +14,9 @@
                             <div class="tab" data-tab="3">History</div>
                         </div>
                     </div>
-                    <?php Flasher::flash(); ?>
+                    
                     <div id="tab-content">
+                    <?php Flasher::flash(); ?>
                         <div class="tab-data tab-data-desc" data-tab="1">
                             <div class="upcoming-order-cards">
                                 <?php foreach ($data['inprogress_orders'] as $order) : ?>

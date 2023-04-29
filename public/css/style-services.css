@@ -1,124 +1,134 @@
 main > #services {
     padding: 0 0 100px 0;
 } 
+
+#services > .container > .hero > .hero-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
 #services > .container > .hero > .hero-details > h1.hero-title {
-    display: flex;
     font-weight: 500;
     font-size: 36px;
     line-height: 1.2;
-    justify-content: center;
-    text-align: center;
 }
 #services > .container > .hero > .hero-details > p.servs {
-    display: flex;
     font-weight: 500;
     font-size: 18px;
     line-height: 1.5;
-    justify-content: center;
-    text-align: center;
     color: var(--primary-color);
 }
 
 #services > .container > .hero > .hero-details > p.hero-description {
-    display: flex;
     font-weight: 400;
     font-size: 18px;
     line-height: 1.5;
-    justify-content: center;
-    text-align: center;
 }
 
 #services > .container > .hero > .hero-details > .hero-image {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 30px;
+    padding-top: 30px;
+}
+
+#services > .container > .hero > .hero-details > .hero-image > img {
+    width: 100%;
+    max-width: 800px;
 }
 
 /* Service tab title */
-#service > .service-description > .service-tittle > h2 {
+#service > .container > .service-description > .service-tittle {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+#service > .container > .service-description > .service-tittle > h2 {
   font-weight: 500;
   font-size: 36px;
   line-height: 1.2;
-  justify-content: center;
-  text-align: center;
 }
 
-#service > .service-description > .service-tittle > p {
-  display: flex;
+#service > .container > .service-description > .service-tittle > p {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
-  justify-content: center;
-  text-align: center;
 }
 
 /* Style the tab */
-#service > .service-description > .service-tab {
-  width: 80%;
-  height: 450px;
+#service > .container > .service-description > .service-tab {
+  width: 100%;
+  min-height: 300px;
+  height: fit-content;
   position: relative;
-  margin: 100px auto;
+  margin: 30px 0;
   overflow: hidden;
   border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 20px;
 }
-#service > .service-description > .service-tab > .content-icon {
+
+#service > .container > .service-description > .service-tab > .content-icon {
   display: flex;
+  justify-content: space-between;
+  gap: 40px;
   border-bottom: 1px solid #ccc;
+  overflow-x: scroll;
+  padding-bottom: 20px;
 }
 
-#service > .service-description > .service-tab > .content-icon > button {
+#service > .container > .service-description > .service-tab > .content-icon > button {
   background: transparent;
   border: none;
+  border-radius: 10px;
   outline: none;
   cursor: pointer;
-  padding: 14px 16px;
-  margin-right: 50px;
+  padding: 5px 12px;
   font-size: 20px;
 }
-#service > .service-description > .service-tab > .content-icon > button:hover {
-  background-color: var(--primary-color);
+
+#service > .container > .service-description > .service-tab > .content-icon > button:hover {
+  background-color: var(--dots-color);
 }
- 
+
+#service > .container > .service-description > .service-tab > .content-icon > button svg.svg_services path{
+  fill: var(--primary-color);
+}
+
 /* Style the tab content */
 
-#service > .service-description > .service-tab > .tab-content {
+#service > .container > .service-description > .service-tab > .tab-content {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 5% auto;
-  position: absolute;
-  transform: translateX(100%);
+  gap: 20px;
+  padding: 30px 20px;
 }
 
-#service > .service-description >.service-tab > .tab-content > .title > .left-sec {
-  flex-basis: 50%;
+#service > .container > .service-description >.service-tab > .tab-content > .title {
+  display: flex;
+  justify-content: space-between;
   font-size: 20px;
   font-weight: 600;
-  margin-left: 10px;
 }
 
-#service > .service-description > .service-tab > .tab-content > .title > .right-sec {
-  flex-basis: 50%;
-  text-align: end;
-  font-size: 20px;
-  font-weight: 600;
-  margin-right: 10px;
-}
-
-#service > .service-description > .service-tab > .tab-content > .description > p {
+#service > .container > .service-description > .service-tab > .tab-content > .description > p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   text-align: justify;
-  margin: 0 10px;
 }
 
-#service > .service-description > .service-tab > #content1 {
+#service > .container > .service-description > .service-tab > #content1 {
   transform: translateX(0px);
 }
 
-#service > .service-description > .service-tab > .content-icon > #button1 {
+#service > .container > .service-description > .service-tab > .content-icon > #button1 {
   background-color: var(--primary-color);
 }

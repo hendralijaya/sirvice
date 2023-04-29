@@ -1501,7 +1501,7 @@ main > #tips > .container > .main-content > .content > .tips-and-tricks-cards > 
     align-items: center;
     padding: 10px;
     border-radius: 5px;
-    margin: 0 0 15px 0;
+    /* margin: 0 0 15px 0; */
     border: 1px solid;
 }
 
