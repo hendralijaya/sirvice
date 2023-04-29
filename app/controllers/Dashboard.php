@@ -187,6 +187,13 @@ class Dashboard extends Controller {
     public function change_password()
     {
         if (isset($_POST['change_password'])){
+            // Check password
+            if ($_POST['password'] != $_POST['repassword']) {
+                // Flash message
+                Flasher::setFlash('Updated Password : ', 'not match', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/profile');
+                exit;
+            }
             if ($this->model('Users_model')->changePassword($_SESSION['user_id'],$_POST) > 0) {
                 // Flash message
                 Flasher::setFlash('Password has been ', 'changed', 'success');
