@@ -85,7 +85,7 @@ class Dashboard extends Controller {
     public function completeOrder()
     {
         if(isset($_POST['complete_order'])) {
-            if($this->model('Orders_model')->completeOrder($_SESSION['user_id'], $_POST['order_id'])) {
+            if($this->model('Orders_model')->updateOrderDone($_SESSION['user_id'], $_POST['order_id'])) {
                 $this->model('Notifications_model')->createNotification($_SESSION['user_id'], 'Order Completed!', "Congratulations, your order has been successfully completed! We hope you had a great experience with us, 't forget to give feedback and we look forward to providing you with the best possible experience.", 'http://sirvice/public/dashboard/order/'.$_POST['order_id'], 'check_circle', 'check', $_POST['order_id']);
                 Flasher::setFlash('Order has been ', 'completed', 'success');
                 header('Location: ' . BASEURL . '/dashboard/order');
@@ -103,6 +103,7 @@ class Dashboard extends Controller {
 
     public function giveFeedback()
     {
+        var_dump($_POST);
         if(isset($_POST['review'])) {
             if($this->model('Reviews_model')->createReview($_SESSION['user_id'], $_POST)) {
                 Flasher::setFlash('Review has been ', 'created', 'success');

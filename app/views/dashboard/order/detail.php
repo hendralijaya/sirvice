@@ -233,6 +233,7 @@
                                 <input type="text" id="name" name="description" value="" placeholder="Example: Sir-vice is the best" required>
                             </div>
                             <input type="hidden" name="order_id" value="<?= $data['order']['id'] ?>">
+                            <input type="hidden" name="review" value="review">
                             <div class="modal-button">
                                 <div class="main-button">
                                     <button type="submit" class="primary-button" id="submitFormFeedback">Submit Feedback</button>
