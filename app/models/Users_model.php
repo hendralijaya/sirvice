@@ -48,7 +48,7 @@ class Users_model {
         }
     }
 
-    public function change_password($userId, $data) {
+    public function changePassword($userId, $data) {
         $this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
         $this->db->bind('id', $userId);
         $user = $this->db->single();
