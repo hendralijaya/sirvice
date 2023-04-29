@@ -28,11 +28,12 @@ class Reviews_model {
 
     public function createReview($userId, $data)
     {
+        $description = isset($data['description']) ? $data['description'] : NULL;
         $this->db->query('INSERT INTO ' . $this->table . ' (user_id, order_id, rating, description) VALUES (:user_id, :order_id, :rating, :description)');
         $this->db->bind('user_id', $userId);
         $this->db->bind('order_id', $data['order_id']);
         $this->db->bind('rating', $data['rating']);
-        $this->db->bind('description', $data['description']);
+        $this->db->bind('description', $description);
         $this->db->execute();
         return $this->db->rowCount();
     }
