@@ -26,7 +26,7 @@
                     </div>
 
                     <div id="step-content">
-                        <form action="<?= BASEURL ?>/dashboard/neworder" method="post" enctype="multipart/form-data">
+                        <form action="<?= BASEURL ?>/dashboard/neworder" method="post" enctype="multipart/form-data" id="order-form">
                             <div class="step-data step-data-desc" data-step="1">
                                 <div class="input-form">
                                     <div class="field">
@@ -64,20 +64,22 @@
                             <div class="step-data step-data-desc" data-step="2">
                                 <div class="input-form">
                                     <div class="field">
-                                        <label for="name">AC Problem Details</label>
+                                        <label for="ac_problem_details">AC Problem Details</label>
                                         <small>Please tell us what’s the problem with the AC. Make it as detail as possible so that we can save more time on diagnosing the problem :D</small>
-                                        <input type="text" id="name" name="description" placeholder="Example: The temperature is not as what expected, It smells bad, etc." required>
+                                        <input type="text" id="ac_problem_details" name="description" placeholder="Example: The temperature is not as what expected, It smells bad, etc." required>
                                     </div>
 
                                     <div class="field">
                                         <label for="address">Services</label>
                                         <small>Which services do you want to order from us?</small>
                                         <div class="checkboxes">
+                                            <?php $i = 1; ?>
                                             <?php foreach ($data['services'] as $service) : ?>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle1" name="service_id[]" value="<?= $service['id'] ?>">
-                                                <label for="vehicle1"><?= $service['name'] . ' - Rp.' . $service['price'] ?></label><br>
+                                                <input type="checkbox" id="vehicle<?= $i?>" name="service_id[]" value="<?= $service['id'] ?>">
+                                                <label for="vehicle<?= $i?>"><?= $service['name'] . ' - Rp.' . $service['price'] ?></label><br>
                                             </div>
+                                            <?php $i++; ?>
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
@@ -93,43 +95,43 @@
                                         <small>What kind of brand is your AC?</small>
                                         <div class="checkboxes">
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle1" name="ac_brand" value="Daikin">
-                                                <label for="vehicle1">Daikin</label><br>
+                                                <input type="radio" id="brand1" name="ac_brand" value="Daikin">
+                                                <label for="brand1">Daikin</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle2" name="ac_brand" value="Panasonic">
-                                                <label for="vehicle2">Panasonic</label><br>
+                                                <input type="radio" id="brand2" name="ac_brand" value="Panasonic">
+                                                <label for="brand2">Panasonic</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle3" name="ac_brand" value="Sharp">
-                                                <label for="vehicle3">Sharp</label><br>
+                                                <input type="radio" id="brand3" name="ac_brand" value="Sharp">
+                                                <label for="brand3">Sharp</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle1" name="ac_brand" value="LG">
-                                                <label for="vehicle1">LG</label><br>
+                                                <input type="radio" id="brand4" name="ac_brand" value="LG">
+                                                <label for="brand4">LG</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle2" name="ac_brand" value="Mitsubishi Electric">
-                                                <label for="vehicle2">Mitsubishi Electric</label><br>
+                                                <input type="radio" id="brand5" name="ac_brand" value="Mitsubishi Electric">
+                                                <label for="brand5">Mitsubishi Electric</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle3" name="ac_brand" value="Samsung">
-                                                <label for="vehicle3">Samsung</label><br>
+                                                <input type="radio" id="brand6" name="ac_brand" value="Samsung">
+                                                <label for="brand6">Samsung</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle1" name="ac_brand" value="Toshiba">
-                                                <label for="vehicle1">Toshiba</label><br>
+                                                <input type="radio" id="brand7" name="ac_brand" value="Toshiba">
+                                                <label for="brand7">Toshiba</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="vehicle2" name="ac_brand" value="Polytron">
-                                                <label for="vehicle2">Polytron</label><br>
+                                                <input type="radio" id="brand8" name="ac_brand" value="Polytron">
+                                                <label for="brand8">Polytron</label><br>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="button-stepper-form">
                                         <button class="back" id="prevBtn2" onclick="prevStep(0)">Back</button>
-                                        <button class="next" id="nextBtn2" onclick="nextStep(2)">Next</button>
+                                        <button class="next" id="nextBtn2" onclick="nextStep(2); paymentDetails()">Next</button>
                                     </div>
                                 </div>
                             </div>
@@ -149,33 +151,45 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <!-- <tr class="invoice-detail">
+                                                        <td><span id="invoice_services">Cleaning Air Conditoner</span></td>
+                                                        <td><span id="invoice_number_unit">3</span></td>
+                                                        <td>Rp. <span id="invoice_price_per-ac">75.000</span>,-</td>
+                                                        <td>Rp. <span id="invoice_amount_price">225.000</span>,-</td>
+                                                    </tr>
                                                     <tr class="invoice-detail">
-                                                        <td>Cleaning Air Conditoner</td>
-                                                        <td>3</td>
-                                                        <td>Rp. 75.000,-</td>
-                                                        <td>Rp. 225.000,-</td>
+                                                        <td><span id="invoice_services_2">Cleaning Air Conditoner</span></td>
+                                                        <td><span id="invoice_number_unit_2">3</span></td>
+                                                        <td>Rp. <span id="invoice_price_per-ac_2">75.000</span>,-</td>
+                                                        <td>Rp. <span id="invoice_amount_price_2">225.000</span>,-</td>
+                                                    </tr>
+                                                    <tr class="invoice-detail">
+                                                        <td><span id="invoice_services_3">Cleaning Air Conditoner</span></td>
+                                                        <td><span id="invoice_number_unit_3">3</span></td>
+                                                        <td>Rp. <span id="invoice_price_per-ac_3">75.000</span>,-</td>
+                                                        <td>Rp. <span id="invoice_amount_price_3">225.000</span>,-</td>
                                                     </tr>
                                                     <tr class="sub-total">
                                                         <td>Sub Total</td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td>Rp. 200.000,-</td>
+                                                        <td>Rp. <span id="invoice_sub_total">225.000</span>,-</td>
                                                     </tr>
                                                     <tr class="tax">
                                                         <td>Service Tax (2%)</td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td>Rp 4.500,-</td>
-                                                    </tr>
+                                                        <td>Rp. <span id="invoice_service_tax">4.500</span>,-</td>
+                                                    </tr> -->
                                                 </tbody>
-                                                <tfoot>
+                                                <!-- <tfoot>
                                                     <tr class="final-total">
                                                         <td>Total</td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td>Rp. 600.000,-</td>
+                                                        <td>Rp. <span id="invoice_final_total">229.500</span>,-</td>
                                                     </tr>
-                                                </tfoot>
+                                                </tfoot> -->
                                             </table>
                                         </div>
                                     </div>
@@ -217,7 +231,7 @@
                                     </div>
                                     <input type="hidden" name="order" id="login" value="order">
                                     <div class="button-stepper-form">
-                                        <button class="back" id="prevBtn3" onclick="prevStep(1)">Back</button>
+                                        <button class="back" id="prevBtn3" onclick="prevStep(1); clearServices()">Back</button>
                                         <button type="button" id="myBtn" class="primary-button submit submit-form">Submit</button>
                                     </div>
                                 </div>

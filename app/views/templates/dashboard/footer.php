@@ -21,5 +21,6 @@
     <script src="<?= BASEURL; ?>/js/script-change-image.js"></script>
     <script src="<?= BASEURL; ?>/js/script-alert.js"></script>
     <script src="<?= BASEURL; ?>/js/script-payment.js"></script>
+    <script src="<?= BASEURL; ?>/js/script-local-storage-payment-order.js"></script>
 </body>
 </html>
