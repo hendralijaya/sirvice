@@ -21,7 +21,7 @@ class Auth_model {
     public function register($data)
   {
     try {
-      $query = "INSERT INTO $this->table VALUES ('', :email, :password, :name, :phone_number, :verification_code, 0)";
+      $query = "INSERT INTO $this->table VALUES ('', :email, :password, :name, :phone_number, :verification_code, 0, 'profile-example.png')";
       $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
       $this->db->query($query);
       $this->db->bind('email', $data['email']);
