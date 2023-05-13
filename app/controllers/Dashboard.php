@@ -264,8 +264,11 @@ class Dashboard extends Controller {
     {
         if ($this->model('Users_model')->deleteUser($_SESSION['user_id']) > 0) {
             // Flash message
+            session_unset();
+            session_destroy();
+            session_start();
             Flasher::setFlash('Your account has been ', 'deleted', 'success');
-            header('Location: ' . BASEURL . '/auth/logout');
+            header('Location: ' . BASEURL . '/auth/login');
             exit;
         } else {
             // Flash message
