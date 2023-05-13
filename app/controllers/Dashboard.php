@@ -138,6 +138,7 @@ class Dashboard extends Controller {
                 $this->view('templates/dashboard/header-sidebar', $data);
                 $this->view('dashboard/order/new', $data);
                 $this->view('templates/dashboard/footer');
+                exit;
             }
             $orderId = $this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST, $_FILES);
             if ($orderId > 0) {
