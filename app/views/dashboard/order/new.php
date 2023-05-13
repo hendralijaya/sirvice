@@ -4,7 +4,7 @@
                 <div class="page-title order-title-with-button">
                     <h1 class="title-page">Add New Order</h1>
                 </div>
-
+                <?php Flasher::flash() ?>
                 <div class="main-content">
                     <div class="content">
                         <div id="steps">
