@@ -3,7 +3,7 @@
 class LandingPage extends Controller {
     public function index()
     {
-        header('Location: ' . BASEURL . '/landing-page/home');
+        header('Location: ' . BASEURL . '/landingpage/home');
     }
 
     public function home()

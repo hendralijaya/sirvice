@@ -249,10 +249,12 @@ class Dashboard extends Controller {
     {
         if ($this->model('Users_model')->deleteUser($_SESSION['user_id']) > 0) {
             // Flash message
+            Flasher::setFlash('Your account has been ', 'deleted', 'success');
             header('Location: ' . BASEURL . '/auth/logout');
             exit;
         } else {
             // Flash message
+            Flasher::setFlash('Your account : ', 'failed to delete', 'danger');
             header('Location: ' . BASEURL . '/dashboard/profile');
             exit;
         }
