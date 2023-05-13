@@ -125,7 +125,7 @@ class Dashboard extends Controller {
     {
         // Get user data
         if(isset($_POST['order'])) {
-            if (empty($_POST["scheduled_date"] || empty($_POST["scheduled_time"]) || empty($_POST['description']) || empty($_POST['service_id']) || empty($_POST['number_unit']) || empty($_POST['ac_brand']) || empty($_POST['address_id']))) {
+            if (empty($_POST["scheduled_date"]) || empty($_POST["scheduled_time"]) || empty($_POST['description']) || empty($_POST['service_id']) || empty($_POST['number_unit']) || empty($_POST['ac_brand']) || empty($_POST['address_id'])) {
                 Flasher::setFlash('Please fill ', 'all fields', 'danger');
                 header('Location: ' . BASEURL . '/dashboard/order');
                 exit;
