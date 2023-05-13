@@ -20,7 +20,7 @@ class Auth extends Controller {
         
       if( isset($_POST['register']) ) {
         // Validate required register fields
-        if (!isset($_POST['name']) || !isset($_POST['email']) || !isset($_POST['password']) || !isset($_POST['repassword']) || !isset($_POST['phone_number']) || !isset($_POST['register'])) {
+        if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['repassword']) || empty($_POST['phone_number']) || empty($_POST['register'])) {
             Flasher::setFlash('All fields are required', 'register', 'danger');
             $data['title'] = 'Register - Sirvice';
             $this->view('auth/register', $data);

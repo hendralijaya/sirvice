@@ -125,6 +125,11 @@ class Dashboard extends Controller {
     {
         // Get user data
         if(isset($_POST['order'])) {
+            if (empty($_POST["scheduled_date"] || empty($_POST["scheduled_time"]) || empty($_POST['description']) || empty($_POST['service_id']) || empty($_POST['number_unit']) || empty($_POST['ac_brand']) || empty($_POST['address_id']))) {
+                Flasher::setFlash('Please fill ', 'all fields', 'danger');
+                header('Location: ' . BASEURL . '/dashboard/order');
+                exit;
+            }
             $orderId = $this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST, $_FILES);
             if ($orderId > 0) {
                 $this->model('Notifications_model')->createNotification($_SESSION['user_id'], 'Order Successful!', 'Congratulations, your order has been successfully processed! You can now check the progress of your order, and we look forward to providing you with the best possible experience.', 'http://sirvice/public/dashboard/order/'.$orderId, 'check_circle', 'check', $orderId, $_POST['scheduled_date']);
