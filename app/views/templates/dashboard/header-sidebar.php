@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -70,10 +70,10 @@
         </ul>
 
         <ul>
-            <li>
+            <!-- <li class="dark-mode" id="change-theme">
                 <i class="material-icons-round">dark_mode</i>
                 <span class="tooltip">Dark</span>
-            </li>
+            </li> -->
             <li>
                 <a href="<?= BASEURL; ?>/auth/logout">
                     <i class="material-icons-round">logout</i>

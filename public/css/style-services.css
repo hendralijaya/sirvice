@@ -1,5 +1,5 @@
 main > #services {
-    padding: 0 0 100px 0;
+  padding: 0 0 100px 0;
 } 
 
 #services > .container > .hero > .hero-details {
@@ -8,36 +8,37 @@ main > #services {
   justify-content: center;
   align-items: center;
   gap: 15px;
+  text-align: center;
 }
 
 #services > .container > .hero > .hero-details > h1.hero-title {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 1.2;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.2;
 }
 #services > .container > .hero > .hero-details > p.servs {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.5;
-    color: var(--primary-color);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--primary-color);
 }
 
 #services > .container > .hero > .hero-details > p.hero-description {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.5;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 #services > .container > .hero > .hero-details > .hero-image {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 30px;
 }
 
 #services > .container > .hero > .hero-details > .hero-image > img {
-    width: 100%;
-    max-width: 800px;
+  width: 100%;
+  max-width: 800px;
 }
 
 /* Service tab title */

@@ -81,3 +81,10 @@ paragraphsTipsAndTricks.forEach(paragraph => {
   // Replace the original text with the truncated text
   paragraph.textContent = truncatedText;
 });
+
+// const toggleButton = document.querySelector('#change-theme');
+
+// toggleButton.addEventListener('click', () => {
+//   const html = document.querySelector('html');
+//   html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+// });
