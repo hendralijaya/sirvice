@@ -52,7 +52,7 @@
 
                                     <div class="field">
                                         <label for="time">Time</label>
-                                        <input type="time" id="time" name="scheduled_time" value="10:00">
+                                        <input type="time" id="time" name="scheduled_time" value="<?php echo isset($_POST["scheduled_time"]) ? $_POST["scheduled_time"] : '10:00'; ?>">
                                     </div>
 
                                     <div class="button-stepper-form">
@@ -66,28 +66,28 @@
                                     <div class="field">
                                         <label for="ac_problem_details">AC Problem Details</label>
                                         <small>Please tell us what’s the problem with the AC. Make it as detail as possible so that we can save more time on diagnosing the problem :D</small>
-                                        <input type="text" id="ac_problem_details" name="description" placeholder="Example: The temperature is not as what expected, It smells bad, etc." required>
+                                        <input type="text" id="ac_problem_details" name="description" placeholder="Example: The temperature is not as expected, It smells bad, etc." required value="<?php echo isset($_POST["description"]) ? htmlspecialchars($_POST["description"]) : ''; ?>">
                                     </div>
 
                                     <div class="field">
                                         <label for="address">Services</label>
                                         <small>Which services do you want to order from us?</small>
                                         <div class="checkboxes">
-                                            <?php $i = 1; ?>
-                                            <?php foreach ($data['services'] as $service) : ?>
+                                        <?php $i = 1; ?>
+                                        <?php foreach ($data['services'] as $service) : ?>
                                             <div class="checkbox">
-                                                <input type="checkbox" id="vehicle<?= $i?>" name="service_id[]" value="<?= $service['id'] ?>">
-                                                <label for="vehicle<?= $i?>"><?= $service['name'] . ' - Rp.' . $service['price'] ?></label><br>
+                                                <input type="checkbox" id="vehicle<?= $i ?>" name="service_id[]" value="<?= $service['id'] ?>" <?php echo (isset($_POST['service_id']) && in_array($service['id'], $_POST['service_id'])) ? 'checked' : ''; ?>>
+                                                <label for="vehicle<?= $i ?>"><?= $service['name'] . ' - Rp.' . $service['price'] ?></label><br>
                                             </div>
-                                            <?php $i++; ?>
-                                            <?php endforeach; ?>
+                                        <?php $i++; ?>
+                                        <?php endforeach; ?>
                                         </div>
                                     </div>
 
                                     <div class="field">
                                         <label for="ac-unit">Number of AC Units</label>
                                         <small>How many AC that you want us to repair?</small>
-                                        <input type="number" placeholder="Example: 3" id="ac-unit" name="number_unit">
+                                        <input type="number" placeholder="Example: 3" id="ac-unit" name="number_unit" value="<?php echo isset($_POST['number_unit']) ? $_POST['number_unit'] : ''; ?>">
                                     </div>
 
                                     <div class="field">
@@ -95,36 +95,36 @@
                                         <small>What kind of brand is your AC?</small>
                                         <div class="checkboxes">
                                             <div class="checkbox">
-                                                <input type="radio" id="brand1" name="ac_brand" value="Daikin">
+                                                <input type="radio" id="brand1" name="ac_brand" value="Daikin" <?php echo isset($_POST['ac_brand']) && $_POST['ac_brand'] == 'Daikin' ? 'checked' : ''; ?>>
                                                 <label for="brand1">Daikin</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="brand2" name="ac_brand" value="Panasonic">
-                                                <label for="brand2">Panasonic</label><br>
+                                                <input type="radio" id="brand2" name="ac_brand" value="Panasonic" <?php echo isset($_POST['ac_brand']) && $_POST['ac_brand'] == 'Panasonic' ? 'checked' : ''; ?>>
+                                                <label for="brand1">Panasonic</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="brand3" name="ac_brand" value="Sharp">
-                                                <label for="brand3">Sharp</label><br>
+                                                <input type="radio" id="brand3" name="ac_brand" value="Sharp" <?php echo isset($_POST['ac_brand']) && $_POST['ac_brand'] == 'Sharp' ? 'checked' : ''; ?>>
+                                                <label for="brand1">Sharp</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="brand4" name="ac_brand" value="LG">
-                                                <label for="brand4">LG</label><br>
+                                                <input type="radio" id="brand4" name="ac_brand" value="LG" <?php echo isset($_POST['ac_brand']) && $_POST['ac_brand'] == 'LG' ? 'checked' : ''; ?>>
+                                                <label for="brand1">LG</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="brand5" name="ac_brand" value="Mitsubishi Electric">
-                                                <label for="brand5">Mitsubishi Electric</label><br>
+                                                <input type="radio" id="brand5" name="ac_brand" value="Mistubishi Electric" <?php echo isset($_POST['ac_brand']) && $_POST['ac_brand'] == 'Mistubishi Electric' ? 'checked' : ''; ?>>
+                                                <label for="brand1">Mistubishi Electric</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="brand6" name="ac_brand" value="Samsung">
-                                                <label for="brand6">Samsung</label><br>
+                                                <input type="radio" id="brand6" name="ac_brand" value="Samsung" <?php echo isset($_POST['ac_brand']) && $_POST['ac_brand'] == 'Samsung' ? 'checked' : ''; ?>>
+                                                <label for="brand1">Samsung</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="brand7" name="ac_brand" value="Toshiba">
-                                                <label for="brand7">Toshiba</label><br>
+                                                <input type="radio" id="brand7" name="ac_brand" value="Toshiba" <?php echo isset($_POST['ac_brand']) && $_POST['ac_brand'] == 'Toshiba' ? 'checked' : ''; ?>>
+                                                <label for="brand1">Toshiba</label><br>
                                             </div>
                                             <div class="checkbox">
-                                                <input type="radio" id="brand8" name="ac_brand" value="Polytron">
-                                                <label for="brand8">Polytron</label><br>
+                                                <input type="radio" id="brand7" name="ac_brand" value="Polytron" <?php echo isset($_POST['ac_brand']) && $_POST['ac_brand'] == 'Polytron' ? 'checked' : ''; ?>>
+                                                <label for="brand1">Polytron</label><br>
                                             </div>
                                         </div>
                                     </div>

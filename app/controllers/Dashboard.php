@@ -127,8 +127,17 @@ class Dashboard extends Controller {
         if(isset($_POST['order'])) {
             if (empty($_POST["scheduled_date"]) || empty($_POST["scheduled_time"]) || empty($_POST['description']) || empty($_POST['service_id']) || empty($_POST['number_unit']) || empty($_POST['ac_brand']) || empty($_POST['address_id'])) {
                 Flasher::setFlash('Please fill ', 'all fields', 'danger');
-                header('Location: ' . BASEURL . '/dashboard/order');
-                exit;
+                $data['user'] = $this->model('Users_model')->getUserById($_SESSION['user_id']);
+                $data['addresses'] = $this->model('Address_model')->getAddressByUserId($_SESSION['user_id']);
+                $data['services'] = $this->model('Services_model')->getAllServices();
+                $data['title'] = 'New Order - Sirvice';
+                $data['date'] = $_POST['scheduled_date'];
+                // $data['services'] = $this->model('Services_model')->getServices();
+                // $data['technicians'] = $this->model('Technicians_model')->getTechnician();
+                $data['notifications'] = $this->model('Notifications_model')->getNotifications($_SESSION['user_id']);
+                $this->view('templates/dashboard/header-sidebar', $data);
+                $this->view('dashboard/order/new', $data);
+                $this->view('templates/dashboard/footer');
             }
             $orderId = $this->model('Orders_model')->createOrder($_SESSION['user_id'],$_POST, $_FILES);
             if ($orderId > 0) {

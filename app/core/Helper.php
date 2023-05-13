@@ -28,9 +28,9 @@ class Helper {
           $fileType = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
   
           // Check if file type is allowed
-          $allowedTypes = array('jpg', 'jpeg', 'png', 'gif', 'pdf');
+          $allowedTypes = array('jpg', 'jpeg', 'png', 'gif', 'pdf', 'webp');
           if(!in_array($fileType, $allowedTypes)) {
-              return 'Sorry, only JPG, JPEG, PNG, GIF, and PDF files are allowed.';
+              return 'Sorry, only JPG, JPEG, PNG, GIF, PDF, and WEBP files are allowed.';
           }
   
           // Check if file size is within limits
