@@ -184,7 +184,7 @@ class Auth extends Controller {
         setcookie('remember_me', '', time() - 3600, '/');
         session_start();
         session_unset();
-        session_destroy();
+        Flasher::setFlash('Logout success : ', 'you have been logged out', 'success');
         header('Location: ' . BASEURL . '/auth/login');
         exit;
     }
